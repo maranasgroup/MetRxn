@@ -159,7 +159,7 @@ public class molProcess extends Thread {
 	public static void addPseudo(Molecule mol_in, Double pH_in) {
 		mol_in.setProperty(PH, pH_in.toString());
 		MolBond[] bondArray = mol_in.getBondArray();
-
+/*hello*/
 		for (int i = 0; i < bondArray.length; i++) {
 			if (bondArray[i].getProperty(SYMBOL).toString().contains(".H.")) {
 				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
