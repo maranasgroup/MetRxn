@@ -174,6 +174,12 @@ public class molProcess extends Thread {
 			/*The first two if's for .H. and LP will be removed*/
 			/*create new enodes e-h based on number of protons and e-lp based on the number of lone pairs.*/
 			if (bondArray[i].getProperty(SYMBOL).toString().contains(".H.") || bondArray[i].getProperty(SYMBOL).toString().contains(".LP.")) {
+				if (bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("H") || bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("LP")) {
+					bondArray[i].putProperty(IGNOREDBYATOM, bondArray[i].getAtom2().getProperty(INDEX));					
+				} else {
+					bondArray[i].putProperty(IGNOREDBYATOM, bondArray[i].getAtom1().getProperty(INDEX));
+				}
+				
 				continue;
 			}			
 			else {
@@ -367,6 +373,19 @@ public class molProcess extends Thread {
 					mol_in.add(chrl_bond);
 				}
 			}
+			
+			if (atomArray[i].containsPropertyKey(TERMINAL)) {
+				if ((int) atomArray[i].getProperty(TERMINAL) > 0) {
+					MolAtom term_node = new MolAtom(MolAtom.PSEUDO);
+					term_node.setAliasstr("term");
+					term_node.putProperty(INDEX, atomArray[i].getProperty(TERMINAL).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
+					MolBond term_bond = new MolBond(atomArray[i], term_node);
+					term_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
+					mol_in.add(term_node);
+					mol_in.add(term_bond);
+				}
+			}
+			
 			if (atomArray[i].containsPropertyKey(HYBRIDIZATIONSTATE)) {
 				MolAtom hbz_node = new MolAtom(MolAtom.PSEUDO);
 				hbz_node.setAliasstr("hbz");
