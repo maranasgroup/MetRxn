@@ -1,11 +1,12 @@
 propertyName	subtype	primeindex
 b	b	1
 e	e-h	2
-e	e-lp	3
-e	e-c	4
-e	2-e	5
-e	3-e	6
-rad	rad	7
+e	e-lp	2
+e	e-c	3
+e	2-e	4
+e	3-e	5
+rad	rad	6
+term	term	7
 rng	rng	8
 erng	erng	9
 en	-1	10

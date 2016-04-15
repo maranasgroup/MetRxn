@@ -63,7 +63,7 @@ public class molProcess extends Thread {
 	public static String CHIRALITY = "chrl";
 	public static String QUERY = "isQuery";
 	public static String RING = "ring";
-	public static String TERMINAL = "terminal";
+	public static String TERMINAL = "term";
 	public static String BONDTYPE = "bnd";
 	public static String PH = "ph";
 	public static String HYBRIDIZATIONSTATE = "hybz";
@@ -86,8 +86,7 @@ public class molProcess extends Thread {
 			String molStr = "N[C@@H](Cc1ccc(O)cc1)C(O)=O";
 			Molecule mol = getMolObject(molStr);
 			mol = getMMSpecies(mol, pH_0);
-			mol = standardizeMol(mol);
-			// mol.aromatize();
+			mol = standardizeMol(mol);			
 			mol = annotatedMolecule(mol, true);
 			HashMap<Molecule, Double> mmDistribution = getMMDistribution(mol);
 			Set<Molecule> molSet = mmDistribution.keySet();
@@ -157,73 +156,26 @@ public class molProcess extends Thread {
 	}
 
 	public static void addPseudo(Molecule mol_in, Double pH_in) {
+		/*Pseudo atoms in place of lone pair electrons and Hydrogen connections.*/
 		mol_in.setProperty(PH, pH_in.toString());
 		MolBond[] bondArray = mol_in.getBondArray();
-/*hello*/
+		Hydrogenize.convertExplicitHToImplicit(mol_in);
+		
+		MolAtom[] atomArray2 = mol_in.getAtomArray();
+		for (int i = 0; i < atomArray2.length; i++) {
+			if (atomArray2[i].getSymbol().equalsIgnoreCase("H") || atomArray2[i].getSymbol().equalsIgnoreCase("LP")) continue;
+			
+			atomArray2[i].putProperty(HCOUNT, atomArray2[i].getImplicitHCount(true) + atomArray2[i].getExplicitHcount());
+			atomArray2[i].putProperty(LONEPAIRCOUNT, atomArray2[i].getLonePairCount());
+			atomArray2[i].putProperty(VALENCE, atomArray2[i].getValence());
+		}
+		
 		for (int i = 0; i < bondArray.length; i++) {
-			if (bondArray[i].getProperty(SYMBOL).toString().contains(".H.")) {
-				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
-				e_node.setAliasstr("e");
-				e_node.putProperty(ETYPE, "e-h");
-
-				mol_in.add(e_node);
-				MolBond bond = new MolBond(bondArray[i].getAtom1(), e_node);
-				MolBond bond2 = new MolBond(e_node, bondArray[i].getAtom2());
-
-				mol_in.add(bond);
-				mol_in.add(bond2);
-
-				if (!bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("H")) {
-					bond.putProperty(IGNOREDBYATOM, bondArray[i].getAtom1().getProperty(INDEX));
-				}
-				else {
-					bond2.putProperty(IGNOREDBYATOM, bondArray[i].getAtom2().getProperty(INDEX));
-				}
-				mol_in.removeBond(bondArray[i]);
-
-			}
-			else if (bondArray[i].getProperty(SYMBOL).toString().contains(".LP.")) {
-				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
-				MolAtom e_node2 = new MolAtom(MolAtom.PSEUDO);
-				e_node.setAliasstr("e");
-				e_node2.setAliasstr("e");
-				e_node.putProperty(ETYPE, "e-lp");
-				e_node2.putProperty(ETYPE, "e-lp");
-
-				mol_in.add(e_node);
-				mol_in.add(e_node2);
-
-				if (!bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("LP")) {
-					MolBond bond = new MolBond(bondArray[i].getAtom1(), e_node);
-					MolBond bond2 = new MolBond(bondArray[i].getAtom1(), e_node2);
-					mol_in.add(bond);
-					mol_in.add(bond2);
-
-					bond.putProperty(IGNOREDBYATOM, bondArray[i].getAtom1().getProperty(INDEX));
-					bond2.putProperty(IGNOREDBYATOM, bondArray[i].getAtom1().getProperty(INDEX));
-
-					bond.putProperty(SYMBOL, "lp");/* indicates, that it connects lone pair electrons */
-					bond2.putProperty(SYMBOL, "lp");
-
-					mol_in.removeAtom(bondArray[i].getAtom2());
-					mol_in.removeBond(bondArray[i]);
-				}
-				else {
-					MolBond bond = new MolBond(bondArray[i].getAtom2(), e_node);
-					MolBond bond2 = new MolBond(bondArray[i].getAtom2(), e_node2);
-					mol_in.add(bond);
-					mol_in.add(bond2);
-
-					bond.putProperty(IGNOREDBYATOM, bondArray[i].getAtom2().getProperty(INDEX));
-					bond2.putProperty(IGNOREDBYATOM, bondArray[i].getAtom2().getProperty(INDEX));
-
-					bond.putProperty(SYMBOL, "lp");/* indicates, that it connects lone pair electrons */
-					bond2.putProperty(SYMBOL, "lp");
-
-					mol_in.removeAtom(bondArray[i].getAtom1());
-					mol_in.removeBond(bondArray[i]);
-				}
-			}
+			/*The first two if's for .H. and LP will be removed*/
+			/*create new enodes e-h based on number of protons and e-lp based on the number of lone pairs.*/
+			if (bondArray[i].getProperty(SYMBOL).toString().contains(".H.") || bondArray[i].getProperty(SYMBOL).toString().contains(".LP.")) {
+				continue;
+			}			
 			else {
 				/* here the bond information of being in the ring plays a key role */
 				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
@@ -255,10 +207,41 @@ public class molProcess extends Thread {
 
 		/* next we add the extra electron nodes, that would account for double and triple */
 		MolAtom[] atomArray = mol_in.getAtomArray();
+		int lp_count = 0;
+		int h_count = 0;
 		for (int i = 0; i < atomArray.length; i++) {
+			lp_count = 0;
+			h_count = 0;
+			
 			if (atomArray[i].isPseudo()) if (atomArray[i].getAliasstr().equalsIgnoreCase("e")) continue;
 
 			if (atomArray[i].getSymbol().equalsIgnoreCase("H")) continue;
+			
+			h_count = (Integer)atomArray[i].getProperty(HCOUNT);
+			
+			for (int j = 0; j < h_count; j++) {
+				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
+				e_node.setAliasstr("e");
+				e_node.putProperty(ETYPE, "e-h");
+				MolBond e_bond = new MolBond(e_node, atomArray[i]);
+				e_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
+				mol_in.add(e_node);
+				mol_in.add(e_bond);
+			}
+			
+			lp_count = (Integer)atomArray[i].getProperty(LONEPAIRCOUNT);
+			
+			for (int j = 0; j < lp_count; j++) {
+				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
+				e_node.setAliasstr("e");
+				e_node.putProperty(ETYPE, "e-lp");
+				MolBond e_bond = new MolBond(e_node, atomArray[i]);
+				e_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
+				e_bond.putProperty(SYMBOL, "lp");
+				mol_in.add(e_node);
+				mol_in.add(e_bond);
+			}
+			
 
 			int e_count = 0;
 			MolBond[] bondArray2 = atomArray[i].getBondArray();
@@ -299,8 +282,8 @@ public class molProcess extends Thread {
 
 			if (atomArray[i].getSymbol().equalsIgnoreCase("H")) continue;
 
-			int lp_count = 0;
-			int h_count = 0;
+			lp_count = 0;
+			h_count = 0;
 
 			MolBond[] bondArray2 = atomArray[i].getBondArray();
 			for (int j = 0; j < bondArray2.length; j++) {
@@ -311,13 +294,7 @@ public class molProcess extends Thread {
 				else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().equalsIgnoreCase("e-h")) {
 					h_count++;
 					MolAtom otherEatom = bondArray2[j].getOtherAtom(atomArray[i]);
-					otherEatom.putProperty(INDEX, h_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#e-h");
-					if (otherEatom.getBond(0).getOtherAtom(otherEatom).getSymbol().equalsIgnoreCase("H")) {
-						otherEatom.getBond(0).getOtherAtom(otherEatom).putProperty(INDEX, h_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#H");
-					}
-					else {
-						otherEatom.getBond(1).getOtherAtom(otherEatom).putProperty(INDEX, h_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#H");
-					}
+					otherEatom.putProperty(INDEX, h_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#e-h");					
 				}
 				else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().contains("-e")) {
 					bondArray2[j].getOtherAtom(atomArray[i]).putProperty(INDEX, bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
@@ -437,6 +414,7 @@ public class molProcess extends Thread {
 	}
 
 	public static HashMap<Molecule, Double> getMMDistribution(Molecule mol) {
+		/*This function returns a HashMap with microspecies molecule as key, and the corresponding PH as the value*/
 		HashMap<Molecule, Double> returnVal = new HashMap<Molecule, Double>();
 		try {
 			pKaPlugin pKAplugin = new pKaPlugin();
@@ -676,6 +654,7 @@ public class molProcess extends Thread {
 	}
 
 	private static String getBondSymbol(MolBond bond) {
+		/*this function sorts and concatenates the atom symbols to create unique bond symbols.*/
 		if (bond.getAtom1().getSymbol().compareToIgnoreCase(bond.getAtom2().getSymbol()) > 1) {
 			return "." + bond.getAtom1().getSymbol() + "." + bond.getAtom2().getSymbol() + ".";
 		}
