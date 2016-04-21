@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<TITLE>Dialogs of MarvinView</TITLE>
+<link rel=stylesheet type="text/css" href="../../marvinmanuals.css">
+</head>
+<body>
+<h1>Dialogs of MarvinView</h1>
+
+<h2><a class="anchor" name="preferences">Preferences</a></h2>
+<p>The Preferences dialog window is located at the <b>Edit</b> menu.
+It allows you to change many of the MarvinView display settings, including look & feel, error highlighting, and object visibility.<br>
+All settings are saved and used when the application is restarted.
+</p>
+<h4>Display</h4>
+    <img src="../../sketch/gui/gui-files/dialogs/preferences1.png" width="477" height="318"><br>
+<ul>
+    <li><b>Atom & Bond labels</b> are used as the default font type and size to labels
+        such as C/T label of bonds, atom query property labels of atoms, etc.</li>
+    <li><b>Double bond spacing</b> is a gap between two lines/sticks representing a double or triple bond measured in Angstroms.</li>
+    <li><b>Wireframe bond thickness</b> is the width of bonds in wireframe mode. It is measured in Angstroms.</li>
+    <li><b>Stick diameter</b> is the width of bonds in stick mode in Angstroms.</li>
+    <li><b>Ball radius</b> is the size of atom spheres in Ball draw type, measured in Angstroms.</li>
+    <li><b>Look & Feel</b> allows changing the visual appearance of GUI components.
+        The available options are: Java Metal, Motif, JGoodies Plastic, JGoodies Plastic XP,
+        and the native Look & Feels (Windows, Aqua) based on the underlying operating system.</li>
+    <li><b>Show Bond in Hand</b> when checked bond types are shown under the mouse cursor like template structures.</li>
+</ul>
+<h4>Bonds</h4>
+    <img src="../../sketch/gui/gui-files/dialogs/preferences2.png" width="477" height="318"><br>
+    <ul>
+        <li><b>Down Wedge Orientation</b> allows changing the wedge bond display convention.
+        Down wedge points downward in MDL's convention, upward (at the chiral center) in Daylight's.</li>
+        <li><b>Any Bond Line Style</b> offers three different modes to display bonds of unkown types: Automatic, Dashed and Solid.
+        This option can be separately set to be used in MarvinSketch and MarvinView.</li>
+    </ul>
+<h4>Warnings</h4>
+    <img src="../../sketch/gui/gui-files/dialogs/preferences3.png" width="477" height="318"><br>
+    <ul>
+        <li><b>Highlighting Valence Errors</b> highlights atoms having wrong valences with red underline when it is checked.
+            <!--<ul>
+                <li><b>Valence Errors</b> highlights atoms having wrong valences with red underline when it is checked.</li>
+                <li><b>Unbalanced Reactions</b> highlights stoichiometrically wrong reactions with red rectangle around reaction arrows when this option is checked.</li>
+            </ul>-->
+        </li>
+    </ul>
+<h4>Save/Load</h4>
+    <img src="../../sketch/gui/gui-files/dialogs/preferences4.png" width="477" height="318"><br>
+    <ul>
+        <li><b>Default location:</b> the folder from which to load or to save molecules may be set by the user.
+        <ul><li>Startup directory: the folder where the command to start the application was given.</li>
+            <li>Last location: the last folder used for opening or saving a structure.</li>
+            <li>Custom working directory: a user-defined folder. If
+            a molecule is loaded from another folder, then the file's location will be offered for saving.</li></ul>
+        </li>
+        <li><b>Default file format</b> determines which type is offered by default when structures are saved to file.</li>
+        <li><b>Save/Load settings</b>
+            <ul><li><b>Save GUI settings to MRV</b> allows storing parameters like background color,
+            font type, etc. beside the structures. This option can only be used with the
+            <a href="../../formats/mrv-doc.html">MRV format</a>.</li>
+        <li><b>Load GUI settings from MRV</b> restores parameters like background color,
+            font type, etc. when this information is present beside the structures.
+        This option can only be used with the <a href="../../formats/mrv-doc.html">MRV format</a>.</li></ul>
+        </li>
+    </ul>
+<h4>Copy</h4>
+    <img src="../../sketch/gui/gui-files/dialogs/preferences5.png" width="477" height="318"><br>
+    <ul>
+    <li><b>Copy molecule as</b><br>
+    This panel offers additional formats in which structure data can be put to clipboard.
+    This can be useful for example when you wish to insert the image of the molecule to
+    an image editor application, which would not recognize the input data without enabling image formats.<br>
+    Please visit <a href="../../datatransfer.html">Cut/Copy/Paste and Drag & Drop Functionality</a> for more details.
+    </li>
+    </ul>
+
+</body>
+</html>

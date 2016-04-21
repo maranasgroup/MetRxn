@@ -1,0 +1,16 @@
+<?php
+    /*if (($_SERVER['SERVER_NAME']!="localhost")){
+     echo "invalid connection parameters";
+    die();
+}*/
+function connect()
+{
+    $username     = "root";
+    $pwd                = "login@123";
+    $host             = "localhost";    
+    if (!($conn=mysql_connect($host, $username, $pwd)))  {
+       printf("error connecting to DB");
+       exit;
+    }   
+}
+?>

@@ -1,0 +1,115 @@
+<!-- 
+    Document   : iupac_functions
+    Created on : Sep 10, 2008, 3:22:08 PM
+    Author     : Panni
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>IUPAC name functionalities in MarvinSketch</TITLE>
+ <link rel=stylesheet type="text/css" href="../marvinmanuals.css">
+</HEAD>
+  <body>
+  
+  <h1>IUPAC name functionalities in MarvinSketch</h1>
+  
+  <h2><a name="name2str" class="anchor">Importing a IUPAC name (Name to Structure)</a></h2>
+  <p>You can easily import a molecule by importing the name directly into MarvinSketch. 
+  
+  <ol>
+    <li>A simple method is to select the name in the text of any page and drag&amp;drop or copy&amp;paste 
+      it to MarvinSketch.
+      <!--  <table border="0">
+  <tr><td><img src="iupac_images/pubchemdetail.png" width="833" height="392" alt="pubchemdetail"/><td></tr>
+
+</table>
+    --></li>
+    <li>Select the Enter IUPAC name from the Edit menu, and paste the name into the text field.
+    <table border="0">
+  <tr><td><img src="iupac_images/importsource.PNG" width="600" height="700" alt="importsource"/><td></tr></table>
+
+    </li>
+    <li>Open a text file (.name) containing IUPAC names (one per row). MarvinView will open 
+    all structures, MarvinSketch will ask you to select one structure (by its index number).
+    <br><img src="iupac_images/selectindex.png" width="522" height="513" alt="selectindex"/>
+
+    </li>
+  </ol>
+  
+A short animation explains the usage: <a href="http://www.chemaxon.com/anim/marvin/file_op/iupacimport.html">IUPAC name import</a>
+
+
+<h3>Custom dictionary in name import</h3>
+<p>Detailed description of the setting up of a custom dictionary is described in <a href="../naming/naming_customdic.html">this page</a>
+
+<p>Notes: 
+<ul><li><p>Some names contain non-ASCII characters or formatting. These are imported 
+into Marvin names by reformulating the name. Two examples of this feature:</p>
+
+<table border="0">
+  <tr><th></th><th align="left">ring-numbering (superscripts)</th><th>non-standard valence (Greek letter)</th></tr>
+  <tr><td><b>Structure</b></td><td><img src="iupac_images/dodecane.png" width="191" height="83" alt="dodecane"/>
+  </td><td><img src="iupac_images/thiopyr.png" width="118" height="139" alt="thiopyr"/>
+</td></tr>
+<tr><td><b>Standard name</b></td><td>pentacyclo[6.4.0.0<sup>2,7</sup>.0<sup>3,6</sup>.0<sup>9,12</sup>]dodecane</td>
+<td>1&lambda;1<sup>4</sup>-thiopyran-1-carboxylic acid</td></tr>
+  <tr><td><b>Marvin name</b></td><td>pentacyclo[6.4.0.0^&#123;2,7&#125;.0^&#123;3,6&#125;.0^&#123;9,12&#125;]dodecane</td>
+  <td>1$1^{4}-thiopyran-1-carboxylic acid</td></tr>
+  <tr><td><b>Changed</b></td><td>superscript to ^&#123;  &#125;</td><td>&lambda; to &#36;1</td></tr>
+</table>
+<br>
+</li>
+<li>Name import is only available for a single molecule with the free MarvinSketch desktop 
+application. For batch opening in MarvinView (from a text file) you will need the IUPAC Name Plugin licence.</li>
+</ul>
+
+<h2><a name="str2name" class="anchor">Dynamic IUPAC name changes while drawing a structure (structure to name)</a></h2>
+<p>  If IUPAC name is inserted to the canvas (Insert -> IUPAC name) you will see the 
+name changing whenever you alter a molecule. See this 
+<a href="http://www.chemaxon.com/anim/marvin/sketch_graphics/iupac.html">animation</a>.
+<p>
+  The snapshot below shows a molecule taken from the IUPAC specification, with its
+name computed by Marvin.
+<p><table>
+	<tr>
+		<td><img src="../calculations/images/iupacnaming_insert.png" width="534" height="516"></td>
+	</tr>
+</table>
+</p>
+
+<p>Note that batch name generation is only available with the IUPAC Name Plugin licence.
+  <hr>
+  
+  <h2><a name="features" class="anchor">Features</a></h2>
+ Supported nomenclatures include:
+<ul>
+<li>Chains, Monocycles</li>
+<li>Retained/traditional names for ring systems with and without heteroatoms</li>
+<li>Spiro ring systems</li>
+<li>All cases of von Bayer nomenclature for bridged ring systems</li>
+<li>Fused ring systems (linear fused ring systems are named using the fused nomenclature, others using von Bayer nomenclature)</li>
+<li>Ethers</li>
+<li>Common characteristic groups</li>
+<li>Ionic compounds</li>
+<li>Compounds with one radical</li>
+<li>Unlimited number of atoms and rings</li>
+<li>All atom types</li>
+<li>Substitutive nomenclature</li>
+<li>Stereochemistry</li>
+</ul>
+
+<h3>Current limitations</h3>
+
+<ul>
+<li>Molecules containing multiple radicals (e.g. <code>ethane-1,2-diyl</code>) are not supported yet.
+<li>Stereo descriptors (r) and (s) are not supported (as in the whole of marvin).
+<li>Amino-acids and peptides are supported only when the amino-acids are represented as groups.
+<li>Isotopes are not supported</li>
+<li>Some aspects of nomenclature are only partially implemented, in particular complex cases of fused
+systems and multiplicative nomenclature. In those cases, a less straightforward but chemically correct
+name will be generated.
+</ul>
+  
+  </body>
+</html>

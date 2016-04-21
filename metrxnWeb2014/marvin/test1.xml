@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This file is created with ChemAxon's Configuration Builder-->
+<!--This is a configuration file for ChemAxon's Standardizer-->
+<StandardizerConfiguration>
+  <Actions>
+    <Clean ID="Clean3D" Dim="3" Type="Full"/>
+    <ClearStereo ID="ClearStereo" Type="Chirality,DoubleBond"/>
+    <WedgeClean ID="WedgeClean"/>
+  </Actions>
+</StandardizerConfiguration>

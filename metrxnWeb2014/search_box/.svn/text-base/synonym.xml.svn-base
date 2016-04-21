@@ -1,0 +1,3002 @@
+<DATA>
+	<ROW>
+		<synonym>H2O</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Water</synonym>
+	</ROW>
+	<ROW>
+		<synonym>ATP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NAD+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NAD</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nicotinamide adenine dinucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DPN</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Diphosphopyridine nucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nadide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NADH</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DPNH</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NADPH</synonym>
+	</ROW>
+	<ROW>
+		<synonym>TPNH</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Reduced nicotinamide adenine dinucleotide phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NADP+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NADP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nicotinamide adenine dinucleotide phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>beta-Nicotinamide adenine dinucleotide phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>TPN</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Triphosphopyridine nucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxygen</synonym>
+	</ROW>
+	<ROW>
+		<synonym>O2</synonym>
+	</ROW>
+	<ROW>
+		<synonym>ADP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine 5-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Orthophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphoric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Orthophosphoric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Coenzyme A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CoA-SH</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CO2</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Carbon dioxide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Peptide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyrophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyrophosphoric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PPi</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NH3</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ammonia</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridine 5-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>FAD</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Flavin adenine dinucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Protein</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyridoxal phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyridoxal 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PLP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>S-Adenosyl-L-methionine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>S-Adenosylmethionine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>AdoMet</synonym>
+	</ROW>
+	<ROW>
+		<synonym>SAM</synonym>
+	</ROW>
+	<ROW>
+		<synonym>AMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine 5-monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-AMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Adenylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Adenosine monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>S-Adenosyl-L-homocysteine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>S-Adenosylhomocysteine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyruvic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxopropanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxopropanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyroracemic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Iron</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetyl coenzyme A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Glutamate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Glutamic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Glutaminic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glutamate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxoglutarate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxoglutaric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Ketoglutaric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-Ketoglutaric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>H2O2</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydrogen peroxide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxydol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acceptor</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydrogen-acceptor</synonym>
+	</ROW>
+	<ROW>
+		<synonym>A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxidized donor</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDPglucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-D-glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridine diphosphate glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-alpha-D-glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Reduced acceptor</synonym>
+	</ROW>
+	<ROW>
+		<synonym>AH2</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydrogen-donor</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Donor</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Grape sugar</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dextrose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Heme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Haem</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Protoheme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Heme B</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Protoheme IX</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ethanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glacial acetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Manganese</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Mn2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Mn(II)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Mn(III)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GDP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanosine 5-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanosine diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxaloacetate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxalacetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxaloacetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxobutanedioic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxosuccinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>keto-Oxaloacetate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Aminoacetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Gly</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Zinc</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Zn2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Zn(II)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DNA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DNAn</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DNAn+1</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(Deoxyribonucleotide)n</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(Deoxyribonucleotide)m</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(Deoxyribonucleotide)n+m</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxyribonucleic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acyl coenzyme A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Alanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Aminopropionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-alpha-Alanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Succinate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Succinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butanedionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ethylenesuccinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-N-acetyl-D-glucosamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-N-acetylglucosamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GTP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanosine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Amino acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Amino acids</synonym>
+	</ROW>
+	<ROW>
+		<synonym>RNA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>RNAn</synonym>
+	</ROW>
+	<ROW>
+		<synonym>RNAn+1</synonym>
+	</ROW>
+	<ROW>
+		<synonym>RNA(linear)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(Ribonucleotide)n</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(Ribonucleotide)m</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(Ribonucleotide)n+m</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ribonucleic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Lysine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Lysine acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2,6-Diaminohexanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glyoxylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glyoxalate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glyoxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Aspartate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Aspartic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Aminosuccinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Metal</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glutathione</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-L-Glutamyl-L-cysteinylglycine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-(N-gamma-L-Glutamyl-L-cysteinyl)glycine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>gamma-L-Glutamyl-L-cysteinyl-glycine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GSH</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Reduced glutathione</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-D-galactose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-galactose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-D-galactopyranose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phosphoadenylyl sulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phosphoadenosine 5-phosphosulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phospho-5-adenylyl sulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PAPS</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine 3,5-bisphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PAP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phosphoadenylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphoadenosine phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytidine-5-monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytidylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Formate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Formic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sulfuric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Carboxylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>R-COOH</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Monocarboxylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Carboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>FMN</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Riboflavin-5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Flavin mononucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Arginine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-2-Amino-5-guanidinovaleric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CTP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytidine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytidine triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Glutamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Aminoglutaramic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Serine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Amino-3-hydroxypropionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-3-Hydroxy-alanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Serine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>tRNA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>tRNA(n)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>tRNA(n+1)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>transfer RNA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Formaldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methanal</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxomethane</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxomethylene</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methylene oxide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Formalin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thiamin diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thiamine diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thiamin pyrophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>TPP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>ThPP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Alcohol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Copper</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cu+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cu2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cu(II)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Aldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>RCHO</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ascorbate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ascorbic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Ascorbate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Ascorbic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Vitamin C</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Methionine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methionine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Amino-4methylthiobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphoenolpyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphoenolpyruvic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PEP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UTP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridine triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Calcium</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ca2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Ornithine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-2,5-Diaminovaleric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-2,5-Diaminopentanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-2,5-Diaminopentanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Tryptophan</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Tryptophan</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-alpha-Amino-beta-(3-indolyl)-propionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Phenylalanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-alpha-Amino-beta-phenylpropionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>H+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>ITP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine tripolyphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Tyrosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-3-(p-Hydroxyphenyl)alanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-2-Amino-3-(p-hydroxyphenyl)propionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Tyrosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Malonyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Malonyl coenzyme A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetaldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ethanal</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Fructose 6-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Fructose 6-phosphoric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Neuberg ester</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Urea</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Carbamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sulfur</synonym>
+	</ROW>
+	<ROW>
+		<synonym>S</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sulfur, precipitated</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nitrite</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sucrose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cane sugar</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Saccharose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1-alpha-D-Glucopyranosyl-2-beta-D-fructofuranoside</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Catechol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,2-Benzenediol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>o-Benzenediol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,2-Dihydroxybenzene</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Brenzcatechin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyrocatechol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Succinyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Succinyl coenzyme A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucose 6-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glucose 6-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Robison ester</synonym>
+	</ROW>
+	<ROW>
+		<synonym>sn-Glycerol 3-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycerophosphoric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glycerol 1-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycerol-3-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sulfite</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Fructose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Levulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Fruit sugar</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-arabino-Hexulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GDP-mannose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GDP-D-mannose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Cysteine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Amino-3-mercaptopropionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oligopeptide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>beta-Alanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Aminopropionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Aminopropanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Propanoyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Propionyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Propionyl coenzyme A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Tetrahydrofolate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5,6,7,8-Tetrahydrofolate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Tetrahydrofolic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>THF</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(6S)-Tetrahydrofolate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(6S)-Tetrahydrofolic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(6S)-THFA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2,6-Dichloroindophenol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2,6-Dichlorophenolindophenol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DCIP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucose 1-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-D-Glucose 1-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cori ester</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucose alpha-1-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>IDP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine 5-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridine monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridine 5-monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5Uridylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uracil</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dipeptide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Anthranilate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Anthranilic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>o-Aminobenzoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Vitamin L1</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Aminobenzoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxobutanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Ketobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxobutyrate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxobutanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-Ketobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-Ketobutyrate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dolichyl phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dolichol phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycerone phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dihydroxyacetone phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CDP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytidine 5-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytidine diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PQQ</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyrrolo-quinoline quinone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyrroloquinoline-quinone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyrroloquinoline quinone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4,5-Dioxo-4,5-dihydro-1H-pyrrolo[2,3-f]quinoline-2,7,9-tricarboxylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methoxatin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Choline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Bilineurine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycerol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycerin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,2,3-Trihydroxypropane</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,2,3-Propanetriol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Ribose 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ribose 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glyceraldehyde 3-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(2R)-2-Hydroxy-3-(phosphonooxy)-propanal</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glyceraldehyde 3-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Phospho-alpha-D-ribose 1-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Phosphoribosyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Phosphoribosyl 1-pyrophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PRPP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Biotin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Biotin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Vitamin H</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Coenzyme R</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Ribose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Fumarate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Fumaric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>trans-Butenedioic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Leucine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-4-methylvaleric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(2S)-alpha-2-Amino-4-methylvaleric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(2S)-alpha-Leucine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Galactose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ferricytochrome c</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytochrome c3+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ferrocytochrome c</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytochrome c2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Reduced cytochrome c</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glutathione disulfide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GSSG</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxiglutatione</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxidized glutathione</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CMP-N-acetylneuraminate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Isopentenyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>delta3-Isopentenyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>delta3-Methyl-3-butenyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>IMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine 5-monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Inosinate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Inosinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Inosine monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-IMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>dATP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Deoxyadenosine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxyadenosine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxyadenosine triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methanol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methyl alcohol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Alanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-2-Aminopropionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Ala</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Putrescine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,4-Butanediamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,4-Diaminobutane</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Tetramethylenediamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butane-1,4-diamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Histidine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-alpha-Amino-1H-imidazole-4-propionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butanoyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butyryl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>myo-Inositol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-myo-Inositol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1D-myo-Inositol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-myo-Inositol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1L-myo-Inositol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>meso-Inositol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inositol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dambose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cyclohexitol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Meat sugar</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Bios I</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Reduced ferredoxin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxidized ferredoxin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-Acetyl-D-glucosamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-Acetylchitosamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Acetamido-2-deoxy-D-glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GlcNAc</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Methyl-2-oxobutanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Methyl-2-oxobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Methyl-2-oxobutanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxo-3-methylbutanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxoisovalerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxoisopentanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-Ketovaline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Ketovaline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Keto-3-methylbutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5,10-Methylenetetrahydrofolate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(6R)-5,10-Methylenetetrahydrofolate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5,10-Methylene-THF</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanosine 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanosine monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanosine 5-monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thiol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Mercaptan</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Benzenol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxybenzene</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>6-Aminopurine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Proline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Pyrrolidinecarboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-Malate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Malate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Apple acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Malic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Hydroxybutanedioic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Malate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Malic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Molybdenum</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Amino acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Amino acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Asparagine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Aminosuccinamic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nicotinamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nicotinic acid amide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Niacinamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Vitamin PP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Palmitoyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hexadecanoyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Homocysteine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-2-Amino-4-mercaptobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Hydroxybenzoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxybenzoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Hydroxybenzoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxybenzenecarboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphatidylcholine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Lecithin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphatidyl-N-trimethylethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,2-Diacyl-sn-glycero-3-phosphocholine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Choline phosphatide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-sn-Phosphatidylcholine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Citrate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Citric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Hydroxy-1,2,3-propanetricarboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Hydroxytricarballylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Mannose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Mannose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Seminose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Carubinose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycolate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycolic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxyacetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxo acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxocarboxylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Fatty acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Propanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Propionate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Propanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Propionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetoacetate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Oxobutanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>beta-Ketobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetoacetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Diacylglycerol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Diglyceride</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenylpyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenylpyruvic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-Ketohydrocinnamic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>keto-Phenylpyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phenyl-2-oxopropanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-glucuronate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDPglucuronate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-D-glucuronate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-alpha-D-glucuronate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxypyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxypyruvic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Hydroxypyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Hydroxypyruvic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Carbamoyl phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Methylthioadenosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methylthioadenosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>S-Methyl-5-thioadenosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Deoxy-5-(methylthio)adenosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thiomethyladenosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>MTA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Phosphomononucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phosphooligonucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acyl-[acyl-carrier protein]</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Long-chain-acyl-[acyl-carrier protein]</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cobalt ion</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cobalt(2+)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Co2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Co(II)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Flavin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cyanide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Prussiate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CN-</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cyano</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thymine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Methyluracil</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Agmatine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(4-Aminobutyl) guanidine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Benzoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Benzoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Benzenecarboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenylformic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dracylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Xylose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Wood sugar</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycogen</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Valine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-3-methylbutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycerone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dihydroxyacetone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,3-Dihydroxyacetone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,3-Dihydroxy-2-propanone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,3-Dihydroxypropan-2-one</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cellobiose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1-beta-D-Glucopyranosyl-4-D-glucopyranose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-Lactate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Lactate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Lactic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cholesterol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cholest-5-en-3beta-ol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Threonine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-3-hydroxybutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Aminoethanol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Hydroxyethylamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-D-xylose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-xylose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-alpha-D-xylose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucuronate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glucuronic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glucuronate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxylamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Aromatic aldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cobamide coenzyme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosylcobalamin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosylcob(III)alamin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxyadenosylcobalamin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cobamamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Vitamin B12 coenzyme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5,6-Dimethylbenzimidazolyl-5-deoxyadenosyl-cobamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(5-Deoxy-5-adenosyl)cobamide coenzyme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(5,6-Dimethylbenzimidazolyl)cobamide coenzyme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-(5,6-Dimethylbenzimidazolyl)cobamide coenzyme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Deoxy-5-adenosylcobalamin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Deoxy-5-adenosyl vitamin B12</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Deoxy-5-adenosyl-5,6-dimethylbenzimidazolylcobamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5,6-Dimethylbenzimidazolyl-Co-5-deoxy-5-adenosylcobamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Calomide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cobalamin coenzyme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Coenzyme B12</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DMBC coenzyme</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dibencozide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Funacomide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-Acylsphingosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ceramide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2,3-Dihydroxybenzoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2,3-Dihydroxybenzoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phospho-D-glycerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glycerate 3-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phospho-(R)-glycerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phosphoglycerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucono-1,5-lactone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Gluconic lactone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Gluconic acid lactone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,5-Gluconolactone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>delta-Gluconolactone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Gluconolactone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Gluconolactone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Ribulose 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenazine methosulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-Methylphenazonium methosulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Methylphenazinium methyl sulphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nucleoside triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>NTP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Isoflurophate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Diisopropyl fluorophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DFP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>UDP-N-acetyl-D-galactosamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Dehydro-3-deoxy-D-gluconate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Keto-3-deoxy-D-gluconate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>hn</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Light</synonym>
+	</ROW>
+	<ROW>
+		<synonym>dADP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Deoxyadenosine 5-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dimethyl ketone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Propanone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Maltose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Malt sugar</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-D-Glucopyranosyl-(1-&gt;4)-D-glucopyranose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxalate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxalic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ethanedioic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cobamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Collagen</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sarcosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-Methylglycine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thymidine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxythymidine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Arabinose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glutamate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glutamic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glutaminic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-2-Aminoglutaric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methylamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methanamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(5Z,8Z,11Z,14Z)-Icosatetraenoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Arachidonate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Arachidonic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>cis-5,8,11,14-Eicosatetraenoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methylene blue</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methylthioninium chloride</synonym>
+	</ROW>
+	<ROW>
+		<synonym>beta-D-Glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Oxopropanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Malonate semialdehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>p-Coumaroyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Coumaroyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Hydroxycinnamoyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenylyl sulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine 5-phosphosulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>APS</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Adenylyl sulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methyl viologen</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Paraquat dichloride</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,1-Dimethyl-4,4-bipyridinium dichloride</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Primary alcohol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1-Alcohol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetyl phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acyl-carrier protein</synonym>
+	</ROW>
+	<ROW>
+		<synonym>ACP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>[Acyl-carrier protein]</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Holo-[acyl-carrier protein]</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3,4-Dihydroxybenzoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3,4-Dihydroxybenzoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Protocatechuate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Protocatechuic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Xylulose 5-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Succinate semialdehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Succinic semialdehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Oxobutanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Methyl-2-oxopentanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxoisocaproate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>10-Formyltetrahydrofolate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>10-Formyl-THF</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dimethylallyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Isopentenyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>delta2-Isopentenyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dimethylallyl pyrophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DMAPP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Monoprenyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Prenyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Phospho-D-glyceroyl phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,3-Bisphospho-D-glycerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(R)-2-Hydroxy-3-(phosphonooxy)-1-monoanhydride with phosphoric propanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CO</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Carbon monoxide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Potassium</synonym>
+	</ROW>
+	<ROW>
+		<synonym>K+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>dCMP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxycytidylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxycytidine monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxycytidylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Deoxycytidine 5-monophosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>rRNA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ribosomal RNA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Amide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Guanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-6-hydroxypurine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Lactose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Milk sugar</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-Lactose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Anhydrous lactose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nitrate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nitric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Taurine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Aminoethanesulfonic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Aminoethylsulfonic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butyrate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Butyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Sorbose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-xylo-Hexulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Lipoamide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thioctic acid amide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hexadecanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hexadecanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hexadecylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Palmitic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Palmitate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cetylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyridoxal</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Chorismate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Chorismic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Isomaltose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Brachiose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nicotinate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nicotinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Niacin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Pyridinecarboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Prephenate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Prephenic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Riboflavin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Lactoflavin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>7,8-Dimethyl-10-ribitylisoalloxazine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Vitamin B2</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(R)-Lactate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Lactate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Lactic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-2-Hydroxypropanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-2-Hydroxypropionic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Gluconic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Gluconate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-gluco-Hexonic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glycerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(R)-Glycerate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glyceric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Arabinose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Arabinopyranose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Benzaldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Benzoic aldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hypoxanthine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Purine-6-ol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Homoserine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-4-hydroxybutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Oxoacyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dithiothreitol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,4-Dithiothreitol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>threo-1,4-Dimercapto-2,3-butanediol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DL-threo-1,4-Dimercapto-2,3-butanediol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycolaldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydroxyacetaldehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-D-Glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dihydrobiopterin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>6,7-Dihydrobiopterin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Quinoid-dihydrobiopterin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(6R)-6-(L-erythro-1,2-Dihydroxypropyl)-7,8-dihydro-6H-pterin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CDP-diacylglycerol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CDP-1,2-diacylglycerol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1,2-Diacyl-sn-glycero-3-cytidine-5-diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-Acetylneuraminate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-Acetylneuraminic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Acetamido-3,5-dideoxy-D-glycero-D-galacto-2-nonulosonic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Neu5Ac</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Single-stranded DNA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Tetrahydrobiopterin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5,6,7,8-Tetrahydrobiopterin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-6-(1,2-dihydroxypropyl)-5,6,7,8-tetrahydoro-4(1H)-pteridinone</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Dehydro-D-fructose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Mannose 6-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Erythrose 4-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Androst-4-ene-3,17-dione</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Androstenedione</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Androstene-3,17-dione</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydrogen</synonym>
+	</ROW>
+	<ROW>
+		<synonym>H2</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydrogen sulfide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydrogen-sulfide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>H2S</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sulfide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>EDTA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ethylenediaminetetraacetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Metal chelating agent</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Chelating agents</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Edetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>dGTP</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Deoxyguanosine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxyguanosine 5-triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxyguanosine triphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ester</synonym>
+	</ROW>
+	<ROW>
+		<synonym>HCO3-</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Bicarbonate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hydrogencarbonate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acid carbonate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Fibrin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Nickel</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ni2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Aniline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phenylamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Benzenamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Arylamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Inosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Orotate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Orotic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uracil-6-carboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Quinate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Quinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Kinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Chinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Quinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Quinate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(-)-Quinic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thioether</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Trypsin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Trypsin crystallized</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Uridine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Creatine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>alpha-Methylguanidino acetic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methylglycocyamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>ADP-ribose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>ADP-D-ribose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Adenosine diphosphate ribose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DL-Glutamate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>DL-Glutaminic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Aminoglutaric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glutamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Aminoglutaramic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Kanamycin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Magnesium</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Mg2+</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Bradykinin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>CDP-choline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cytidine 5-diphosphocholine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Citicoline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Canavanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Canavanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-4-(guanidinooxy)butyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Ribulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-erythro-2-Pentulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Arabinoketose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Arabinulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Riboketose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Xylulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-threo-Pentulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Lyxulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Isocitrate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Isocitric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1-Hydroxytricarballylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1-Hydroxypropane-1,2,3-tricarboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Xylulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-threo-Pentulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Lyxulose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxalyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyridoxine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Pyridoxol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Spermidine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>N-(3-Aminopropyl)-1,4-butane-diamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Tripeptide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Amylopectin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Carnitine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-gamma-Trimethyl-beta-hydroxybutyrobetaine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Vitamin BT</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Carboxy-2-hydroxy-N,N,N-trimethyl-1-propanaminium hydroxide, inner salt</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Levocarnitine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(R)-Carnitine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sphingosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sphingenine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sphingoid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Sphing-4-enine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thiosulfate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hyposulfite</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Trypsinogen</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxoadipate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Oxoadipic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Caffeoyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ferricyanide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Hexacyanoferrate(III)</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GDP-L-fucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GDP-beta-L-fucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Glycoprotein</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Citrulline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-5-ureidovaleric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Citrulline</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Kynurenine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Anthraniloyl-L-alanine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucosamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Chitosamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Amino-2-deoxy-D-glucose</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Deoxyguanosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Deoxyguanosine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Indolepyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Indolepyruvic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(Indol-3-yl)pyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Indole-3-pyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-(Indol-3-yl)pyruvate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetoacetyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Acetoacetyl coenzyme A</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Acetoacetyl-CoA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Galacturonate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Galacturonic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Aminobutanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Aminobutanoic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Aminobutyrate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>4-Aminobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>gamma-Aminobutyric acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>GABA</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Collagen type IV</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-Dihydroorotate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(S)-4,5-Dihydroorotate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Dihydroorotate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>L-Dihydroorotic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Dihydro-L-orotic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Lipopolysaccharide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>LPS</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Long-chain alcohol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Reduced rubredoxin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Geranyl diphosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thioredoxin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Reduced thioredoxin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thioredoxin disulfide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Oxidized thioredoxin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Thioredoxin sulfide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphatidylglycerol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-(3-sn-Phosphatidyl)glycerol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3(3-Phosphatidyl-)glycerol</synonym>
+	</ROW>
+	<ROW>
+		<synonym>PtdGro</synonym>
+	</ROW>
+	<ROW>
+		<synonym>6-Phospho-D-gluconate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Ethanolamine phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>O-Phosphorylethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphoethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>O-Phosphoethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Long-chain carboxylate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Long-chain carboxylic acid</synonym>
+	</ROW>
+	<ROW>
+		<synonym>all-trans-Undecaprenyl phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>2-Methyl-3-oxopropanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>3-Oxo-2-methylpropanoate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Methylmalonate semialdehyde</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Phosphatidylethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(3-Phosphatidyl)ethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>(3-Phosphatidyl)-ethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>Cephalin</synonym>
+	</ROW>
+	<ROW>
+		<synonym>O-(1-beta-Acyl-2-acyl-sn-glycero-3-phospho)ethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>1-Acyl-2-acyl-sn-glycero-3-phosphoethanolamine</synonym>
+	</ROW>
+	<ROW>
+		<synonym>5-Phosphooligonucleotide</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucosamine 6-phosphate</synonym>
+	</ROW>
+	<ROW>
+		<synonym>D-Glucosamine phosphate</synonym>
+	</ROW>
+</DATA>

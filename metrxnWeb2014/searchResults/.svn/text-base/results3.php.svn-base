@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>
+    (MetRxn search results)
+</title>
+<script src="../Jmol-12.0.25-binary/jmol-12.0.25/Jmol.js" type="application/javascript">
+</script>
+<script language="JavaScript" type="text/javascript" src="ahahLib.js">
+</script> 
+<script language="JavaScript" type="text/javascript">
+function makeactive(tab)
+{
+<?php
+/*this function is created dynamically using php*/
+		$con = mysql_connect("localhost","root","");
+        if (!$con)
+            {
+            die('Could not connect: ' . mysql_error());
+            }
+			
+		$numresults = mysql_query("SELECT SYNONYM,idStructures id,count(distinct sourceName) cnt FROM `biodb4`.`metabolitesynonyms` where synonym = '".$_GET["searchString"]."' and idStructures is not null group by SYNONYM,idStructures order by cnt desc limit 5;");
+			 		
+		while($row = mysql_fetch_array($numresults))
+		{
+			echo "document.getElementById(\"tab".$row['id']."\").className = \"\";\n";			
+		}
+?>
+document.getElementById("tab"+tab).className = "active";
+callAHAH('content.php?content= '+tab, 'content', 'getting content for tab '+tab+'. Wait...', 'Error');
+
+}
+</script>
+    <style type="text/css">
+	.header {
+
+		width:100%;
+		top:0;
+		border:none;
+
+
+	}
+	.footer {
+		position:relative;
+		bottom:0;
+		width:100%;
+	}
+	.content {
+		float:left;
+		width:80%;
+		position:relative;
+	}
+	.leftbar{
+		float:left;
+		width:20%;
+		position:relative;
+
+
+
+		}
+	iframe{
+		border:0;
+	}
+	table
+	{
+	border-collapse:collapse;
+	margin:20px;
+	}
+	td
+	{
+	padding:2px;
+	}
+	.imageframe {
+
+	}
+	img {
+		margin:20px;
+		float:left;
+
+	}
+	#structure {
+
+		float:left;
+	}
+	#synonym {
+		bottom:1;
+		float:none;
+	}
+	pre {text-indent: 30px} 
+	#tabmenu { color: #000; border-bottom: 1px solid black; margin: 12px 0px 0px 0px; padding: 0px; z-index: 1; padding-left: 10px } 
+	#tabmenu li { display: inline; overflow: hidden; list-style-type: none; } 
+	#tabmenu a, a.active { color: #aaaaaa; background: #295229; font: normal 1em verdana, Arial, sans-serif; border: 1px solid black; padding: 2px 5px 0px 5px; margin: 0px; text-decoration: none; cursor:hand; } 
+	#tabmenu a.active { background: #ffffff; border-bottom: 3px solid #ffffff; } 
+	#tabmenu a:hover { color: #fff; background: #ADC09F; } 
+	#tabmenu a:visited { color: #E8E9BE; } 
+	#tabmenu a.active:hover { background: #ffffff; color: #DEDECF; } 
+	#content {font: 0.9em/1.3em verdana, sans-serif; text-align: justify; background: #ffffff; padding: 20px; border: 1px solid black; border-top: none; z-index: 2; } 
+	#content a { text-decoration: none; color: #E8E9BE; } 
+	#content a:hover { background: #aaaaaa; }
+
+	</style>
+</head>
+<body onload="makeactive(1)">
+<div class="header">
+    <iframe src="/MetRxn/top_data/top.htm" width="100%" height="160" scrolling="no">
+    </iframe>
+</div>
+<div class="leftbar">
+	<?php include('../left_data/leftMenu.htm'); 
+	?>
+   	<!--iframe src="/MetRxn/left_data/leftMenu.htm" height="450" scrolling="no">
+    </iframe-->
+
+</div>
+
+<!--the content data goes here-->
+<div>
+<ul id="tabmenu" >
+<?php
+
+$count = 1;
+$numresults2 = mysql_query("SELECT SYNONYM syn,idStructures id,count(distinct sourceName) cnt FROM `biodb4`.`metabolitesynonyms` where synonym = '".$_GET["searchString"]."' and idStructures is not null group by SYNONYM,idStructures order by cnt desc limit 5;");
+while($row2 = mysql_fetch_array($numresults2))
+{
+	if(!$count == 1)
+	{
+		echo "<li onclick=\"makeactive(".$row2['id'].")\"><a class=\"\" id=\"tab".$row2['id']."\">".$row2['syn']."</a></li> \n";
+	
+	}
+	else 
+	{
+		echo "<li onclick=\"makeactive(".$row2['id'].")\"><a class=\"active\" id=\"tab".$row2['id']."\">".$row2['syn']."</a></li> \n";
+	}
+}
+?>
+</ul>
+</div>
+<div id="content"></div>
+<div class="footer">
+    <iframe src="/MetRxn/footer_data/footer.html" height="60" width="100%" scrolling="no">
+    </iframe>
+</div>
+</body>
+</html>
+

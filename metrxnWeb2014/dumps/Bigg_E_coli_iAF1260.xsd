@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 (http://www.altova.com) by Costas Maranas (Pennsylvania State Unviersity) -->
+<xs:schema xmlns="http://www.sbml.org/sbml/level2" xmlns:n2="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sbml.org/sbml/level2" elementFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="Bigg_E_coli_iAF12601.xsd"/>
+	<xs:import namespace="http://www.w3.org/1998/Math/MathML"/>
+	<xs:element name="sbml">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="model">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="listOfUnitDefinitions">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="unitDefinition">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="listOfUnits">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="unit" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="scale" type="xs:byte"/>
+																		<xs:attribute name="offset" type="xs:byte" use="required"/>
+																		<xs:attribute name="multiplier" type="xs:decimal" use="required"/>
+																		<xs:attribute name="kind" type="xs:string" use="required"/>
+																		<xs:attribute name="exponent" type="xs:byte"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="listOfCompartments">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="compartment" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:string" use="required"/>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="listOfSpecies">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="species" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="notes">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="html:html"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:string" use="required"/>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="compartment" type="xs:string" use="required"/>
+												<xs:attribute name="charge" type="xs:byte" use="required"/>
+												<xs:attribute name="boundaryCondition" type="xs:boolean" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="listOfReactions">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="reaction" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="notes">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="html:p" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="listOfReactants">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="speciesReference" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="species" type="xs:string" use="required"/>
+																		<xs:attribute name="stoichiometry" type="xs:decimal" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="listOfProducts">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="speciesReference" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="species" type="xs:string" use="required"/>
+																		<xs:attribute name="stoichiometry" type="xs:decimal" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="kineticLaw">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="n2:math"/>
+																<xs:element name="listOfParameters">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="parameter" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:attribute name="value" type="xs:decimal" use="required"/>
+																					<xs:attribute name="units" type="xs:string"/>
+																					<xs:attribute name="id" type="xs:string" use="required"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:string" use="required"/>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="reversible" type="xs:boolean" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:string" use="required"/>
+						<xs:attribute name="name" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:byte" use="required"/>
+			<xs:attribute name="level" type="xs:byte" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

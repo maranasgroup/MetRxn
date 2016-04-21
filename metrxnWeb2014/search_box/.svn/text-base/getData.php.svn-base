@@ -1,0 +1,25 @@
+<?php
+include("..\conn.php");
+connect();
+mysql_select_db("metrxn") or die("Database not found");
+$livesearch = mysql_real_escape_string(addslashes($_POST['livesearch']));
+$livesearch = str_replace(' ','%',$livesearch);
+$type = mysql_real_escape_string(addslashes($_POST['type']));
+$result = mysql_query("SELECT distinct syn FROM `metrxn`.`abbrsynstrsrcview` where syn like '%$livesearch%' and type = '$type' limit 4;") or die(mysql_query());
+function boldText($partialText,$fullValue) {
+	$lengthp = strlen($partialText);
+	$lengthf = strlen($fullValue);
+	
+	$blength = $lengthp - $lengthf;
+	
+	$notbolded = substr($fullValue, 0,$blength);
+	$bolded = substr($fullValue, $blength);
+	
+	return $notbolded."<strong>".$bolded."</strong>"; 
+	 
+}
+
+while ($row = mysql_fetch_assoc($result)) {
+		echo "<div id='link' onclick='addText(\"".$row['syn']."\")'>".boldText($livesearch,$row['syn'])."</div>";
+}
+?>

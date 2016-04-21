@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="18">
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="25" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="85"/>
+					</targets>
+					<view ltx="367" lty="-204" rbx="413" rby="-186"/>
+					<data>
+						<constant value="P" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="remove-folder" library="core" uid="31" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="237"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="238"/>
+					</targets>
+					<view ltx="194" lty="-163" rbx="290" rby="-124"/>
+				</component>
+				<component name="constant" library="core" uid="27" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="162"/>
+					</targets>
+					<view ltx="282" lty="-201" rbx="347" rby="-183"/>
+					<data>
+						<constant value="BiGG" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="24" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="83"/>
+					</targets>
+					<view ltx="441" lty="-201" rbx="488" rby="-183"/>
+					<data>
+						<constant value="R" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="inputFileName" library="core" uid="30" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="235"/>
+					</targets>
+					<view ltx="-29" lty="-26" rbx="86" rby="13"/>
+					<data>
+						<input datatype="string"/>
+						<wsdl/>
+						<parameter usageKind="input" name="inputFileName"/>
+					</data>
+				</component>
+				<component name="structure" library="db" uid="23" kind="15">
+					<properties XSLTDefaultOutput="1" JDBCDriver="com.mysql.jdbc.Driver" JDBCDatabaseURL="jdbc:mysql://130.203.234.86:3306/SBMLimports" DBUser="metrxnWeb" DBPassword="login@123" DBDataSource="sbmlImports"/>
+					<view ltx="599" lty="28" rbx="770" rby="753"/>
+					<data>
+						<root scrollposition="75">
+							<header>
+								<namespaces/>
+							</header>
+							<entry name="document" expanded="1">
+								<entry name="compartment" type="table" inpkey="86" expanded="1">
+									<entry name="idcompartment" valuekeygeneration="databasegenerated"/>
+									<entry name="modelName" inpkey="87"/>
+									<entry name="modelId" inpkey="88"/>
+									<entry name="compartmentName" inpkey="89"/>
+									<entry name="compartmentId" inpkey="90"/>
+									<entry name="fileName" inpkey="163"/>
+									<entry name="source" inpkey="164"/>
+								</entry>
+								<entry name="reaction" type="table" inpkey="91" expanded="1">
+									<entry name="idreaction" valuekeygeneration="databasegenerated"/>
+									<entry name="modelName" inpkey="92"/>
+									<entry name="modelId" inpkey="93"/>
+									<entry name="reversible" inpkey="94"/>
+									<entry name="reactionName" inpkey="95"/>
+									<entry name="reactionId" inpkey="96"/>
+									<entry name="reactionNotes" inpkey="97"/>
+									<entry name="stoichiometry" inpkey="98"/>
+									<entry name="species" inpkey="99"/>
+									<entry name="RPflag" inpkey="84"/>
+									<entry name="fileName" inpkey="165"/>
+									<entry name="source" inpkey="166"/>
+								</entry>
+								<entry name="reaction" type="table" inpkey="100" expanded="1" clone="1">
+									<entry name="idreaction" valuekeygeneration="databasegenerated"/>
+									<entry name="modelName" inpkey="101"/>
+									<entry name="modelId" inpkey="102"/>
+									<entry name="reversible" inpkey="103"/>
+									<entry name="reactionName" inpkey="104"/>
+									<entry name="reactionId" inpkey="105"/>
+									<entry name="reactionNotes" inpkey="106"/>
+									<entry name="stoichiometry" inpkey="107"/>
+									<entry name="species" inpkey="108"/>
+									<entry name="RPflag" inpkey="109"/>
+									<entry name="fileName" inpkey="167"/>
+									<entry name="source" inpkey="168"/>
+								</entry>
+								<entry name="species" type="table" inpkey="110" expanded="1">
+									<entry name="idspecies" valuekeygeneration="databasegenerated"/>
+									<entry name="modelName" inpkey="111"/>
+									<entry name="modelId" inpkey="112"/>
+									<entry name="speciesName" inpkey="113"/>
+									<entry name="speciesId" inpkey="114"/>
+									<entry name="compartment" inpkey="115"/>
+									<entry name="charge" inpkey="116"/>
+									<entry name="boundryCondition" inpkey="117"/>
+									<entry name="speciesNotes" inpkey="118"/>
+									<entry name="fileName" inpkey="169"/>
+									<entry name="source" inpkey="170"/>
+								</entry>
+							</entry>
+						</root>
+						<wsdl/>
+						<database>
+							<database_connection database_kind="MySQL" import_kind="ODBC" version="5.5.13-log" name="Connection2" path="Connection2" allow_background_retrieval="No">
+								<properties>
+									<property name="Database Kind" value="MySQL"/>
+									<property name="Import Kind" value="ODBC"/>
+									<property name="Root Object" value="SBMLimports"/>
+									<property name="FileDsn"/>
+									<property name="Dsn" value="sbmlImports"/>
+									<property name="Driver"/>
+									<property name="Trusted_Connection"/>
+									<property name="App"/>
+									<property name="Server"/>
+									<property name="Database"/>
+									<property name="Regional"/>
+									<property name="Languages"/>
+									<property name="Wsid"/>
+									<property name="Uid"/>
+									<property name="Pwd"/>
+									<property name="Port" value="3306"/>
+									<property name="Option"/>
+									<property name="Stmt"/>
+									<property name="Driver Name" value="myodbc5.dll"/>
+									<property name="Driver Version" value="05.01.0008"/>
+									<property name="Driver Company"/>
+									<property name="Driver File Name"/>
+									<property name="Driver Full Path"/>
+									<property name="Driver Date"/>
+									<property name="Socket"/>
+									<property name="Desc"/>
+								</properties>
+								<LocalViewStorage/>
+								<LocalRelationsStorage/>
+								<selections>
+									<selection>
+										<PathElement Name="Connection2" Kind="DataSource"/>
+										<PathElement Name="SBMLimports" Kind="Database"/>
+										<PathElement Name="compartment" Kind="Table"/>
+									</selection>
+									<selection>
+										<PathElement Name="Connection2" Kind="DataSource"/>
+										<PathElement Name="SBMLimports" Kind="Database"/>
+										<PathElement Name="reaction" Kind="Table"/>
+									</selection>
+									<selection>
+										<PathElement Name="Connection2" Kind="DataSource"/>
+										<PathElement Name="SBMLimports" Kind="Database"/>
+										<PathElement Name="species" Kind="Table"/>
+									</selection>
+								</selections>
+							</database_connection>
+							<recordset/>
+						</database>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="28" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="129" lty="-27" rbx="318" rby="567"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.sbml.org/sbml/level2"/>
+									<namespace uid="http://www.w3.org/1999/xhtml"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="234" outkey="171" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="sbml" ns="1" expanded="1">
+										<entry name="model" ns="1" expanded="1">
+											<entry name="name" type="attribute" outkey="172"/>
+											<entry name="id" type="attribute" outkey="173"/>
+											<entry name="listOfCompartments" ns="1">
+												<entry name="compartment" ns="1" outkey="174" expanded="1">
+													<entry name="name" type="attribute" outkey="175"/>
+													<entry name="id" type="attribute" outkey="176"/>
+												</entry>
+											</entry>
+											<entry name="listOfSpecies" ns="1" expanded="1">
+												<entry name="species" ns="1" outkey="177" expanded="1">
+													<entry name="name" type="attribute" outkey="178"/>
+													<entry name="id" type="attribute" outkey="179"/>
+													<entry name="compartment" type="attribute" outkey="180"/>
+													<entry name="charge" type="attribute" outkey="181"/>
+													<entry name="boundaryCondition" type="attribute" outkey="182"/>
+													<entry name="notes" ns="1" expanded="1">
+														<entry name="html" ns="2" expanded="1">
+															<entry name="p" ns="2" outkey="183"/>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+											<entry name="listOfReactions" ns="1" expanded="1">
+												<entry name="reaction" ns="1" expanded="1">
+													<entry name="reversible" type="attribute" outkey="184"/>
+													<entry name="name" type="attribute" outkey="185"/>
+													<entry name="id" type="attribute" outkey="186"/>
+													<entry name="notes" ns="1" expanded="1">
+														<entry name="p" ns="2" outkey="187"/>
+													</entry>
+													<entry name="listOfReactants" ns="1" expanded="1">
+														<entry name="speciesReference" ns="1" outkey="188" expanded="1">
+															<entry name="stoichiometry" type="attribute" outkey="189"/>
+															<entry name="species" type="attribute" outkey="190"/>
+														</entry>
+													</entry>
+													<entry name="listOfProducts" ns="1" expanded="1">
+														<entry name="speciesReference" ns="1" outkey="191" expanded="1">
+															<entry name="stoichiometry" type="attribute" outkey="192"/>
+															<entry name="species" type="attribute" outkey="193"/>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="Bigg_E_coli_iAF1260.xsd" inputinstance="?.xml" instanceroot="{http://www.sbml.org/sbml/level2}sbml"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="83">
+						<edges>
+							<edge vertexkey="84" edgekey="145"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="85">
+						<edges>
+							<edge vertexkey="109" edgekey="146"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="162">
+						<edges>
+							<edge vertexkey="170" edgekey="194"/>
+							<edge vertexkey="168" edgekey="195"/>
+							<edge vertexkey="166" edgekey="196"/>
+							<edge vertexkey="164" edgekey="197"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="171">
+						<edges>
+							<edge vertexkey="237" edgekey="239"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="172">
+						<edges>
+							<edge vertexkey="87" edgekey="202"/>
+							<edge vertexkey="92" edgekey="203"/>
+							<edge vertexkey="101" edgekey="204"/>
+							<edge vertexkey="111" edgekey="205"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="173">
+						<edges>
+							<edge vertexkey="88" edgekey="206"/>
+							<edge vertexkey="93" edgekey="207"/>
+							<edge vertexkey="102" edgekey="208"/>
+							<edge vertexkey="112" edgekey="209"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="174">
+						<edges>
+							<edge vertexkey="86" edgekey="210"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="175">
+						<edges>
+							<edge vertexkey="89" edgekey="211"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="176">
+						<edges>
+							<edge vertexkey="90" edgekey="212"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="177">
+						<edges>
+							<edge vertexkey="110" edgekey="213"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="178">
+						<edges>
+							<edge vertexkey="113" edgekey="214"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="179">
+						<edges>
+							<edge vertexkey="114" edgekey="215"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="180">
+						<edges>
+							<edge vertexkey="115" edgekey="216"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="181">
+						<edges>
+							<edge vertexkey="116" edgekey="217"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="182">
+						<edges>
+							<edge vertexkey="117" edgekey="218"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="183">
+						<edges>
+							<edge vertexkey="118" edgekey="219"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="184">
+						<edges>
+							<edge vertexkey="94" edgekey="220"/>
+							<edge vertexkey="103" edgekey="221"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="185">
+						<edges>
+							<edge vertexkey="95" edgekey="222"/>
+							<edge vertexkey="104" edgekey="223"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="186">
+						<edges>
+							<edge vertexkey="96" edgekey="224"/>
+							<edge vertexkey="105" edgekey="225"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="187">
+						<edges>
+							<edge vertexkey="97" edgekey="226"/>
+							<edge vertexkey="106" edgekey="227"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="188">
+						<edges>
+							<edge vertexkey="91" edgekey="228"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="189">
+						<edges>
+							<edge vertexkey="98" edgekey="229"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="190">
+						<edges>
+							<edge vertexkey="99" edgekey="230"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="191">
+						<edges>
+							<edge vertexkey="100" edgekey="231"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="192">
+						<edges>
+							<edge vertexkey="107" edgekey="232"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="193">
+						<edges>
+							<edge vertexkey="108" edgekey="233"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="235">
+						<edges>
+							<edge vertexkey="234" edgekey="236"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="238">
+						<edges>
+							<edge vertexkey="163" edgekey="240"/>
+							<edge vertexkey="165" edgekey="241"/>
+							<edge vertexkey="167" edgekey="242"/>
+							<edge vertexkey="169" edgekey="243"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

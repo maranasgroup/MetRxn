@@ -1,0 +1,1925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="18">
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties SelectedLanguage="java"/>
+		<structure>
+			<children>
+				<component name="concat" library="core" uid="12" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="69"/>
+						<datapoint pos="1" key="70"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="71"/>
+					</targets>
+					<view ltx="632" lty="-9" rbx="707" rby="49"/>
+				</component>
+				<component name="constant" library="core" uid="22" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="162"/>
+					</targets>
+					<view ltx="405" lty="-9" rbx="464" rby="9"/>
+					<data>
+						<constant value=".xml" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="27" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="170"/>
+					</targets>
+					<view ltx="672" lty="95" rbx="718" rby="113"/>
+					<data>
+						<constant value="2" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="28" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="171"/>
+					</targets>
+					<view ltx="674" lty="64" rbx="720" rby="82"/>
+					<data>
+						<constant value="1" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="32" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="214"/>
+					</targets>
+					<view ltx="502" lty="178" rbx="592" rby="196"/>
+					<data>
+						<constant value="MODELID_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="31" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="215"/>
+						<datapoint pos="1" key="216"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="217"/>
+					</targets>
+					<view ltx="656" lty="183" rbx="731" rby="241"/>
+				</component>
+				<component name="SbmlCompartment" library="db" uid="29" kind="21">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="204"/>
+						<datapoint pos="1" key="205"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="206"/>
+					</targets>
+					<view ltx="331" lty="244" rbx="444" rby="300"/>
+					<data>
+						<where condition="idSrc = :idSrc">
+							<parameters>
+								<parameter name="idSrc" type="string"/>
+							</parameters>
+						</where>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="34" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="224"/>
+					</targets>
+					<view ltx="345" lty="55" rbx="399" rby="73"/>
+					<data>
+						<constant value="m_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="42" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="249"/>
+					</targets>
+					<view ltx="495" lty="876" rbx="545" rby="894"/>
+					<data>
+						<constant value="_r" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="43" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="247"/>
+					</targets>
+					<view ltx="475" lty="813" rbx="525" rby="831"/>
+					<data>
+						<constant value="r_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="sbmlSpecialCharReplacement" library="user" blackbox="0" uid="67" kind="19" visible="0">
+					<view ltx="709" lty="747" rbx="790" rby="764"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="value" inpkey="303" componentid="64"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="id" outkey="302" componentid="65"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="35" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="226"/>
+					</targets>
+					<view ltx="330" lty="620" rbx="384" rby="638"/>
+					<data>
+						<constant value="m_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="40" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="244"/>
+					</targets>
+					<view ltx="307" lty="689" rbx="361" rby="707"/>
+					<data>
+						<constant value="_m" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="33" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="221"/>
+						<datapoint pos="1" key="222"/>
+						<datapoint pos="2" key="243"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="223"/>
+					</targets>
+					<view ltx="431" lty="45" rbx="515" rby="121"/>
+				</component>
+				<component name="sbmlSpecialCharReplacement" library="user" blackbox="0" uid="68" kind="19" visible="0">
+					<view ltx="737" lty="689" rbx="818" rby="706"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="value" inpkey="305" componentid="64"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="id" outkey="304" componentid="65"/>
+						</root>
+					</data>
+				</component>
+				<component name="sbmlSpecies" library="db" uid="21" kind="21">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="144"/>
+						<datapoint pos="1" key="145"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="146"/>
+					</targets>
+					<view ltx="270" lty="114" rbx="383" rby="170"/>
+					<data>
+						<where condition="idSrc = :idSourceName">
+							<parameters>
+								<parameter name="idSourceName" type="string"/>
+							</parameters>
+						</where>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="39" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="242"/>
+					</targets>
+					<view ltx="293" lty="89" rbx="347" rby="107"/>
+					<data>
+						<constant value="_m" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="36" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="227"/>
+						<datapoint pos="1" key="228"/>
+						<datapoint pos="2" key="245"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="225"/>
+					</targets>
+					<view ltx="510" lty="664" rbx="594" rby="740"/>
+				</component>
+				<component name="concat" library="core" uid="38" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="231"/>
+						<datapoint pos="1" key="232"/>
+						<datapoint pos="2" key="246"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="229"/>
+					</targets>
+					<view ltx="511" lty="566" rbx="595" rby="642"/>
+				</component>
+				<component name="sbmlreactions_tab2" library="db" uid="47" kind="21">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="285"/>
+						<datapoint pos="1" key="286"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="287"/>
+					</targets>
+					<view ltx="350" lty="877" rbx="471" rby="933"/>
+					<data>
+						<where condition="idReaction in (select distinct idRxn from `metrxn`.`sbmlSpeciesAll` where idSrc = :idSrc) and idSource = :idSrc and id is not null and trim(id) &lt;&gt; &apos;&apos;">
+							<parameters>
+								<parameter name="idSrc" type="string"/>
+							</parameters>
+						</where>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="41" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="252"/>
+						<datapoint pos="1" key="251"/>
+						<datapoint pos="2" key="250"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="248"/>
+					</targets>
+					<view ltx="593" lty="817" rbx="677" rby="893"/>
+				</component>
+				<component name="sbmlSpeciesAll" library="db" uid="26" kind="21">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="155"/>
+						<datapoint pos="1" key="157"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="156"/>
+					</targets>
+					<view ltx="463" lty="437" rbx="563" rby="493"/>
+					<data>
+						<where condition="idRxn = :idRxn and RPflag = &apos;R&apos; and speciesId is not null">
+							<parameters>
+								<parameter name="idRxn" type="string"/>
+							</parameters>
+						</where>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="sbmlSpeciesAll" library="db" uid="25" kind="21">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="150"/>
+						<datapoint pos="1" key="151"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="152"/>
+					</targets>
+					<view ltx="463" lty="499" rbx="563" rby="555"/>
+					<data>
+						<where condition="idRxn = :idRxn and RPflag = &apos;P&apos; and speciesId is not null">
+							<parameters>
+								<parameter name="idRxn" type="string"/>
+							</parameters>
+						</where>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="sbmlSpecialCharReplacement" library="user" blackbox="0" uid="89" kind="19" visible="0">
+					<view ltx="646" lty="459" rbx="727" rby="476"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="value" inpkey="352" componentid="64"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="id" outkey="353" componentid="65"/>
+						</root>
+					</data>
+				</component>
+				<component name="sbmlSpecialCharReplacement" library="user" blackbox="0" uid="69" kind="19" visible="0">
+					<view ltx="655" lty="404" rbx="736" rby="421"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="value" inpkey="307" componentid="64"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="id" outkey="306" componentid="65"/>
+						</root>
+					</data>
+				</component>
+				<component name="structure" library="db" uid="6" kind="15">
+					<properties JDBCDriver="com.mysql.jdbc.Driver" JDBCDatabaseURL="jdbc:mysql://130.203.234.86:3306/metrxn" DBDataSource="final"/>
+					<view ltx="-11" lty="20" rbx="120" rby="172"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces/>
+							</header>
+							<entry name="document" expanded="1">
+								<entry name="sbmlSpecies" type="table" outkey="32" expanded="1">
+									<entry name="speciesName" outkey="33"/>
+									<entry name="compartment" outkey="34"/>
+									<entry name="speciesIdComp" outkey="67"/>
+									<entry name="charge" outkey="37"/>
+									<entry name="boundry" outkey="38"/>
+								</entry>
+								<entry name="source_pin" type="table">
+									<entry name="source" outkey="39"/>
+									<entry name="idsourceName" outkey="40" valuekeygeneration="databasegenerated"/>
+									<entry name="pubmed" outkey="169"/>
+								</entry>
+							</entry>
+						</root>
+						<wsdl/>
+						<database>
+							<database_connection database_kind="MySQL" import_kind="ODBC" version="5.5.13-log" name="Connection2" path="Connection2" allow_background_retrieval="No">
+								<properties>
+									<property name="Database Kind" value="MySQL"/>
+									<property name="Import Kind" value="ODBC"/>
+									<property name="Root Object" value="metrxn"/>
+									<property name="FileDsn"/>
+									<property name="Dsn" value="final"/>
+									<property name="Driver"/>
+									<property name="Trusted_Connection"/>
+									<property name="App"/>
+									<property name="Server"/>
+									<property name="Database"/>
+									<property name="Regional"/>
+									<property name="Languages"/>
+									<property name="Wsid"/>
+									<property name="Uid"/>
+									<property name="Pwd"/>
+									<property name="Port" value="3306"/>
+									<property name="Option"/>
+									<property name="Stmt"/>
+									<property name="Driver Name" value="myodbc5.dll"/>
+									<property name="Driver Version" value="05.01.0008"/>
+									<property name="Driver Company"/>
+									<property name="Driver File Name"/>
+									<property name="Driver Full Path"/>
+									<property name="Driver Date"/>
+									<property name="Socket"/>
+									<property name="Desc"/>
+								</properties>
+								<LocalViewStorage>
+									<LocalViewElement SQL="select group_concat(distinct speciesName) `SpeciesName`, compartment,speciesId,SpeciesIdComp,idSrc,charge,boundry from sbmlSpecies
+group by  compartment,speciesId,SpeciesIdComp,idSrc,charge,boundry">
+										<PathElement Name="Connection2" Kind="DataSource"/>
+										<PathElement Name="metrxn" Kind="Database"/>
+										<PathElement Name="sbmlSpe" Kind="Select Statement"/>
+									</LocalViewElement>
+								</LocalViewStorage>
+								<LocalRelationsStorage/>
+								<selections>
+									<selection>
+										<PathElement Name="Connection2" Kind="DataSource"/>
+										<PathElement Name="metrxn" Kind="Database"/>
+										<PathElement Name="sbmlSpecies" Kind="View"/>
+									</selection>
+									<selection>
+										<PathElement Name="Connection2" Kind="DataSource"/>
+										<PathElement Name="metrxn" Kind="Database"/>
+										<PathElement Name="source_pin" Kind="Table"/>
+									</selection>
+								</selections>
+							</database_connection>
+							<recordset/>
+						</database>
+					</data>
+				</component>
+				<component name="sbmlSpecialCharReplacement" library="user" blackbox="0" uid="126" kind="19" visible="0">
+					<view ltx="454" lty="322" rbx="535" rby="339"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="value" inpkey="369" componentid="64"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="id" outkey="370" componentid="65"/>
+						</root>
+					</data>
+				</component>
+				<component name="structure" library="db" uid="23" kind="15">
+					<properties JDBCDriver="com.mysql.jdbc.Driver" JDBCDatabaseURL="jdbc:mysql://130.203.234.86:3306/metrxn" DBDataSource="final4"/>
+					<view ltx="12" lty="412" rbx="267" rby="926"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces/>
+							</header>
+							<entry name="document" expanded="1">
+								<entry name="SbmlCompartment" type="table" outkey="207" expanded="1">
+									<entry name="compartment" outkey="208"/>
+								</entry>
+								<entry name="sbmlSpeciesAll" type="table" outkey="153" expanded="1">
+									<entry name="newStoichiometry" outkey="163"/>
+									<entry name="speciesIdComp" outkey="164"/>
+									<entry name="sbmlSpeciesAllId" valuekeygeneration="databasegenerated"/>
+								</entry>
+								<entry name="sbmlreactions_tab" type="table" expanded="1"/>
+								<entry name="sbmlreactions_tab2" type="table" outkey="358" expanded="1">
+									<entry name="id" outkey="359"/>
+									<entry name="name" outkey="360"/>
+									<entry name="idReaction" outkey="361"/>
+									<entry name="reversible" outkey="362"/>
+								</entry>
+							</entry>
+						</root>
+						<wsdl/>
+						<database>
+							<database_connection database_kind="MySQL" import_kind="ODBC" version="5.5.13-log" name="Connection1" path="Connection1" allow_background_retrieval="No">
+								<properties>
+									<property name="Database Kind" value="MySQL"/>
+									<property name="Import Kind" value="ODBC"/>
+									<property name="Root Object" value="metrxn"/>
+									<property name="FileDsn"/>
+									<property name="Dsn" value="final4"/>
+									<property name="Driver"/>
+									<property name="Trusted_Connection"/>
+									<property name="App"/>
+									<property name="Server"/>
+									<property name="Database"/>
+									<property name="Regional"/>
+									<property name="Languages"/>
+									<property name="Wsid"/>
+									<property name="Uid"/>
+									<property name="Pwd"/>
+									<property name="Port" value="3306"/>
+									<property name="Option"/>
+									<property name="Stmt"/>
+									<property name="Driver Name" value="myodbc5.dll"/>
+									<property name="Driver Version" value="05.01.0008"/>
+									<property name="Driver Company"/>
+									<property name="Driver File Name"/>
+									<property name="Driver Full Path"/>
+									<property name="Driver Date"/>
+									<property name="Socket"/>
+									<property name="Desc"/>
+								</properties>
+								<LocalViewStorage/>
+								<LocalRelationsStorage/>
+								<selections>
+									<selection>
+										<PathElement Name="Connection1" Kind="DataSource"/>
+										<PathElement Name="metrxn" Kind="Database"/>
+										<PathElement Name="SbmlCompartment" Kind="View"/>
+									</selection>
+									<selection>
+										<PathElement Name="Connection1" Kind="DataSource"/>
+										<PathElement Name="metrxn" Kind="Database"/>
+										<PathElement Name="sbmlSpeciesAll" Kind="Table"/>
+									</selection>
+									<selection>
+										<PathElement Name="Connection1" Kind="DataSource"/>
+										<PathElement Name="metrxn" Kind="Database"/>
+										<PathElement Name="sbmlreactions_tab" Kind="Table"/>
+									</selection>
+									<selection>
+										<PathElement Name="Connection1" Kind="DataSource"/>
+										<PathElement Name="metrxn" Kind="Database"/>
+										<PathElement Name="sbmlreactions_tab2" Kind="Table"/>
+									</selection>
+								</selections>
+							</database_connection>
+							<recordset/>
+						</database>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1" AddSchemaLocation="0"/>
+					<view ltx="886" lty="27" rbx="1416" rby="681"/>
+					<data>
+						<root scrollposition="112">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.sbml.org/sbml/level2"/>
+									<namespace uid="http://www.w3.org/1999/xhtml"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="3" inpkey="28" expanded="1">
+								<entry name="document" ns="3" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="sbml" ns="1" expanded="1">
+										<entry name="version" type="attribute" inpkey="158"/>
+										<entry name="level" type="attribute" inpkey="159"/>
+										<entry name="model" ns="1" expanded="1">
+											<entry name="id" type="attribute" inpkey="161"/>
+											<entry name="name" type="attribute" inpkey="160"/>
+											<entry name="listOfUnitDefinitions" ns="1" expanded="1">
+												<entry name="unitDefinition" ns="1" expanded="1">
+													<entry name="listOfUnits" ns="1" expanded="1">
+														<entry name="unit" ns="1" expanded="1"/>
+													</entry>
+												</entry>
+											</entry>
+											<entry name="listOfCompartments" ns="1" expanded="1">
+												<entry name="compartment" ns="1" inpkey="201" expanded="1">
+													<entry name="id" type="attribute" inpkey="203"/>
+													<entry name="name" type="attribute" inpkey="202"/>
+												</entry>
+											</entry>
+											<entry name="listOfSpecies" ns="1" expanded="1">
+												<entry name="species" ns="1" inpkey="1" expanded="1">
+													<entry name="id" type="attribute" inpkey="3"/>
+													<entry name="name" type="attribute" inpkey="2"/>
+													<entry name="compartment" type="attribute" inpkey="4"/>
+													<entry name="charge" type="attribute" inpkey="5"/>
+													<entry name="boundaryCondition" type="attribute" inpkey="6"/>
+													<entry name="notes" ns="1">
+														<entry name="html" ns="2" expanded="1"/>
+													</entry>
+												</entry>
+											</entry>
+											<entry name="listOfReactions" ns="1" expanded="1">
+												<entry name="reaction" ns="1" inpkey="63" expanded="1">
+													<entry name="id" type="attribute" inpkey="66"/>
+													<entry name="name" type="attribute" inpkey="65"/>
+													<entry name="reversible" type="attribute" inpkey="64"/>
+													<entry name="notes" ns="1" expanded="1"/>
+													<entry name="listOfReactants" ns="1" expanded="1">
+														<entry name="speciesReference" ns="1" inpkey="95" expanded="1">
+															<entry name="species" type="attribute" inpkey="101"/>
+															<entry name="stoichiometry" type="attribute" inpkey="100"/>
+														</entry>
+													</entry>
+													<entry name="listOfProducts" ns="1" expanded="1">
+														<entry name="speciesReference" ns="1" inpkey="102" expanded="1">
+															<entry name="species" type="attribute" inpkey="104"/>
+															<entry name="stoichiometry" type="attribute" inpkey="103"/>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="Bigg_E_coli_iAF1260.xsd" outputinstance="Bigg_E_coli_iAF1260.xml" instanceroot="{http://www.sbml.org/sbml/level2}sbml"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="sbmlSpecialCharReplacement" library="user" blackbox="0" uid="66" kind="19" visible="0">
+					<view ltx="835" lty="853" rbx="916" rby="870"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="value" inpkey="298" componentid="64"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="id" outkey="299" componentid="65"/>
+						</root>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="32">
+						<edges>
+							<edge vertexkey="144" edgekey="356"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="33">
+						<edges>
+							<edge vertexkey="2" edgekey="357"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="34">
+						<edges>
+							<edge vertexkey="369" edgekey="371"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="5" edgekey="175"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="38">
+						<edges>
+							<edge vertexkey="6" edgekey="176"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="39">
+						<edges>
+							<edge vertexkey="69" edgekey="72"/>
+							<edge vertexkey="160" edgekey="177"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="40">
+						<edges>
+							<edge vertexkey="145" edgekey="178"/>
+							<edge vertexkey="205" edgekey="209"/>
+							<edge vertexkey="286" edgekey="288"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="222" edgekey="233"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="71">
+						<edges>
+							<edge vertexkey="28" edgekey="83"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="146">
+						<edges>
+							<edge vertexkey="1" edgekey="181"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="152">
+						<edges>
+							<edge vertexkey="102" edgekey="336"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="153">
+						<edges>
+							<edge vertexkey="150" edgekey="184"/>
+							<edge vertexkey="155" edgekey="185"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="156">
+						<edges>
+							<edge vertexkey="95" edgekey="339"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="162">
+						<edges>
+							<edge vertexkey="70" edgekey="189"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="163">
+						<edges>
+							<edge vertexkey="103" edgekey="190"/>
+							<edge vertexkey="100" edgekey="191"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="164">
+						<edges>
+							<edge vertexkey="228" edgekey="234"/>
+							<edge vertexkey="232" edgekey="235"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="169">
+						<edges>
+							<edge vertexkey="216" edgekey="218"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="170">
+						<edges>
+							<edge vertexkey="159" edgekey="199"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="171">
+						<edges>
+							<edge vertexkey="158" edgekey="200"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="206">
+						<edges>
+							<edge vertexkey="201" edgekey="210"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="207">
+						<edges>
+							<edge vertexkey="204" edgekey="211"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="208">
+						<edges>
+							<edge vertexkey="202" edgekey="212"/>
+							<edge vertexkey="352" edgekey="354"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="214">
+						<edges>
+							<edge vertexkey="215" edgekey="219"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="217">
+						<edges>
+							<edge vertexkey="161" edgekey="220"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="223">
+						<edges>
+							<edge vertexkey="307" edgekey="308"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="224">
+						<edges>
+							<edge vertexkey="221" edgekey="237"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="225">
+						<edges>
+							<edge vertexkey="303" edgekey="309"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="226">
+						<edges>
+							<edge vertexkey="227" edgekey="239"/>
+							<edge vertexkey="231" edgekey="256"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="229">
+						<edges>
+							<edge vertexkey="305" edgekey="310"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="242">
+						<edges>
+							<edge vertexkey="243" edgekey="257"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="244">
+						<edges>
+							<edge vertexkey="246" edgekey="258"/>
+							<edge vertexkey="245" edgekey="259"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="247">
+						<edges>
+							<edge vertexkey="252" edgekey="260"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="248">
+						<edges>
+							<edge vertexkey="298" edgekey="300"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="249">
+						<edges>
+							<edge vertexkey="250" edgekey="262"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="287">
+						<edges>
+							<edge vertexkey="63" edgekey="297"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="299">
+						<edges>
+							<edge vertexkey="66" edgekey="301"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="302">
+						<edges>
+							<edge vertexkey="104" edgekey="311"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="304">
+						<edges>
+							<edge vertexkey="101" edgekey="312"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="306">
+						<edges>
+							<edge vertexkey="3" edgekey="313"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="353">
+						<edges>
+							<edge vertexkey="203" edgekey="355"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="358">
+						<edges>
+							<edge vertexkey="285" edgekey="363"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="359">
+						<edges>
+							<edge vertexkey="251" edgekey="364"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="360">
+						<edges>
+							<edge vertexkey="65" edgekey="365"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="361">
+						<edges>
+							<edge vertexkey="157" edgekey="366"/>
+							<edge vertexkey="151" edgekey="367"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="362">
+						<edges>
+							<edge vertexkey="64" edgekey="368"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="370">
+						<edges>
+							<edge vertexkey="4" edgekey="372"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="sbmlSpecialCharReplacement" library="user" blackbox="0" uid="54" editable="1" inline="1">
+		<properties/>
+		<description>
+			<long>special charecters like &apos; &apos;,- and * get replaced
+</long>
+		</description>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="59" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="648" lty="124" rbx="694" rby="142"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="60" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="15"/>
+					</targets>
+					<view ltx="647" lty="101" rbx="693" rby="119"/>
+					<data>
+						<constant value="+" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="62" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="14"/>
+						<datapoint pos="1" key="8"/>
+						<datapoint pos="2" key="12"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="545" lty="17" rbx="637" rby="90"/>
+				</component>
+				<component name="replace" library="lang" uid="63" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="10"/>
+						<datapoint pos="1" key="16"/>
+						<datapoint pos="2" key="3"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="730" lty="29" rbx="822" rby="102"/>
+				</component>
+				<component name="replace" library="lang" uid="58" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="18"/>
+						<datapoint pos="2" key="6"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="13"/>
+					</targets>
+					<view ltx="333" rbx="425" rby="73"/>
+				</component>
+				<component name="value" library="core" uid="64" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="19"/>
+					</targets>
+					<view rbx="75" rby="39"/>
+					<data>
+						<input datatype="string"/>
+						<wsdl/>
+						<parameter usageKind="input" name="value"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="55" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="17"/>
+					</targets>
+					<view ltx="256" lty="7" rbx="299" rby="25"/>
+					<data>
+						<constant value=" " datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="56" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="257" lty="41" rbx="303" rby="59"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="61" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="461" lty="20" rbx="505" rby="38"/>
+					<data>
+						<constant value="-" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="57" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="11"/>
+					</targets>
+					<view ltx="463" lty="49" rbx="509" rby="67"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="82" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="39"/>
+						<datapoint pos="1" key="38"/>
+						<datapoint pos="2" key="36"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="40"/>
+					</targets>
+					<view ltx="56" lty="225" rbx="148" rby="298"/>
+				</component>
+				<component name="constant" library="core" uid="80" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="35"/>
+					</targets>
+					<view ltx="-42" lty="246" rbx="4" rby="264"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="81" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="37"/>
+					</targets>
+					<view ltx="-39" lty="279" rbx="5" rby="297"/>
+					<data>
+						<constant value="*" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="84" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="43"/>
+					</targets>
+					<view ltx="45" lty="317" rbx="88" rby="335"/>
+					<data>
+						<constant value="[" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="id" library="core" uid="65" kind="7">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="20"/>
+					</sources>
+					<view ltx="1072" rbx="1108" rby="39"/>
+					<data>
+						<output datatype="string"/>
+						<wsdl/>
+						<parameter usageKind="output" name="id"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="88" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="47"/>
+					</targets>
+					<view ltx="161" lty="347" rbx="204" rby="365"/>
+					<data>
+						<constant value="]" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="86" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="49"/>
+					</targets>
+					<view ltx="155" lty="374" rbx="195" rby="392"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="83" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="41"/>
+					</targets>
+					<view ltx="48" lty="344" rbx="88" rby="362"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="91" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="67"/>
+					</targets>
+					<view ltx="875" lty="456" rbx="921" rby="474"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="90" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="63"/>
+					</targets>
+					<view ltx="881" lty="429" rbx="933" rby="447"/>
+					<data>
+						<constant value="__" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="94" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="74"/>
+					</targets>
+					<view ltx="291" lty="423" rbx="337" rby="441"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="93" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="77"/>
+					</targets>
+					<view ltx="290" lty="389" rbx="333" rby="407"/>
+					<data>
+						<constant value=":" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="96" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="79"/>
+					</targets>
+					<view ltx="389" lty="478" rbx="435" rby="496"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="98" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="81"/>
+					</targets>
+					<view ltx="388" lty="444" rbx="431" rby="462"/>
+					<data>
+						<constant value="," datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="95" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="76"/>
+						<datapoint pos="1" key="78"/>
+						<datapoint pos="2" key="75"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="73"/>
+					</targets>
+					<view ltx="367" lty="347" rbx="459" rby="420"/>
+				</component>
+				<component name="replace" library="lang" uid="97" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="83"/>
+						<datapoint pos="1" key="82"/>
+						<datapoint pos="2" key="80"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="84"/>
+					</targets>
+					<view ltx="465" lty="402" rbx="557" rby="475"/>
+				</component>
+				<component name="constant" library="core" uid="99" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="85"/>
+					</targets>
+					<view ltx="499" lty="524" rbx="545" rby="542"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="103" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="92"/>
+					</targets>
+					<view ltx="594" lty="583" rbx="640" rby="601"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="102" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="95"/>
+					</targets>
+					<view ltx="593" lty="549" rbx="637" rby="567"/>
+					<data>
+						<constant value=")" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="85" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="45"/>
+						<datapoint pos="1" key="44"/>
+						<datapoint pos="2" key="42"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="46"/>
+					</targets>
+					<view ltx="158" lty="260" rbx="250" rby="333"/>
+				</component>
+				<component name="replace" library="lang" uid="87" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="52"/>
+						<datapoint pos="1" key="48"/>
+						<datapoint pos="2" key="50"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="51"/>
+					</targets>
+					<view ltx="259" lty="298" rbx="351" rby="371"/>
+				</component>
+				<component name="constant" library="core" uid="105" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="97"/>
+					</targets>
+					<view ltx="701" lty="633" rbx="747" rby="651"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="107" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="99"/>
+					</targets>
+					<view ltx="700" lty="599" rbx="744" rby="617"/>
+					<data>
+						<constant value="(" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="108" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="103"/>
+					</targets>
+					<view ltx="872" lty="347" rbx="918" rby="365"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="109" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="106"/>
+					</targets>
+					<view ltx="878" lty="320" rbx="930" rby="338"/>
+					<data>
+						<constant value="__" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="92" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="65"/>
+						<datapoint pos="1" key="64"/>
+						<datapoint pos="2" key="68"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="66"/>
+					</targets>
+					<view ltx="950" lty="387" rbx="1042" rby="460"/>
+				</component>
+				<component name="constant" library="core" uid="111" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="110"/>
+					</targets>
+					<view ltx="870" lty="246" rbx="916" rby="264"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="112" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="112"/>
+					</targets>
+					<view ltx="876" lty="219" rbx="928" rby="237"/>
+					<data>
+						<constant value="__" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="110" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="105"/>
+						<datapoint pos="1" key="107"/>
+						<datapoint pos="2" key="104"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="102"/>
+					</targets>
+					<view ltx="947" lty="278" rbx="1039" rby="351"/>
+				</component>
+				<component name="replace" library="lang" uid="113" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="109"/>
+						<datapoint pos="1" key="113"/>
+						<datapoint pos="2" key="111"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="108"/>
+					</targets>
+					<view ltx="945" lty="177" rbx="1037" rby="250"/>
+				</component>
+				<component name="replace" library="lang" uid="104" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="91"/>
+						<datapoint pos="1" key="96"/>
+						<datapoint pos="2" key="93"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="94"/>
+					</targets>
+					<view ltx="691" lty="496" rbx="783" rby="569"/>
+				</component>
+				<component name="replace" library="lang" uid="100" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="89"/>
+						<datapoint pos="1" key="88"/>
+						<datapoint pos="2" key="86"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="90"/>
+					</targets>
+					<view ltx="575" lty="448" rbx="667" rby="521"/>
+				</component>
+				<component name="constant" library="core" uid="114" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="140"/>
+					</targets>
+					<view ltx="810" lty="679" rbx="856" rby="697"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="106" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="114"/>
+						<datapoint pos="1" key="100"/>
+						<datapoint pos="2" key="98"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="101"/>
+					</targets>
+					<view ltx="795" lty="556" rbx="887" rby="629"/>
+				</component>
+				<component name="constant" library="core" uid="115" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="138"/>
+					</targets>
+					<view ltx="809" lty="645" rbx="852" rby="663"/>
+					<data>
+						<constant value="." datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="116" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="143"/>
+						<datapoint pos="1" key="139"/>
+						<datapoint pos="2" key="141"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="142"/>
+					</targets>
+					<view ltx="904" lty="602" rbx="996" rby="675"/>
+				</component>
+				<component name="constant" library="core" uid="120" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="160"/>
+					</targets>
+					<view ltx="1018" lty="794" rbx="1064" rby="812"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="118" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="152"/>
+						<datapoint pos="1" key="151"/>
+						<datapoint pos="2" key="149"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="153"/>
+					</targets>
+					<view ltx="1003" lty="652" rbx="1095" rby="725"/>
+				</component>
+				<component name="constant" library="core" uid="117" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="148"/>
+					</targets>
+					<view ltx="909" lty="729" rbx="955" rby="747"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="101" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="87"/>
+					</targets>
+					<view ltx="498" lty="490" rbx="541" rby="508"/>
+					<data>
+						<constant value=";" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="119" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="150"/>
+					</targets>
+					<view ltx="908" lty="695" rbx="982" rby="713"/>
+					<data>
+						<constant value="&amp;apos;" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="122" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="158"/>
+					</targets>
+					<view ltx="1017" lty="760" rbx="1064" rby="778"/>
+					<data>
+						<constant value="&amp;" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="123" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="170"/>
+					</targets>
+					<view ltx="1124" lty="913" rbx="1170" rby="931"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="125" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="172"/>
+					</targets>
+					<view ltx="1123" lty="879" rbx="1165" rby="897"/>
+					<data>
+						<constant value="&apos;" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="124" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="169"/>
+						<datapoint pos="1" key="173"/>
+						<datapoint pos="2" key="171"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="168"/>
+					</targets>
+					<view ltx="1234" lty="872" rbx="1326" rby="945"/>
+				</component>
+				<component name="constant" library="core" uid="127" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="179"/>
+					</targets>
+					<view ltx="896" lty="906" rbx="942" rby="924"/>
+					<data>
+						<constant value="_" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="129" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="181"/>
+						<datapoint pos="1" key="183"/>
+						<datapoint pos="2" key="180"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="178"/>
+					</targets>
+					<view ltx="990" lty="829" rbx="1082" rby="902"/>
+				</component>
+				<component name="constant" library="core" uid="128" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="182"/>
+					</targets>
+					<view ltx="895" lty="872" rbx="941" rby="890"/>
+					<data>
+						<constant value="#" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="replace" library="lang" uid="121" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="162"/>
+						<datapoint pos="1" key="159"/>
+						<datapoint pos="2" key="161"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="163"/>
+					</targets>
+					<view ltx="1112" lty="717" rbx="1204" rby="790"/>
+				</component>
+				<component name="replace" library="lang" uid="131" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="193"/>
+						<datapoint pos="1" key="192"/>
+						<datapoint pos="2" key="190"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="188"/>
+					</targets>
+					<view ltx="674" lty="843" rbx="766" rby="916"/>
+				</component>
+				<component name="constant" library="core" uid="132" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="191"/>
+					</targets>
+					<view ltx="579" lty="886" rbx="626" rby="904"/>
+					<data>
+						<constant value="ß" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="130" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="189"/>
+					</targets>
+					<view ltx="580" lty="920" rbx="642" rby="938"/>
+					<data>
+						<constant value="Beta" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="39" edgekey="53"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="3" edgekey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="6" edgekey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="8" edgekey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="10" edgekey="25"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="12" edgekey="26"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="13">
+						<edges>
+							<edge vertexkey="14" edgekey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="16" edgekey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="18" edgekey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="4" edgekey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="35">
+						<edges>
+							<edge vertexkey="36" edgekey="54"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="38" edgekey="55"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="40">
+						<edges>
+							<edge vertexkey="45" edgekey="56"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="41">
+						<edges>
+							<edge vertexkey="42" edgekey="57"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="44" edgekey="58"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="52" edgekey="59"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="48" edgekey="60"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="50" edgekey="61"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="51">
+						<edges>
+							<edge vertexkey="76" edgekey="115"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="63">
+						<edges>
+							<edge vertexkey="64" edgekey="70"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="66">
+						<edges>
+							<edge vertexkey="105" edgekey="116"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="68" edgekey="72"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="73">
+						<edges>
+							<edge vertexkey="83" edgekey="117"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="74">
+						<edges>
+							<edge vertexkey="75" edgekey="118"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="77">
+						<edges>
+							<edge vertexkey="78" edgekey="119"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="79">
+						<edges>
+							<edge vertexkey="80" edgekey="120"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="81">
+						<edges>
+							<edge vertexkey="82" edgekey="121"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="84">
+						<edges>
+							<edge vertexkey="89" edgekey="122"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="85">
+						<edges>
+							<edge vertexkey="86" edgekey="123"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="87">
+						<edges>
+							<edge vertexkey="88" edgekey="124"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="90">
+						<edges>
+							<edge vertexkey="91" edgekey="137"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="92">
+						<edges>
+							<edge vertexkey="93" edgekey="125"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="94">
+						<edges>
+							<edge vertexkey="114" edgekey="126"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="95">
+						<edges>
+							<edge vertexkey="96" edgekey="127"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="97">
+						<edges>
+							<edge vertexkey="98" edgekey="128"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="99">
+						<edges>
+							<edge vertexkey="100" edgekey="129"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="101">
+						<edges>
+							<edge vertexkey="143" edgekey="144"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="102">
+						<edges>
+							<edge vertexkey="109" edgekey="131"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="103">
+						<edges>
+							<edge vertexkey="104" edgekey="132"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="106">
+						<edges>
+							<edge vertexkey="107" edgekey="133"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="108">
+						<edges>
+							<edge vertexkey="20" edgekey="134"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="110">
+						<edges>
+							<edge vertexkey="111" edgekey="135"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="112">
+						<edges>
+							<edge vertexkey="113" edgekey="136"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="138">
+						<edges>
+							<edge vertexkey="139" edgekey="145"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="140">
+						<edges>
+							<edge vertexkey="141" edgekey="146"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="142">
+						<edges>
+							<edge vertexkey="152" edgekey="154"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="148">
+						<edges>
+							<edge vertexkey="149" edgekey="155"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="150">
+						<edges>
+							<edge vertexkey="151" edgekey="156"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="153">
+						<edges>
+							<edge vertexkey="162" edgekey="164"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="158">
+						<edges>
+							<edge vertexkey="159" edgekey="165"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="160">
+						<edges>
+							<edge vertexkey="161" edgekey="166"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="163">
+						<edges>
+							<edge vertexkey="193" edgekey="194"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="168">
+						<edges>
+							<edge vertexkey="65" edgekey="175"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="170">
+						<edges>
+							<edge vertexkey="171" edgekey="176"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="172">
+						<edges>
+							<edge vertexkey="173" edgekey="177"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="178">
+						<edges>
+							<edge vertexkey="169" edgekey="185"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="179">
+						<edges>
+							<edge vertexkey="180" edgekey="186"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="182">
+						<edges>
+							<edge vertexkey="183" edgekey="187"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="188">
+						<edges>
+							<edge vertexkey="181" edgekey="195"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="189">
+						<edges>
+							<edge vertexkey="190" edgekey="196"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="191">
+						<edges>
+							<edge vertexkey="192" edgekey="197"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

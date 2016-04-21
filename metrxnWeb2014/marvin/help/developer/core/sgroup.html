@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta NAME="description" CONTENT="Sgroups">
+<meta NAME="author" CONTENT="Erika Biro">
+<link REL ="stylesheet" TYPE="text/css" HREF="../../marvinmanuals.css" TITLE="Style">
+<title>Sgroups</title>
+</head>
+<body>
+
+<h1><a class="anchor" NAME="expandable-sgroups">Expandable S-group behavior</a></h1>
+<h2><a class="anchor" NAME="superatom-sgroup">SuperatomSgroup</a></h2>
+
+There are two states of the molecule:
+ <li>All represented atoms are present in the parent molecule in all expandable 
+  S-group independently from their expansion state.
+ Here we can see a special S-group state called Sgroup.XSTATE_XC where the S-group remembers its previous contracted 
+ state but the represented atoms were moved to the molecule graph and the abbreviation (SgroupAtom) was removed from the molecule
+ graph. Set this state on all Sgroups by calling Molecule.setGUIContracted(false) or by calling 
+ Sgroup.setGUIStateRecursively(false) individually on Sgroup-s. Example for a typical usage is a non-GUI related API
+ based calculation where we need the represented atoms in the molecule graph instead of the abbreviation.
+ </li>
+ <li>Either the abbreviation (SuperAtom) or the represented atom set is exclusively present depending on the state of the S-group. 
+In the case of expanded S-groups (called  Sgroup.XSTATE_X)  the represented  atoms are present in the parent molecule. 
+In the case of contracted S-groups (called  Sgroup.XSTATE_C)  the abbreviation ( SgroupAtom) is present in the parent 
+ molecule. Set this state on all Sgroups by calling Molecule.setGUIContracted(true) or by calling 
+Sgroup.setGUIStateRecursively(true) individually on Sgroup-s.
+ </li>
+ </ul>
+ </p>
+Note:
+ </br>
+When Molecule.isGUIContracted() returns true and afterwards you call:
+</br>
+<code>
+Molecule.setGUIContracted(false);
+</br>
+Molecule.setGUIContracted(true);
+</code>
+</br>
+the second <code>setGUIContracted</code> call will restore the state before the first <code>setGUIContracted</code> call!
+ <h2><a class="anchor" NAME="multiple-sgroups">MultipleSgroup</a></h2>
+</body>
+</html>

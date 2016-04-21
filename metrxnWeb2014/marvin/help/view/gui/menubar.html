@@ -1,0 +1,438 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<TITLE>Menus of MarvinView</TITLE>
+<link rel=stylesheet type="text/css" href="../../marvinmanuals.css">
+</head>
+<body>
+<h1>Menus of MarvinView</h1>
+
+<p>The Menu Bar contains almost all commands that are available in MarvinSketch.<br>
+The main menus are groups of functionally similar commands shown in the following picture:
+<img src="menubar.png">
+</p>
+
+<dl>
+    <dt><a href="#file">File Menu</a></dt>
+    <dd>The File menu contains the available file operations, such as New, Open, Save, Print, and Close.
+        (Note that the unsigned Swing applets contain only a subset of these functions.)</dd>
+
+    <dt><a href="#edit">Edit Menu</a></dt>
+    <dd>The Edit menu contains general clipboard operations like Copy and Paste,
+	and Marvin-specific editing options.
+    </dd>
+
+    <dt><a href="#view">View Menu</a></dt>
+    <dd>The View menu allows you to alter the
+	way the molecules are displayed. You can change the molecule display type, background color,
+        color scheme, error highlighting, etc.
+    </dd>
+
+    <dt><a href="#table">Table Menu</a></dt>
+    <dd>
+        The Table menu offers different settings to set up the table in which molecules and the corresponding molecule data fields are displayed.
+    </dd>
+
+    <dt><a href="#structure">Structure Menu</a></dt>
+    <dd>
+        Provides chemical functions relating to structures like molecule cleaning, aromatization, and more.
+    </dd>
+
+       <dt>Tools Menu</dt>
+    <dd>
+        Contains the available <a href="../../calculations/calculator-plugins.html">Calculator Plugins</a>.
+    </dd>
+
+    <dt><a href="#help">Help Menu</a></dt>
+    <dd>
+        Provides information about using the program, technical details and license management.
+    </dd>
+</dl>
+
+<h2>Full Menu Reference</h2>
+
+<h3><a class="anchor" name="file">File Menu</a></h3>
+<table cellspacing="0" cellpadding="3" class="grid">
+    <tr>
+        <td width="25%"><a class="text" name="open">Open</a></td>
+        <td width="75%">Loads a molecule file into Marvin and closes the molecules you were previously working with.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="recentItems">Recent Files</a></td>
+        <td>List of the recently used file names.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="save">Save Selection</a></td>
+        <td>Saves the molecule being in the selected cell. If there is no cell selected, you can specify molecules to save by giving a single cell index or a range of cell indices.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="saveAs">Save All</a></td>
+        <td>Saves all molecules to a different location or with a different file name or format.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="saveAsImage">Save As Image</a></td>
+        <td>Save an image of the selected molecule in the required location in required format.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="print">Print</a></td>
+        <td>Prints an image of either the current molecule, the visible molecules or all molecules.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="exit">Exit</a></td>
+        <td>Saves preferences and closes the application.</td>
+    </tr>
+</table>
+
+<h3><a class="anchor" name="edit">Edit Menu</a></h3>
+<table cellspacing="0" cellpadding="3" class="grid">
+    <tr>
+        <td width="25%"><a class="text" name="copy">Copy</a></td>
+        <td width="75%">Copies the selection to the clipboard.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="copyAs">Copy As</a></td>
+        <td>Copies the selection to the clipboard in the specified format.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="copyAsSmiles">Copy As SMILES</a></td>
+        <td>Copies the selection to the clipboard in SMILES format.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="paste">Paste</a></td>
+        <td>Inserts the contents of the clipboard at the location of the cursor, without replacing selection.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="find">Find</a></td>
+        <td>Allows searching for an expression in the molecule data fields.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="findAgain">Find Again</a></td>
+        <td>Repeats the last search, highlighting the next match if it exists.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="editstructure">Structure</a></td>
+        <td>You can alter a molecule by editing it with MarvinSketch.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="source">Source</a></td>
+        <td>You can alter a molecule by directly editing its source in the Edit Source Window. You can view and edit the source in any of the supported file formats.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="preferences">Preferences</a></td>
+        <td>The Preferences dialog window allows you to change many of the MarvinView display settings, including look &amp; feel, error highlighting, and object visibility.</td>
+    </tr>
+</table>
+
+<h3><a class="anchor" name="view">View Menu</a></h3>
+<table cellspacing="0" cellpadding="3" class="grid">
+    <tr>
+        <td width="25%"><a class="text" name="normalMode">Transform &gt; Translate or Drag</a></td>
+        <td width="75%">Shifts the structure on the canvas with the mouse.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="zoomMode">Transform &gt; Zoom</a></td>
+        <td>Zoom of the content of the canvas by dragging the mouse without modifying atom coordinates.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="rotate3DMode">Transform &gt; Rotate in 3D</a></td>
+        <td>Spin the structure around its central point in 3 dimension with the help of the mouse without modifying atom coordinates.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="rotate2DMode">Transform &gt; Rotate in 2D</a></td>
+        <td>Spin the structure around its central point in 2 dimension with the help of the mouse without modifying atom coordinates.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="zoomRotate">Transform &gt; Zoom/Rotate</a></td>
+        <td>Uses the zoom transformation when the mouse is moved vertically and uses rotation when the mouse is moved horizontally.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="resetView">Transform &gt; Reset View</a></td>
+        <td>Restores the starting view as modified by rotation and zoom.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="animPlay">Animation &gt; Play/Pause</a></td>
+        <td>Starts/stops an XYZ animation sequence, or starts rotating the selected molecule in 3D.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="animRewind">Animation &gt; Rewind</a></td>
+        <td>Stops the animation and resets it to the starting position.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="animQuantize">Animation &gt; Quantize Spin</a></td>
+        <td>Changes the number of rotations from the current value to the closest integer, for example 1.8 rotation / 198 frames is changed to 2 rotations / 198 frames. The effect is irreversible.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="animDrag">Animation &gt; Drag to Spin</a></td>
+        <td>Allows changing the direction and speed of the rotation using mouse dragging.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="atomSymbols">Display &gt; Atom Symbols in 3D</a></td>
+        <td>Sets atom symbol visibility in 3D mode. Note that in 3D mode, atoms may become invisible in Wireframe and Stick mode by hiding atom symbols.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="wireframe">Display &gt; Wireframe</a></td>
+        <td>Displays bonds as thin lines, and atoms (except Carbon) as symbols.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="wireframeAndKnobs">Display &gt; Wireframe with Knobs</a></td>
+        <td>Displays bonds as thin lines, Carbon atoms as knobs, and other atoms as symbols.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="stick">Display &gt; Sticks</a></td>
+        <td>Displays bonds as thick lines, and atoms (except Carbon) as symbols.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="ballAndStick">Display &gt; Ball and Stick</a></td>
+        <td>Displays bonds as thick lines, atoms as shaded balls, and atoms (except Carbon and Hydrogen) as symbols on balls.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="spacefill">Display &gt; Spacefill</a></td>
+        <td>Displays atoms as large shaded balls, and atoms (except Carbon and Hydrogen) as symbols on the balls.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="lowQuality">Display &gt; Quality &gt; Low</a></td>
+        <td>Disables line anti-aliasing.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="highQuality">Display &gt; Quality &gt; High</a></td>
+        <td>Enables line anti-aliasing.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="monoScheme">Colors &gt; Monochrome</a></td>
+        <td>Displays all atoms with default drawing color.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="cpkScheme">Colors &gt; CPK</a></td>
+        <td>Displays all atoms with Corey-Pauling-Kultun colors.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="shapelyScheme">Colors &gt; Shapely</a></td>
+        <td>This color scheme is based on RasMol's shapely color scheme for nucleic and amino acids.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="groupScheme">Colors &gt; Group</a></td>
+        <td>Coloring atoms based on PDB residue numbers.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="coloringEnabled">Colors &gt; Atom/Bond Sets</a></td>
+        <td>Colors atoms and bonds according to the color of the pre-defined set they belong to.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="background">Colors &gt; Background</a></td>
+        <td>Sets custom background color with adjusted default drawing color.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="whiteBackground">Colors &gt; White Background</a></td>
+        <td>Sets the background color to white and the default drawing color to black.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="blackBackground">Colors &gt; Black Background</a></td>
+        <td>Sets the background color to black and the default drawing color to white.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="chiralitySupport.all">Stereo &gt; R/S Labels &gt; All</a></td>
+        <td>Always show atom chirality (R/S).</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="chiralitySupport.selected">Stereo &gt; R/S Labels &gt; Absolute Stereo</a></td>
+        <td>Show atom chirality if chiral flag is set for the molecule or the atom's enhanced stereo type is absolute.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="chiralitySupport.none">Stereo &gt; R/S Labels &gt; None</a></td>
+        <td>Do not show atom chirality (R/S).</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="EZLabelsVisible">Stereo &gt; E/Z Labels</a></td>
+        <td>Toggles the display of absolute double bond stereo configuration labels. Bonds known to have an (E) or (Z) configuration will be marked as such.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="absoluteLabelsVisible">Stereo &gt; Absolute Labels</a></td>
+        <td>Toggles the display of the Absolute label if the chiral flag is set on the molecule.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="implicitH.All">Implicit Hydrogens &gt; On All</a></td>
+        <td>View hydrogens by symbol on all atoms. This option is disabled in Spacefill and Ball & Stick display modes.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="implicitH.HeteroTerm">Implicit Hydrogens &gt; On Hetero and Terminal</a></td>
+        <td>View hydrogens by symbol on hetero and terminal carbon atoms. This option is disabled in Spacefill and Ball & Stick display modes.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="implicitH.Hetero">Implicit Hydrogens &gt; On Hetero</a></td>
+        <td>View hydrogens by symbol on hetero atoms only. This option is disabled in Spacefill and Ball & Stick display modes.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="implicitH.Off">Implicit Hydrogens &gt; Off</a></td>
+        <td>Disable hydrogens by symbol on all atoms.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="atomNumbersVisible">Misc &gt; Atom Numbers</a></td>
+        <td>Toggles the visibility of unique internal atom indices. The indices are continuous starting from 1.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="atomPropertiesVisible">Misc &gt; Atom Properties</a></td>
+        <td>Toggles the visibility of atom properties.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="atomMappingVisible">Misc &gt; Atom Mapping</a></td>
+        <td>Toggles the visibility of atom mapping labels.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="graphInvariantsVisible">Misc &gt; Graph Invariants</a></td>
+        <td>Toggles the display of graph invariants (canonical labels).</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="bondLengthsVisible">Misc &gt; Bond Lengths</a></td>
+        <td>Toggles the display of bond lengths in Angstroms on the middle of the bonds.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="lonePairsVisible">Misc &gt; Lone Pairs</a></td>
+        <td>Toggles the display of lone pairs.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="rGroupsVisible">Misc &gt; R-groups</a></td>
+        <td>Toggles the display of R-group definitions.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="rescaleSeparately">Rescale Cells &gt; Separately</a></td>
+        <td>Changes the zoom of each cells individually so that molecules best fit their own cell.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="rescaleUniformly">Rescale Cells &gt; Uniformly</a></td>
+        <td>Changes the zoom ratio of all cells to the same value with which all molecules are fully visible in their own cell.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="marvinSpace">Open MarvinSpace</a></td>
+        <td>Launches a MarvinSpace window containing the current molecule from the Sketcher.</td>
+    </tr>
+</table>
+
+<h3><a class="anchor" name="table">Table Menu</a></h3>
+<table cellspacing="0" cellpadding="3" class="grid">
+    <tr>
+        <td width="25%"><a class="text" name="options">Options</a></td>
+        <td width="75%">Allows configuration of the table in which molecules are displayed.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="show1">Show Fields</a></td>
+        <td>Shows all available molecule data fields.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="show2">Show Molecule Name</a></td>
+        <td>Shows the name of the molecules if they are available.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="show3">Show Generated Name</a></td>
+        <td>Generates IUPAC name for the molecules and displays them.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="show4">Show SMILES</a></td>
+        <td>Shows the SMILES representation of the molecules.</td>
+    </tr>
+</table>
+
+<h3><a class="anchor" name="structure">Structure Menu</a></h3>
+<table cellspacing="0" cellpadding="3" class="grid">
+    <tr>
+        <td width="25%"><a class="text" name="clean2D">Clean 2D &gt; Clean in 2D</a></td>
+        <td width="75%">Calculates new 2D coordinates for the molecule.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="clean2DWedgeH">Clean 2D &gt; Clean Wedge Bond</a></td>
+        <td>Adds an explicit hydrogen atom to a chiral center having no terminal atoms when
+        2D cleaning is performed.</td>
+    </tr>
+<!--    <tr>
+        <td><a class="text" name="clean2DWedgeBonds">Clean 2D &gt; Clean Wedge Bonds</a></td>
+        <td>Arranges the wedge bonds of the molecule in 2D.</td>
+    </tr>-->
+    <tr>
+        <td><a class="text" name="clean3D">Clean 3D &gt; Clean in 3D</a></td>
+        <td>Calculates new 3D coordinates for the molecule. Clean3D builds up conformers of fragments from which the best, i.e. the lowest energy conformer is given back. The quality of the structures is measured by a simple energy function (Dreiding type molecular mechanics).</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="clean3DOption.fineBuild">Clean 3D &gt; Cleaning Method &gt; Fine Build</a></td>
+        <td>Fine Clean3D builds up conformers of fragments to find low energy conformer. Leaves failed fragments intact.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="clean3DOption.fineWithHydrogenize">Clean 3D &gt; Cleaning Method &gt; Fine with Hydrogenize</a></td>
+        <td>The build process always adds explicit Hydrogens to the structures which are removed if not present in the original molecule. This option prevents the removal of extra Hydrogen atoms, otherwise gives the same results than Fine build.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="clean3DOption.fastBuild">Clean 3D &gt; Cleaning Method &gt; Fast Build</a></td>
+        <td>Fast clean, which if fails, performs fine clean. It accepts any generated structure, and it is the default behavior of the Clean3D function.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="clean3DOption.buildOrOptimize">Clean 3D &gt; Cleaning Method &gt; Build or Optimize</a></td>
+        <td>Builds 3D structure for non-3D molecules and just optimizes the 3D molecules with the Dreiding force field.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="clean3DOption.optimize">Clean 3D &gt; Cleaning Method &gt; Gradient Optimize</a></td>
+        <td>Optimizes with the Dreiding force field using the actual structure as starting geometry.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="clean3DSelectConformer">Clean 3D &gt; Display Stored Conformers </a></td>
+        <td>Allows you to choose one of the possible conformer structures which were calculated via the Conformers plugin.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="hydrogenize">Add &gt; Explicit H Atoms</a></td>
+        <td>Adds explicit H atoms instead of the current implicit ones. Explicit hydrogens are displayed with atoms joining its neighbor while implicit hydrogens are displayed by atom symbols only.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="dehydrogenize">Remove &gt; Explicit H Atoms</a></td>
+        <td>Removes explicit H atoms and increases the number of implicit hydrogens.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="aromatize">Aromatic Form &gt; Convert to Aromatic Form</a></td>
+        <td>Transforms the molecule to aromatic representation using the transformation method set.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="aromatizeMethod.basic">Aromatic Form &gt; Conversion Method &gt; Basic</a></td>
+        <td>Basic conversion method is described <a href="../../sci/aromatization-doc.html#basic">here</a>.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="aromatizeMethod.general">Aromatic Form &gt; Conversion Method &gt; General</a></td>
+        <td>General conversion method is described <a href="../../sci/aromatization-doc.html#daylight_arom">here</a>.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="aromatizeMethod.loose">Aromatic Form &gt; Conversion Method &gt; Loose</a></td>
+        <td>Loose conversion method is described <a href="../../sci/aromatization-doc.html#loose">here</a>.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="dearomatize">Aromatic Form &gt; Convert to Kekulé Form</a></td>
+        <td>Transforms the molecule to non-aromatic representation.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="contractSGroup">Groups &gt; Contract Group</a></td>
+        <td>Contracts all groups to its abbreviations.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="expandSGroup">Groups &gt; Expand Group</a></td>
+        <td>Displays the full structure instead of the abbreviations.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="regenerate">Regenerate Bonds</a></td>
+        <td>Generate bonds for an XYZ structure with a different bond length cut-off.</td>
+    </tr>
+</table>
+
+
+<h3><a class="anchor" name="help">Help Menu</a></h3>
+<table cellspacing="0" cellpadding="3" class="grid">
+    <tr>
+        <td width="25%"><a class="text" name="helpContents">Help Contents</a></td>
+        <td width="75%">Shows MarvinView User's Guide.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="licenses">Licenses</a></td>
+        <td>Starts ChemAxon License Manager where you can manage the licenses of all ChemAxon products.</td>
+    </tr>
+    <tr>
+        <td><a class="text" name="about">About MarvinView</a></td>
+        <td>Shows MarvinView product information and technical details.</td>
+    </tr>
+</table>
+
+</body>
+</html>

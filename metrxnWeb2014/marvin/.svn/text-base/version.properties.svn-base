@@ -1,0 +1,3 @@
+marvin.version=5.4.1.1
+marvin.main.version=5.4
+revision=${revision}

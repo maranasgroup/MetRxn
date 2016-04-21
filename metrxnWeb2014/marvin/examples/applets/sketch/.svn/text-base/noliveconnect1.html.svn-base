@@ -1,0 +1,155 @@
+<html>
+<head>
+<meta name="author" content="Tamas Vertse">
+<title>MarvinSketch Example - Retrieving a structure</title>
+    <script type="text/javascript" src="../../sh_main.js"></script>
+    <script type="text/javascript" src="../../sh_javascript.js"></script>
+    <script type="text/javascript" src="../../sh_html.js"></script>
+    <link REL ="stylesheet" TYPE="text/css" HREF="../../sh_nedit.css" TITLE="Style">
+<link REL="stylesheet" TYPE="text/css" HREF="../../../marvinmanuals.css" TITLE="Style">
+</head>
+<body onload="sh_highlightDocument();">
+<h1>MarvinSketch Example - Retrieving a structure</h1>
+<p>
+In Macintosh systems, there are several browsers that do not support standard JavaScript to Java communication
+(LiveConnect).
+This example shows a workaround for this problem.
+</p><p>
+Press the <code>'Submit&nbsp;as&nbsp;Molfile'</code> or the <code>'Submit&nbsp;as&nbsp;SMILES'</code> button to retrieve the
+molecule from MarvinSketch in the specified format and post it to another page to display the structure in MarvinView.</p>
+<center>
+<script type="text/javascript" src="../../../marvin.js"></script>
+<script type="text/javascript" src="../../../js2java.js"></script>
+
+<form name="molform" method="post" action="../display-result.jsp">
+	<input type="button" value="Submit as Molfile"
+	    onClick="getMol('mol')">
+	<input type="button" value="Submit as SMILES"
+		onClick="getMol('smiles')">
+	<input type="hidden" name="molecule">
+</form>
+
+
+<script type="text/javascript">
+<!--
+var isJs2Java = isLiveConnect(); // Is JavaScript - Java communication available?
+setPath("../../.."); // Sets the relative path of the Marvin directory.
+
+/* Sets form variable and submits the form.*/
+function submitMethod() {
+	document.molform.molecule.value = getResult();
+	document.molform.submit();
+}
+
+/* Retrieves the molecule (in the specified format) from the sketcher and
+calls 'submitMethod()'.
+The 'runMethod' method should be the last statement in this function.*/
+function getMol(format) {
+	if((document.MSketch != null) && isJs2Java) {
+		var s = document.MSketch.getMol(format);
+		s = unix2local(s); // Convert "\n" to local line separator
+		document.molform.molecule.value = s;
+		document.molform.submit();
+	} else if(!isJs2Java) {
+		setMethod("MSketch.getMol","java.lang.String");
+		addMethodParam(format);
+		setPostJsMethod("parent.submitMethod()");
+		runMethod();
+	} else {
+		alert("Cannot import molecule:\n" +
+		"no JavaScript to Java communication in your browser.\n");
+	}
+}
+
+msketch_name="MSketch";
+msketch_begin("../../../",540,480);
+msketch_param("mol","../../../mols-2d/caffeine.mol");
+msketch_end();
+//--></script>
+</center>
+
+<p>If LiveConnect is available the <code>document.MSketch.getMol(format)</code> statement can be used
+to get the structure from the <code>MSketch</code> applet.
+Otherwise a workaround is needed.
+See the <code>else if(!isjs2java)</code> branch in the code of the <code>getMol</code> method.</p>
+<p>In this case, instead of <code>document.MSketch.getMol</code> the following code should be used:
+<pre class="sh_javascript">
+	setMethod("MSketch.getMol","java.lang.String");
+	addMethodParam(format);
+	setPostJsMethod("parent.submitMethod()");
+	runMethod();
+</pre>
+<blockquote>where
+<ul>
+	<li>The <code>setMethod(methodname,paramtypes)</code> call specifies the name and the types of the
+	parameters of the applet method that you want to call.
+	<li>The <code>addMethodParam(paramvalue)</code> call sets the value of the <code>n</code>-th parameter of the method.
+	(Follow the order of the parameters in the method specification.)
+	<li>The <code>setPostJsMethod(paramvalue)</code> call defines which JavaScript function has to be called after the result
+	of the applet method is retrieved.
+	<li><code>runMethod()</code>submits the request and sends it to the applet.
+	Since the <code>runMethod()</code> does not wait for the result of the request, <code>runMethod()</code> has to be the last
+	statement in the <code>getMol</code> function.
+</ul>
+</blockquote>
+<p>The <code>submitMethod()</code> operation sets the result molecule in the <code>molecule</code> field of the form and submits
+the form.<br>
+Since this method will be called after the applet has sent back the result, you can already
+refer to the result of the applet method with <code>getResult()</code>.
+When the form is submited, the molecule is posted to the <code>display-result.jsp</code> page.</p>
+<pre class="sh_html">
+    &lt;script type="text/javascript" src="../../../marvin.js">&lt;/script>
+    &lt;script type="text/javascript" src="../../../js2java.js">&lt;/script>
+    &lt;form name="molform" method="post" action="../display-result.jsp">
+            &lt;input type="button" value="Submit as Molfile"
+                onClick="getMol('mol')">
+            &lt;input type="button" value="Submit as SMILES"
+                    onClick="getMol('smiles')">
+            &lt;input type="hidden" name="molecule">
+    &lt;/form>
+
+&lt;script type="text/javascript">
+</pre>
+<pre class="sh_javascript">
+&lt;!--
+var isJs2Java = isLiveConnect(); // Is JavaScript - Java communication available?
+setPath("../../.."); // Sets the relative path of the Marvin directory.
+
+/* Sets form variable and submits the form.*/
+function submitMethod() {
+	document.molform.molecule.value = getResult();
+	document.molform.submit();
+}
+
+/* Retrieves the molecule (in the specified format) from the sketcher and
+calls 'submitMethod()'.
+The 'runMethod' method should be the last statement in this function.*/
+function getMol(format) {
+	if((document.MSketch != null) && isJs2Java) {
+		var s = document.MSketch.getMol(format);
+		s = unix2local(s); // Convert "\n" to local line separator
+		document.molform.molecule.value = s;
+		document.molform.submit();
+	} else if(!isJs2Java) {
+		setMethod("MSketch.getMol","java.lang.String");
+		addMethodParam(format);
+		setPostJsMethod("parent.submitMethod()");
+		runMethod();
+	} else {
+		alert("Cannot import molecule:\n" +
+		"no JavaScript to Java communication in your browser.\n");
+	}
+}
+
+msketch_name="MSketch";
+msketch_begin("../../../",540,480);
+msketch_param("mol","../../../mols-2d/caffeine.mol");
+msketch_end();
+//-->&lt;/script>    
+</pre>
+<p>The limitation of this workaround is that the result string can be 2K characters the maximum.
+Because of the limited transfer size, the data is sent in compressed (gzip) format with Base 64 encoding.<br>
+Marvin supports molecule import as well as export in
+<a href="../../../help/formats/base64-doc.html">base64</a>:<a href="../../../help/formats/gzip-doc.html">gzip</a> format.</p>
+</body>
+</html>
