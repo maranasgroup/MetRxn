@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/repos/MetRxn/!svn/ver/2/marvin/plugins
+END
+extensions.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/MetRxn/!svn/ver/2/marvin/plugins/extensions.jar
+END
+plugins.properties.sample.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/MetRxn/!svn/ver/2/marvin/plugins/plugins.properties.sample.txt
+END
+calc.properties.sample.txt
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/MetRxn/!svn/ver/2/marvin/plugins/calc.properties.sample.txt
+END

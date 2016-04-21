@@ -1,0 +1,3183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns:n2="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" version="1" level="2" xmlns="http://www.sbml.org/sbml/level2">
+	<model id="MODELID_19214212" name="Mycoplasma_genitalium">
+		<listOfCompartments>
+			<compartment id="e" name="[e]"/>
+			<compartment id="c" name="[c]"/>
+		</listOfCompartments>
+		<listOfSpecies>
+			<species id="m_acgam_e_m" name="N-Acetyl-D-glucosamine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_pep_c_m" name="Phosphoenolpyruvate" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_acgam6p_c_m" name="N-Acetyl-D-glucosamine 6-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_pyr_c_m" name="Pyruvate" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_ac_c_m" name="Acetate" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_atp_c_m" name="ATP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_actp_c_m" name="Acetyl phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_adp_c_m" name="ADP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_acoa_e_m" name="Acyl-CoA" compartment="e" charge="-4" boundaryCondition="false"/>
+			<species id="m_amp_c_m" name="AMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_pppi_c_m" name="Inorganic triphosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ppi_c_m" name="Diphosphate" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_ade_c_m" name="Adenine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_prpp_c_m" name="5-Phospho-alpha-D-ribose 1-diphosphate" compartment="c" charge="-5" boundaryCondition="false"/>
+			<species id="m_1ag3p_c_m" name="1-Acyl-sn-glycerol 3-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_acoa_c_m" name="Acyl-CoA" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_12dag3p_c_m" name="1,2-Diacyl-sn-glycerol 3-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_coa_c_m" name="Coenzyme A" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_akg_c_m" name="2-Oxoglutarate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_co2_c_m" name="CO2" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_succoa_c_m" name="Succinyl-CoA" compartment="c" charge="-5" boundaryCondition="false"/>
+			<species id="m_akg_e_m" name="2-Oxoglutarate" compartment="e" charge="-2" boundaryCondition="false"/>
+			<species id="m_h_e_m" name="H+" compartment="e" charge="1" boundaryCondition="false"/>
+			<species id="m_ala_L_c_m" name="L-Alanine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnaala_c_m" name="tRNA(Ala)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_alatrna_c_m" name="L-Alanyl-tRNA(Ala)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_acald_c_m" name="Acetaldehyde" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_h2o_c_m" name="H2O" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_h_c_m" name="H+" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_nadp_c_m" name="Nicotinamide adenine dinucleotide phosphate" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_nadph_c_m" name="Nicotinamide adenine dinucleotide phosphate - reduced" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_arbt_e_m" name="Arbutin" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_arbt6p_c_m" name="Arbutin 6-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_arg_L_e_m" name="L-Arginine" compartment="e" charge="1" boundaryCondition="false"/>
+			<species id="m_arg_L_c_m" name="L-Arginine" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_trnaarg_c_m" name="tRNA(Arg)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_argtrna_c_m" name="L-Arginyl-tRNA(Arg)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_asn_L_e_m" name="L-Asparagine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_asn_L_c_m" name="L-Asparagine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnaasn_c_m" name="tRNA(Asn)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_asntrna_c_m" name="L-Asparaginyl-tRNA(Asn)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_asp_L_c_m" name="L-Aspartate" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_trnaasp_c_m" name="tRNA(Asp)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_asptrna_c_m" name="L-Aspartyl-tRNA(Asp)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_itp_c_m" name="ITP" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_nh4_c_m" name="Ammonium" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_pi_c_m" name="Phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_ca2_e_m" name="Calcium" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_cdpdag_c_m" name="CDPdiacylglycerol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_glyc3p_c_m" name="Glycerol 3-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_cmp_c_m" name="CMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_pglyp_c_m" name="Phosphatidylglycerophosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_cellb_e_m" name="cellobiose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_6pgg_c_m" name="6-Phospho-beta-D-glucosyl-(1,4)-D-glucose" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_chol_c_m" name="Choline" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_cholp_c_m" name="Choline phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_cobalt2_e_m" name="Co2+" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_coa_e_m" name="Coenzyme A" compartment="e" charge="-4" boundaryCondition="false"/>
+			<species id="m_csn_e_m" name="Cytosine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_cu2_e_m" name="Cu2+" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_cys_L_c_m" name="L-Cysteine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnacys_c_m" name="tRNA(Cys)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_cystrna_c_m" name="L-Cysteinyl-tRNA(Cys)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_cytd_c_m" name="Cytidine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_uri_c_m" name="Uridine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gtp_c_m" name="GTP" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_gdp_c_m" name="GDP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_idp_c_m" name="IDP" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_cdp_c_m" name="CDP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_dcmp_c_m" name="dCMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_dcdp_c_m" name="dCDP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_damp_c_m" name="dAMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_dadp_c_m" name="dADP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_datp_c_m" name="dATP" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_ditp_c_m" name="dITP" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_datp_e_m" name="dATP" compartment="e" charge="-4" boundaryCondition="false"/>
+			<species id="m_dcyt_c_m" name="Deoxycytidine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_duri_c_m" name="Deoxyuridine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_dgmp_c_m" name="dGMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_dgdp_c_m" name="dGDP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_dgtp_e_m" name="dGTP" compartment="e" charge="-4" boundaryCondition="false"/>
+			<species id="m_dhf_c_m" name="7,8-Dihydrofolate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_fol_c_m" name="Folate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_thf_c_m" name="5,6,7,8-Tetrahydrofolate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_cgly_e_m" name="Cys-Gly" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_2dr5p_c_m" name="2-Deoxy-D-ribose 5-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_g3p_c_m" name="Glyceraldehyde 3-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_dtmp_c_m" name="dTMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_dtdp_c_m" name="dTDP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_2dr1p_c_m" name="2-Deoxy-D-ribose 1-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ura_c_m" name="Uracil" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_dxyl5p_c_m" name="1-deoxy-D-xylulose 5-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_2pg_c_m" name="D-Glycerate 2-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_f1p_c_m" name="D-Fructose 1-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_fdp_c_m" name="D-Fructose 1,6-bisphosphate" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_dhap_c_m" name="Dihydroxyacetone phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_glyald_c_m" name="D-Glyceraldehyde" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_fe2_e_m" name="Fe2+" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_fe3_e_m" name="Fe3+" compartment="e" charge="3" boundaryCondition="false"/>
+			<species id="m_10fthf_c_m" name="10-Formyltetrahydrofolate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_mettrna_c_m" name="L-Methionyl-tRNA (Met)" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_fmettrna_c_m" name="N-Formylmethionyl-tRNA" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_fmn_c_m" name="FMN" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_fad_c_m" name="Flavin adenine dinucleotide oxidized" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_fru_e_m" name="D-Fructose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_accoa_c_m" name="Acetyl-CoA" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_gam1p_c_m" name="D-Glucosamine 1-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_acgam1p_c_m" name="N-Acetyl-D-glucosamine 1-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_mqn7_c_m" name="Menaquinone 7" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_mql7_c_m" name="Menaquinol 7" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_g6p_c_m" name="D-Glucose 6-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_g6p_B_c_m" name="beta-D-glucose 6-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gal_e_m" name="D-Galactose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_g1p_c_m" name="D-Glucose 1-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_utp_c_m" name="UTP" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_udpg_c_m" name="UDPglucose" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_gam_e_m" name="D-Glucosamine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_gam6p_c_m" name="D-Glucosamine 6-phosphate" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_13dpg_c_m" name="3-Phospho-D-glyceroyl phosphate" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_ser_L_c_m" name="L-Serine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gly_c_m" name="Glycine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_mlthf_c_m" name="5,10-Methylenetetrahydrofolate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_gmp_c_m" name="GMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_glc_D_e_m" name="D-Glucose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_gln_L_c_m" name="L-Glutamine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_amet_c_m" name="S-Adenosyl-L-methionine" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_ahcys_c_m" name="S-Adenosyl-L-homocysteine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_C03153_c_m" name="N5-Methyl-L-glutamine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_glu_L_c_m" name="L-Glutamate" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_trnaglu_c_m" name="tRNA (Glu)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_glutrna_c_m" name="L-Glutamyl-tRNA(Glu)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_glntrna_c_m" name="L-Glutaminyl-tRNA(Gln)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_glyc3p_e_m" name="Glycerol 3-phosphate" compartment="e" charge="-2" boundaryCondition="false"/>
+			<species id="m_glyc_c_m" name="Glycerol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnagly_c_m" name="tRNA(Gly)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_glytrna_c_m" name="Glycyl-tRNA(Gly)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_xtp_c_m" name="XTP" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gtp_e_m" name="GTP" compartment="e" charge="-4" boundaryCondition="false"/>
+			<species id="m_gua_c_m" name="Guanine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_xan_c_m" name="Xanthine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_his_L_e_m" name="L-Histidine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_his_L_c_m" name="L-Histidine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnahis_c_m" name="tRNA(His)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_histrna_c_m" name="L-Histidyl-tRNA(His)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_hxan_c_m" name="Hypoxanthine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_imp_c_m" name="IMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_ile_L_e_m" name="L-Isoleucine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_ile_L_c_m" name="L-Isoleucine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnaile_c_m" name="tRNA(Ile)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_iletrna_c_m" name="L-Isoleucyl-tRNA(Ile)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_inost_c_m" name="myo-Inositol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_2ins_c_m" name="2-Inosose" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_msa_c_m" name="Malonate semialdehyde" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ins_c_m" name="Inosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_k_e_m" name="Potassium" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_lac_L_c_m" name="L-Lactate" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_leu_L_c_m" name="L-Leucine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnaleu_c_m" name="tRNA(Leu)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_leutrna_c_m" name="L-Leucyl-tRNA(Leu)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_lys_L_c_m" name="L-Lysine" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_trnalys_c_m" name="tRNA(Lys)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_lystrna_c_m" name="L-Lysine-tRNA (Lys)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_malt_e_m" name="Maltose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_malt6p_c_m" name="Maltose 6&apos;-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_man_e_m" name="D-Mannose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_man6p_c_m" name="D-Mannose 6-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_met_L_c_m" name="L-Methionine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_metox_c_m" name="L-Methionine S-oxide" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trdrd_c_m" name="Reduced thioredoxin" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trdox_c_m" name="Oxidized thioredoxin" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_h2o2_c_m" name="Hydrogen peroxide" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnamet_c_m" name="tRNA(Met)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_mg2_e_m" name="Magnesium" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_mqn7_e_m" name="Menaquinone 7" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_mn2_e_m" name="Mn2+" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_mnl_e_m" name="D-Mannitol" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_mnl1p_c_m" name="D-Mannitol 1-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_mobd_e_m" name="Molybdate" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_methf_c_m" name="5,10-Methenyltetrahydrofolate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_nac_e_m" name="Nicotinate" compartment="e" charge="-1" boundaryCondition="false"/>
+			<species id="m_dnad_c_m" name="Deamino-NAD+" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_nac_c_m" name="Nicotinate" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_nicrnt_c_m" name="Nicotinate D-ribonucleotide" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_udp_c_m" name="UDP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_ctp_c_m" name="CTP" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_dttp_c_m" name="dTTP" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_dgtp_c_m" name="dGTP" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_dudp_c_m" name="dUDP" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_dutp_c_m" name="dUTP" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_dctp_c_m" name="dCTP" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_ni2_e_m" name="Nickel" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_nmn_c_m" name="NMN" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_2ohph_c_m" name="2-Octaprenyl-6-hydroxyphenol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_2omph_c_m" name="2-Octaprenyl-6-methoxyphenol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_12dgr_c_m" name="1,2-Diacylglycerol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_btcoa_c_m" name="Butanoyl-CoA" compartment="c" charge="-4" boundaryCondition="false"/>
+			<species id="m_butpi_c_m" name="Butanoyl phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_f6p_c_m" name="D-Fructose 6-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_3pg_c_m" name="3-Phospho-D-glycerate" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_phe_L_c_m" name="L-Phenylalanine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnaphe_c_m" name="tRNA(Phe)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_phetrna_c_m" name="L-Phenylalanyl-tRNA(Phe)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_pi_e_m" name="Phosphate" compartment="e" charge="-2" boundaryCondition="false"/>
+			<species id="m_man1p_c_m" name="D-Mannose 1-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_pro_L_e_m" name="L-Proline" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_pro_L_c_m" name="L-Proline" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnapro_c_m" name="tRNA(Pro)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_protrna_c_m" name="L-Prolyl-tRNA(Pro)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_r5p_c_m" name="alpha-D-Ribose 5-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_psd5p_c_m" name="Pseudouridine 5&apos;-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_ppcoa_c_m" name="Propanoyl-CoA" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ppap_c_m" name="Propanoyl phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_ptrc_e_m" name="Putrescine" compartment="e" charge="2" boundaryCondition="false"/>
+			<species id="m_orn_L_c_m" name="L-Ornithine" compartment="c" charge="1" boundaryCondition="false"/>
+			<species id="m_adn_c_m" name="Adenosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_r1p_c_m" name="alpha-D-Ribose 1-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_dad_2_c_m" name="Deoxyadenosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gsn_c_m" name="Guanosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_dgsn_c_m" name="Deoxyguanosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_din_c_m" name="Deoxyinosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_xtsn_c_m" name="Xanthosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_pydx_c_m" name="Pyridoxal" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_pydx5p_c_m" name="Pyridoxal 5&apos;-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_pydx_e_m" name="Pyridoxal" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_csn_c_m" name="Cytosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ribflv_c_m" name="Riboflavin" compartment="c" charge="-1" boundaryCondition="false"/>
+			<species id="m_rib_D_c_m" name="D-Ribose" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_rib_D_e_m" name="D-Ribose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_ribflv_e_m" name="Riboflavin" compartment="e" charge="-1" boundaryCondition="false"/>
+			<species id="m_ru5p_D_c_m" name="D-Ribulose 5-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_xu5p_D_c_m" name="D-Xylulose 5-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_salcn_e_m" name="Salicin" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_salc6p_c_m" name="Salicin 6-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ser_L_e_m" name="L-Serine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_trnaser_c_m" name="tRNA(Ser)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_sertrna_c_m" name="L-Seryl-tRNA(Ser)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_so4_e_m" name="Sulfate" compartment="e" charge="-2" boundaryCondition="false"/>
+			<species id="m_spmd_e_m" name="Spermidine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_sucr_e_m" name="Sucrose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_suc6p_c_m" name="Sucrose 6-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_thm_e_m" name="Thiamin" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_thymd_e_m" name="Thymidine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_thr_L_c_m" name="L-Threonine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnathr_c_m" name="tRNA(Thr)" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_thrtrna_c_m" name="L-Threonyl-tRNA(Thr)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_s7p_c_m" name="Sedoheptulose 7-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_e4p_c_m" name="D-Erythrose 4-phosphate" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_thymd_c_m" name="Thymidine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_thm_c_m" name="Thiamin" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_thmpp_c_m" name="Thiamine diphosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_thym_c_m" name="Thymine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_dump_c_m" name="dUMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_tre_e_m" name="Trehalose" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_tre6p_c_m" name="alpha,alpha&apos;-Trehalose 6-phosphate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_cgly_c_m" name="Cys-Gly" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trp_L_e_m" name="L-Tryptophan" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_trnatrp_c_m" name="tRNA(Trp)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trp_L_c_m" name="L-Tryptophan" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trptrna_c_m" name="L-Tryptophanyl-tRNA(Trp)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_tyr_L_c_m" name="L-Tyrosine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_trnatyr_c_m" name="tRNA(Tyr)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_tyrtrna_c_m" name="L-Tyrosyl-tRNA(Tyr)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_uacgam_c_m" name="UDP-N-acetyl-D-glucosamine" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_uacgala_c_m" name="UDP-N-acetyl-D-galactosamine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_udpgal_c_m" name="UDPgalactose" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_udpgalfur_c_m" name="UDP-D-galacto-1,4-furanose" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_udpglcur_c_m" name="UDP-D-glucuronate" compartment="c" charge="-3" boundaryCondition="false"/>
+			<species id="m_m12dg_c_m" name="monoglucosyl-1,2 diacylglycerol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_d12dg_c_m" name="diglucosyl-1,2 diacylglycerol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_t12dg_c_m" name="triglucosyl-1,2 diacylglycerol" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ump_c_m" name="UMP" compartment="c" charge="-2" boundaryCondition="false"/>
+			<species id="m_ura_e_m" name="Uracil" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_val_L_e_m" name="L-Valine" compartment="e" charge="0" boundaryCondition="false"/>
+			<species id="m_trnaval_c_m" name="tRNA(Val)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_val_L_c_m" name="L-Valine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_valtrna_c_m" name="L-Valyl-tRNA(Val)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_zn2_c_m" name="Zinc" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_4mpetz_c_m" name="4-Methyl-5-(2-phosphoethyl)-thiazole" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ala_L_asp_L_c_m" name="L-alanyl-L-aspartate" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ala_L_gln_L_c_m" name="ala-L-gln-L" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ala_L_glu_L_c_m" name="ala-L-glu-L" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ala_L_his_L_c_m" name="Alanylhistidine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ala_L_leu_L_c_m" name="N-L-Alanyl-L-leucine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ala_L_thr_L_c_m" name="N-L-alanyl-L-threonine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gly_asn_L_c_m" name="glycyl-L-asparagine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gly_gln_L_c_m" name="L-Glycylglutamine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gly_met_L_c_m" name="N-Glycyl-L-methionine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_gly_pro_L_c_m" name="L-Proline, 1-glycyl-" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_L_alagly_c_m" name="L-alanylglycine" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_met_L_ala_L_c_m" name="met-L-ala-L" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_metox_R_c_m" name="L-methionine R-oxide" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_tcam_c_m" name="minor teichoic acid (acetylgalactosamine glucose phosphate, n=30)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_teich_45_c_m" name="teichuronic acid (GlcA + GalNac, 45 repeating unit)" compartment="c" charge="0" boundaryCondition="false"/>
+			<species id="m_ac_e_b_m" name="Acetate" compartment="e" charge="-1" boundaryCondition="true"/>
+			<species id="m_h_e_b_m" name="H+" compartment="e" charge="1" boundaryCondition="true"/>
+			<species id="m_ade_e_b_m" name="Adenine" compartment="e" charge="0" boundaryCondition="true"/>
+			<species id="m_cl_e_b_m" name="Chloride" compartment="e" charge="-1" boundaryCondition="true"/>
+			<species id="m_co2_e_b_m" name="CO2" compartment="e" charge="0" boundaryCondition="true"/>
+			<species id="m_fol_e_b_m" name="Folate" compartment="e" charge="0" boundaryCondition="true"/>
+			<species id="m_glu_L_e_b_m" name="L-Glutamate" compartment="e" charge="-1" boundaryCondition="true"/>
+			<species id="m_h2o_e_b_m" name="H2O" compartment="e" charge="0" boundaryCondition="true"/>
+			<species id="m_leu_L_e_b_m" name="L-Leucine" compartment="e" charge="0" boundaryCondition="true"/>
+			<species id="m_lac_L_e_b_m" name="L-Lactate" compartment="e" charge="-1" boundaryCondition="true"/>
+			<species id="m_met_L_e_b_m" name="L-Methionine" compartment="e" charge="0" boundaryCondition="true"/>
+			<species id="m_nh4_e_b_m" name="Ammonium" compartment="e" charge="1" boundaryCondition="true"/>
+			<species id="m_phe_L_e_b_m" name="L-Phenylalanine" compartment="e" charge="0" boundaryCondition="true"/>
+			<species id="m_ptrc_e_b_m" name="Putrescine" compartment="e" charge="2" boundaryCondition="true"/>
+		</listOfSpecies>
+		<listOfReactions>
+			<reaction id="r_ACGApts_r" name="N-Acetyl-D-glucosamine transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_acgam_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_acgam6p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ACKr_r" name="acetate kinase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_ac_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_actp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ACOAt_r" name="Acyl Coenzyme A transport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_acoa_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_acoa_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ACt6_r" name="acetate transport in" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_ac_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ac_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ADEt2_r" name="adenine transport via proton symport (reversible)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_ade_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ade_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ADK1_r" name="adenylate kinase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1.25"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="2.25"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ADK2_r" name="adenylate kinase (Inorganic triphosphate)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pppi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ADPT_r" name="adenine phosphoribosyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_ade_c_m" stoichiometry="1"/>
+					<speciesReference species="m_prpp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AGPAT_r" name="1-acylglycerol-3-phosphate O-acyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_1ag3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_acoa_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_12dag3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AKGD_r" name="2-oxoglutarate dehydrogenase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_akg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_co2_c_m" stoichiometry="1"/>
+					<speciesReference species="m_succoa_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AKGt2_r" name="2-oxoglutarate transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_akg_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_akg_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ALATRS_r" name="Alanyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaala_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_alatrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ALDD2x_r" name="aldehyde dehydrogenase (acetaldehyde, NAD)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_acald_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="2"/>
+					<speciesReference species="m_ac_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ALDD2y_r" name="aldehyde dehydrogenase (acetaldehyde, NADP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_acald_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="2"/>
+					<speciesReference species="m_ac_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_nadph_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ARBTpts_r" name="arbutin transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_arbt_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_arbt6p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ARGt2_r" name="L-arginine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_arg_L_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_arg_L_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ARGTRS_r" name="Arginyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_arg_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaarg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_argtrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ASNt2_r" name="L-asparagine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_asn_L_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_asn_L_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ASNTRS_r" name="Asparaginyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_asn_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaasn_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_asntrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ASPTRS_r" name="Aspartyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_asp_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="2.55882352941176"/>
+					<speciesReference species="m_trnaasp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_asptrna_c_m" stoichiometry="2.47058823529412"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="4.33823529411765"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ATPHs_r" name="ATP amine hydrolysis (spontaneous)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_itp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ATPM_r" name="ATP maintenance requirement" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ATPS4r_r" name="ATP synthase (four protons for one ATP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CA2abc_r" name="calcium efflux  via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ca2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ca2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CDGPT_r" name="CDPdiacylglycerol:sn-glycerol-3-phosphate 3-phosphatidyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_cdpdag_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glyc3p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cmp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pglyp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CELBpts_r" name="cellobiose transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_cellb_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_6pgg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CHOLK_r" name="Choline kinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_chol_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cholp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_Clt_r" name="chlorideion transport out via diffusion" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_cl_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_cl_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CO2t_r" name="CO2 transporter via diffusion" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_co2_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_co2_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_Coabc_r" name="Cobalt transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cobalt2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cobalt2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_COAt_r" name="Coenzyme A  transport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_coa_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_coa_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CSNt2_r" name="cytosine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_csn_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_csn_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_Cuabc_r" name="Copper transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cu2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cu2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CYSTRS_r" name="Cysteinyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cys_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnacys_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cystrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CYTD_r" name="cytidine deaminase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_cytd_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+					<speciesReference species="m_uri_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CYTDK1_r" name="cytidine kinase (ATP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cytd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cmp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CYTDK2_r" name="cytidine kinase (GTP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_cytd_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gtp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cmp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CYTDK3_r" name="cytidine kinase (ITP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_cytd_c_m" stoichiometry="1"/>
+					<speciesReference species="m_itp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cmp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_idp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CYTK1_r" name="cytidylate kinase (CMP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cmp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cdp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_CYTK2_r" name="cytidylate kinase (dCMP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dcmp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dcdp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DADK_r" name="deoxyadenylate kinase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="2"/>
+					<speciesReference species="m_damp_c_m" stoichiometry="2"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dadp_c_m" stoichiometry="3"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DATPHs_r" name="dATP amine hydrolysis (spontaneous)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_datp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ditp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DATPt_r" name="Dinucleoside transport (dATP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_datp_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_datp_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DCYTD_r" name="deoxycytidine deaminase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_dcyt_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_duri_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DGK1_r" name="deoxyguanylate kinase (dGMP:ATP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dgmp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dgdp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DGTPt_r" name="Dinucleoside transport (dGTP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_dgtp_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_dgtp_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DHFOR2_r" name="dihydrofolate reductase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_dhf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_fol_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadph_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DHFOR3_r" name="dihydrofolate reductase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_fol_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="2"/>
+					<speciesReference species="m_nadph_c_m" stoichiometry="2"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nadp_c_m" stoichiometry="2"/>
+					<speciesReference species="m_thf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DHFR_r" name="dihydrofolate reductase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_dhf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadph_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nadp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc15_r" name="Dipeptide transport via ABC system (cgly)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cgly_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cgly_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DRPAr_r" name="Deoxyribose-phosphate aldolase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_2dr5p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_acald_c_m" stoichiometry="1"/>
+					<speciesReference species="m_g3p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DTMPK_r" name="dTMP kinase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dtmp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dtdp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DURIPP_r" name="purine-nucleoside phosphatase (deoxyuridine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_duri_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_2dr1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ura_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DXPS_r" name="1-deoxy-D-xylulose 5-phosphate synthase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_g3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_co2_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dxyl5p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ENO_r" name="enolase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_2pg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_F1PK_r" name="fructose-1-phosphate kinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_f1p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FBA_r" name="fructose-bisphosphate aldolase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_fdp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_dhap_c_m" stoichiometry="1"/>
+					<speciesReference species="m_g3p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FBA2_r" name="D-Fructose 1-phosphate D-glyceraldehyde-3-phosphate-lyase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_f1p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_dhap_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glyald_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FE2abc_r" name="iron (II) transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fe2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fe2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FE3abc_r" name="iron (III) transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fe3_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fe3_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FMETTRS_r" name="Methionyl-tRNA formyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_10fthf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mettrna_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_fmettrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thf_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FMNATr_r" name="FMN adenylyltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fmn_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_fad_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FOLt_r" name="folate transport via proton simport" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_fol_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_fol_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_FRUpts_r" name="D-fructose transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_fru_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_f1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_G1PACT_r" name="glucosamine-1-phosphate N-acetyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_accoa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gam1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_acgam1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_G3PD4_r" name="glycerol-3-phosphate dehydrogenase (menaquinone 7)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_glyc3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mqn7_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_dhap_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mql7_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_G3POA_r" name="glycerol-3-phosphate O-acyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_glyc3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_acoa_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_1ag3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_G6PI_r" name="Glucose-6-phosphate isomerase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_g6p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_g6p_B_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GALabc_r" name="D-galactose transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gal_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gal_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GALU_r" name="UTP-glucose-1-phosphate uridylyltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_g1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_utp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udpg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GAMpts_r" name="D-glucosamine transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_gam_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gam6p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GAPD_r" name="glyceraldehyde-3-phosphate dehydrogenase (NAD)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_g3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_13dpg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GHMT_r" name="glycine hydroxymethyltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_ser_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thf_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_mlthf_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GK1_r" name="guanylate kinase (GMP:ATP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="2"/>
+					<speciesReference species="m_gmp_c_m" stoichiometry="2"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="3"/>
+					<speciesReference species="m_gdp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GK2_r" name="guanylate kinase (GMP:dATP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_datp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gmp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_dadp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gdp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLCpts_r" name="D-glucose transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_glc_D_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_g6p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLNMT_r" name="glutamine-N5 methyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_gln_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_amet_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ahcys_c_m" stoichiometry="1"/>
+					<speciesReference species="m_C03153_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLUDy_r" name="glutamate dehydrogenase (NADP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_glu_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_akg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_nadph_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLUt6_r" name="L-glutamate transport in" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_glu_L_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_glu_L_e_b_m" stoichiometry="1"/>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLUTRS_r" name="Glutamyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1.6"/>
+					<speciesReference species="m_glu_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaglu_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="2.8"/>
+					<speciesReference species="m_glutrna_c_m" stoichiometry="0"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLXAT_r" name="glutamyl-tRNA(Gln) amidotransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1.66666666666667"/>
+					<speciesReference species="m_gln_L_c_m" stoichiometry="2.33333333333333"/>
+					<speciesReference species="m_glutrna_c_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_glu_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glntrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLYC3Pabc_r" name="sn-Glycerol 3-phosphate transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glyc3p_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glyc3p_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLYCt_r" name="glycerol transport" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_glyc_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_glyc_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLYK_r" name="glycerol kinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glyc_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glyc3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GLYTRS_r" name="Glycyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnagly_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glytrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GTPHs_r" name="GTP amine hydrolysis (spontaneous)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_gtp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+					<speciesReference species="m_xtp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GTPt_r" name="Nucleoside transport (GTP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_gtp_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gtp_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GUAD_r" name="guanine deaminase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_gua_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+					<speciesReference species="m_xan_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_GUAPRTr_r" name="guanine phosphoribosyltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_gua_c_m" stoichiometry="1"/>
+					<speciesReference species="m_prpp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gmp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_H2Ot5_r" name="H2O transport via diffusion" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_e_b_m" stoichiometry="0"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_e_b_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_HISt2_r" name="L-histidine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_his_L_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_his_L_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_HISTRS_r" name="Histidyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1.42857142857143"/>
+					<speciesReference species="m_his_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnahis_c_m" stoichiometry="1.71428571428571"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_histrna_c_m" stoichiometry="1.71428571428571"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1.64285714285714"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_HXPRTr_r" name="hypoxanthine phosphoribosyltransferase (Hypoxanthine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_hxan_c_m" stoichiometry="1"/>
+					<speciesReference species="m_prpp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_imp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ILEt2_r" name="L-isoleucine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ile_L_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ile_L_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ILETRS_r" name="Isoleucyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ile_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaile_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_iletrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_INS2D_r" name="inositol 2-dehydrogenase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_inost_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_2ins_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_INSCR_r" name="inositol catabolic reactions (lumped)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_2ins_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="2"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dhap_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_msa_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_INSK_r" name="inosine kinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ins_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_imp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_Kt2i_r" name="potassium irreversible transport via proton symporter" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_k_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_k_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_L_LACt2_r" name="L-lactate reversible transport via proton symport" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_lac_L_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_lac_L_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_LDH_L_r" name="L-lactate dehydrogenase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_lac_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_LEUt6_r" name="L-leucine transport in" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_leu_L_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_leu_L_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_LEUTRS_r" name="Leucyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_leu_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaleu_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_leutrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_LYSt3_r" name="L-lysine transport out via proton antiport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_lys_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_lys_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_LYSTRS_r" name="Lysyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_lys_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnalys_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_lystrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MALTpts_r" name="maltose transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_malt_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_malt6p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MANpts_r" name="D-mannose transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_man_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_man6p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_METAT_r" name="methionine adenosyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_met_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amet_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_METSR_S1_r" name="L-methionine-S-oxide reductase (trdrd)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_metox_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_met_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_METSR_S2_r" name="L-methionine S-oxide reductase (H2O2)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h2o2_c_m" stoichiometry="1"/>
+					<speciesReference species="m_met_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_metox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_METt6_r" name="L-methionine transport in" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_met_L_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_met_L_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_METTRS_r" name="Methionyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="2"/>
+					<speciesReference species="m_met_L_c_m" stoichiometry="2"/>
+					<speciesReference species="m_trnamet_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mettrna_c_m" stoichiometry="2"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="3.5"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MG2abc_r" name="Magnesium transport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mg2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mg2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MLN7t_r" name="Menaquinone transport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_mqn7_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_mqn7_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MMSAD3_r" name="methylmalonate-semialdehyde dehydrogenase (malonic semialdehyde)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_msa_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_accoa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_co2_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MNabc_r" name="manganese transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_mn2_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_mn2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MNLpts_r" name="mannitol transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_mnl_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_mnl1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MOBDabc_r" name="molybdate transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_mobd_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_mobd_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MTHFC_r" name="methenyltetrahydrofolate cyclohydrolase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_methf_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_10fthf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_MTHFD_r" name="methylenetetrahydrofolate dehydrogenase (NADP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_mlthf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_methf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadph_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NACUP_r" name="Nicotinic acid uptake" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_nac_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nac_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NADH5_r" name="NADH dehydrogenase (Menaquinone 7 &amp; 2 protons)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mqn7_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_mql7_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NADK_r" name="NAD kinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_nadp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NADS1_r" name="NAD synthase (nh4)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1.30434782608696"/>
+					<speciesReference species="m_dnad_c_m" stoichiometry="1.50724637681159"/>
+					<speciesReference species="m_nh4_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="0.355072463768116"/>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1.31159420289855"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NAMNPP_r" name="nicotinic acid mononucleotide pyrophosphorylase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_nac_c_m" stoichiometry="1"/>
+					<speciesReference species="m_prpp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nicrnt_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK1_r" name="nucleoside-diphosphate kinase (ATP:GDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gdp_c_m" stoichiometry="1.5"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1.5"/>
+					<speciesReference species="m_gtp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK2_r" name="nucleoside-diphosphate kinase (ATP:UDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_utp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK3_r" name="nucleoside-diphosphate kinase (ATP:CDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cdp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ctp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK4_r" name="nucleoside-diphosphate kinase (ATP:dTDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dtdp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dttp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK5_r" name="nucleoside-diphosphate kinase (ATP:dGDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dgdp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dgtp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK6_r" name="nucleoside-diphosphate kinase (ATP:dUDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dudp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dutp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK7_r" name="nucleoside-diphosphate kinase (ATP:dCDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dcdp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dctp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK8_r" name="nucleoside-diphosphate kinase (ATP:dADP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="2"/>
+					<speciesReference species="m_dadp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_datp_c_m" stoichiometry="2"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NDPK9_r" name="nucleoside-diphophate kinase (ATP:IDP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_idp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_itp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NH4t_r" name="ammonia transport via diffusion" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_nh4_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nh4_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NIabc_r" name="nickel transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_ni2_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_ni2_e_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NMNATr_r" name="nicotinamide-nucleotide adenylyltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_nmn_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_NNATr_r" name="nicotinate-nucleotide adenylyltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_nicrnt_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_dnad_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_OHPHM_r" name="2-octaprenyl-6-hydroxyphenol methylase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_2ohph_c_m" stoichiometry="1"/>
+					<speciesReference species="m_amet_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_2omph_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ahcys_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PAP_r" name="phosphatidic acid phosphatase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_12dag3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_12dgr_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PBUTT_r" name="phosphate butyryltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_btcoa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_butpi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PDH_r" name="pyruvate dehydrogenase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_accoa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_co2_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PFK_r" name="phosphofructokinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_f6p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PGAMT_r" name="phosphoglucosamine mutase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_gam1p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gam6p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PGI_r" name="glucose-6-phosphate isomerase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_g6p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_f6p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PGK_r" name="phosphoglycerate kinase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_13dpg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_3pg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PGM_r" name="phosphoglycerate mutase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_3pg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_2pg_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PGMT_r" name="phosphoglucomutase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_g1p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_g6p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PHCYT_r" name="phosphatidate cytidylyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_12dag3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ctp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_cdpdag_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PHEt6_r" name="L-phenylalanine transport in" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_phe_L_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_phe_L_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PHETRS_r" name="Phenylalanyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_phe_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaphe_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_phetrna_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PIabc_r" name="phosphate transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.2"/>
+					<speciesReference species="m_pi_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="0.6"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_e_m" stoichiometry="1.8"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PMANM_r" name="phosphomannomutase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_man1p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_man6p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PPA_r" name="inorganic diphosphatase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="2"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PROt2_r" name="L-proline transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_pro_L_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_pro_L_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PROTRS_r" name="Prolyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pro_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnapro_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_protrna_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PRPPS_r" name="phosphoribosylpyrophosphate synthetase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_r5p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_prpp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PSUDS_r" name="pseudouridylate synthase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_r5p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ura_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_psd5p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PTA2r_r" name="Phosphate acetyltransferase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppcoa_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppap_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PTAr_r" name="phosphotransacetylase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_accoa_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_actp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_coa_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PTRCabc_r" name="putrescine transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1.04166666666667"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.958333333333334"/>
+					<speciesReference species="m_ptrc_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="0.875"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1.125"/>
+					<speciesReference species="m_ptrc_e_m" stoichiometry="1.10416666666667"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PTRCORNt7_r" name="putrescine" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_orn_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ptrc_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_orn_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ptrc_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PTRCt2_r" name="putrescine transport in via proton symport, reversible" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_ptrc_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_b_m" stoichiometry="0"/>
+					<speciesReference species="m_ptrc_e_b_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PUNP1_r" name="purine-nucleoside phosphorylase (Adenosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_adn_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ade_c_m" stoichiometry="1"/>
+					<speciesReference species="m_r1p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PUNP2_r" name="purine-nucleoside phosphorylase (Deoxyadenosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_dad_2_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_2dr1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ade_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PUNP3_r" name="purine-nucleoside phosphorylase (Guanosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_gsn_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gua_c_m" stoichiometry="1"/>
+					<speciesReference species="m_r1p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PUNP4_r" name="purine-nucleoside phosphorylase (Deoxyguanosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_dgsn_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_2dr1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gua_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PUNP5_r" name="purine-nucleoside phosphorylase (Inosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_ins_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_hxan_c_m" stoichiometry="1"/>
+					<speciesReference species="m_r1p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PUNP6_r" name="purine-nucleoside phosphorylase (Deoxyinosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_din_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_2dr1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_hxan_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PUNP7_r" name="purine-nucleoside phosphorylase (Xanthosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_xtsn_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_r1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_xan_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PYDXK_r" name="pyridoxal kinase (Pyridoxal)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pydx_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pydx5p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PYDXt_r" name="Pyridoxal transport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_pydx_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_pydx_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PYK_r" name="pyruvate kinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PYNP1r_r" name="pyrimidine-nucleoside phosphorylase (cytosine)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_csn_c_m" stoichiometry="1"/>
+					<speciesReference species="m_r1p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_cytd_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PYNP2_r" name="pyrimidine-nucleoside phosphorylase (uracil)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_uri_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_r1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ura_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RBFK_r" name="riboflavin kinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ribflv_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_fmn_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RBK_r" name="ribokinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_rib_D_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_r5p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RIBabc_r" name="D-ribose transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_rib_D_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_rib_D_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RIBFLVt2_r" name="riboflavin transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ribflv_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ribflv_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RNDR1_r" name="ribonucleoside-diphosphate reductase (ADP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dadp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RNDR2_r" name="ribonucleoside-diphosphate reductase (GDP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_gdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dgdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RNDR3_r" name="ribonucleoside-diphosphate reductase (CDP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_cdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dcdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RNDR4_r" name="ribonucleoside-diphosphate reductase (UDP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dudp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RPE_r" name="ribulose 5-phosphate 3-epimerase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_ru5p_D_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_xu5p_D_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_RPI_r" name="ribose-5-phosphate isomerase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_r5p_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ru5p_D_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_SALCpts_r" name="salicin transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+					<speciesReference species="m_salcn_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+					<speciesReference species="m_salc6p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_SERt2_r" name="L-serine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ser_L_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ser_L_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_SERTRS_r" name="Seryl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ser_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaser_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_sertrna_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_SO4t2_r" name="sulfate transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_so4_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_so4_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_SPMDabc_r" name="spermidine transport via ABC system" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0.5"/>
+					<speciesReference species="m_spmd_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_spmd_e_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_SUCpts_r" name="sucrose transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+					<speciesReference species="m_sucr_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+					<speciesReference species="m_suc6p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_THDPO_r" name="thiol peroxidase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h2o2_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="2"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_THM2t2_r" name="Thiamine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_thm_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_thm_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_THMDt2_r" name="thymidine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_thymd_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_thymd_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_THRTRS_r" name="Threonyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thr_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnathr_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thrtrna_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TKT1_r" name="transketolase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_r5p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_xu5p_D_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_g3p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_s7p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TKT2_r" name="transketolase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_e4p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_xu5p_D_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_f6p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_g3p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TMDK1_r" name="thymidine kinase (ATP:thymidine)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thymd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dtmp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TMDPK_r" name="thiamine diphosphokinase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thm_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_thmpp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TMDPP_r" name="thymidine phosphorylase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thymd_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_2dr1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thym_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TMDS_r" name="thymidylate synthase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_dump_c_m" stoichiometry="1"/>
+					<speciesReference species="m_mlthf_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_dhf_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dtmp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TPI_r" name="triose-phosphate isomerase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_dhap_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_g3p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TRDR_r" name="thioredoxin reductase (NADPH)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_nadph_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_nadp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TREpts_r" name="trehalose transport via PEP:Pyr PTS" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_pep_c_m" stoichiometry="1"/>
+					<speciesReference species="m_tre_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_pyr_c_m" stoichiometry="1"/>
+					<speciesReference species="m_tre6p_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TRIA_r" name="membrane alanyl aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_cgly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_cys_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TRPt2_r" name="L-tryptophan transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_trp_L_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_trp_L_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TRPTRS_r" name="Tryptophanyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnatrp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trp_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trptrna_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TYRt2_r" name="tyrosine peroxisomal transport via proton symport" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_tyr_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_tyr_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TYRTRS_r" name="Tyrosyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnatyr_c_m" stoichiometry="1"/>
+					<speciesReference species="m_tyr_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_tyrtrna_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UAG4E_r" name="UDP-N-acetylglucosamine 4-epimerase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_uacgam_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_uacgala_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UAGDP_r" name="UDP-N-acetylglucosamine diphosphorylase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_acgam1p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_utp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_uacgam_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UDPG4E_r" name="UDPglucose 4-epimerase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_udpg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_udpgal_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UDPGALM_r" name="UDPgalactopyranose mutase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_udpgal_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_udpgalfur_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UDPGD_r" name="UDPglucose 6-dehydrogenase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udpg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="3"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_udpglcur_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="0"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UGT1_r" name="UDP-glucosyltransferase (monoglucosyl)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_12dgr_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udpg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_m12dg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UGT2_r" name="UDP-glucosyltransferase (diglucosyl)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_m12dg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udpg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_d12dg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UGT3_r" name="UDP-glucosyltransferase (triglucosyl)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_d12dg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udpg_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="2"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_t12dg_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_UPPRT_r" name="uracil phosphoribosyltransferase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_prpp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ura_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ump_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_URAt2_r" name="uracil transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ura_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_ura_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_URIDK1_r" name="uridylate kinase (UMP)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ump_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_URIDK3_r" name="uridylate kinase (dUMP)" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dump_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dudp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_URIK1_r" name="uridine kinase (ATP:Uridine)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_uri_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_ump_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_URIK2_r" name="uridine kinase (GTP:Uridine)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_gtp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_uri_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gdp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_ump_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_URIK3_r" name="uridine kinase (ITP:Uridine)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_itp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_uri_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="0"/>
+					<speciesReference species="m_idp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ump_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_VALt2_r" name="L-valine transport in via proton symport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_val_L_e_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_val_L_e_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_VALTRS_r" name="Valyl-tRNA synthetase" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trnaval_c_m" stoichiometry="1"/>
+					<speciesReference species="m_val_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+					<speciesReference species="m_valtrna_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_ZN2t4_r" name="zinc transport out via antiport" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_k_e_m" stoichiometry="1"/>
+					<speciesReference species="m_zn2_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_e_m" stoichiometry="0"/>
+					<speciesReference species="m_k_e_m" stoichiometry="1"/>
+					<speciesReference species="m_zn2_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP1_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_asp_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_asp_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP10_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glu_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP11_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_met_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_met_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP12_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_met_L_ala_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_met_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP13_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_asp_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP14_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_pro_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pro_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP2_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_gln_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gln_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP3_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_glu_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_glu_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP4_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_L_alagly_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP5_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_his_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_his_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP6_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_leu_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_leu_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP7_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_thr_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_thr_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP8_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_asn_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_asn_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_AMPEP9_r" name="aminopeptidase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gly_gln_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_gly_c_m" stoichiometry="1"/>
+					<speciesReference species="m_gln_L_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc1_r" name="Dipeptide transport via ABC system (ala-asp)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc10_r" name="Dipeptide transport via ABC system (gly-glu)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc11_r" name="Dipeptide transport via ABC system (gly-met)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc12_r" name="Dipeptide transport via ABC system (met-ala)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc13_r" name="Dipeptide transport via ABC system (gly-asp)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc14_r" name="Dipeptide transport via ABC system (gly-pro-L)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc2_r" name="Dipeptide transport via ABC system (ala-gln)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc3_r" name="Dipeptide transport via ABC system (ala-glu)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc4_r" name="Dipeptide transport via ABC system (ala-gly)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc5_r" name="Dipeptide transport via ABC system (ala-his)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc6_r" name="Dipeptide transport via ABC system (ala-leu)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc8_r" name="Dipeptide transport via ABC system (gly-asn)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DIPEPabc9_r" name="Dipeptide transport via ABC system (gly-gln)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_pi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DM_C03153_r" name="N5-Methyl-L-glutamine drain" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_C03153_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_C03153_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_DM_pglyp_r" name="Phosphatidylglycerophosphate drain" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_pglyp_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_pglyp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_METSR_R1_r" name="L-methionine R-oxide reductase (trdrd)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_trdrd_c_m" stoichiometry="1"/>
+					<speciesReference species="m_metox_R_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_met_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_trdox_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_METSR_R2_r" name="L-methionine R-oxide (H2O2)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h2o2_c_m" stoichiometry="1"/>
+					<speciesReference species="m_met_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PPAK_r" name="Propionate kinase" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_adp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppap_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PPAt6_r" name="propionate transport in" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_PPAt6_r" name="out via proton symport" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_h_e_b_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TECA4S_r" name="minor teichoic acid synthesis (n=30)" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_h2o_c_m" stoichiometry="30"/>
+					<speciesReference species="m_uacgala_c_m" stoichiometry="30"/>
+					<speciesReference species="m_udpg_c_m" stoichiometry="30"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="60"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="30"/>
+					<speciesReference species="m_ump_c_m" stoichiometry="30"/>
+					<speciesReference species="m_tcam_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_TEICH45_r" name="teichuronic acid (n=45), unlinked, GalNAc-GlcA repeated" reversible="true">
+				<listOfReactants>
+					<speciesReference species="m_uacgala_c_m" stoichiometry="45"/>
+					<speciesReference species="m_udpglcur_c_m" stoichiometry="45"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_h_c_m" stoichiometry="45"/>
+					<speciesReference species="m_udp_c_m" stoichiometry="45"/>
+					<speciesReference species="m_ump_c_m" stoichiometry="45"/>
+					<speciesReference species="m_teich_45_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+			<reaction id="r_THZPSN_r" name="thiazole phosphate synthesis" reversible="false">
+				<listOfReactants>
+					<speciesReference species="m_atp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_cys_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_dxyl5p_c_m" stoichiometry="1"/>
+					<speciesReference species="m_tyr_L_c_m" stoichiometry="1"/>
+				</listOfReactants>
+				<listOfProducts>
+					<speciesReference species="m_4mpetz_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ala_L_c_m" stoichiometry="1"/>
+					<speciesReference species="m_amp_c_m" stoichiometry="1"/>
+					<speciesReference species="m_co2_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h_c_m" stoichiometry="1"/>
+					<speciesReference species="m_h2o_c_m" stoichiometry="1"/>
+					<speciesReference species="m_ppi_c_m" stoichiometry="1"/>
+				</listOfProducts>
+			</reaction>
+		</listOfReactions>
+	</model>
+</sbml>

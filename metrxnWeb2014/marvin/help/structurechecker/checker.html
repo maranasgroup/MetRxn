@@ -1,0 +1,965 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+    Author     : Annamaria Jakab
+-->
+<html>
+    <HEAD>
+        <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+        <TITLE>Structure Checker in MarvinSketch</TITLE>
+        <link rel=stylesheet type="text/css" href="../marvinmanuals.css">
+    </HEAD>
+    <body>
+        <h1>Structure Checker</h1>
+     
+        <p>Structure checker is a tool for filtering drawing mistakes or special structural elements.
+            Registering a compound in a company's database might limit the user in for example
+            the introduction of non-natural isotopes, query bonds, species with charge etc.
+            Structure checker runs a check on the molecule(s) features and lists
+            them in a separate window, with the option to refresh when you make changes
+            to your drawing. The Structure checker works with predefined checking elements and
+            you can choose which ones should be considered when you run a check.
+        <p> Structure checker's command line interface and API for batch usage requires
+            a Standardizer Pro licence. This guide refers to the checker available free in
+            MarvinSketch as an add-on.
+
+            <p><a href="#abbr">abbreviated group</a> <a href="#alias">alias</a>
+        <a href="#arom">aromaticity error</a> <a href="#atommap">atom map</a>
+        <a href="#atomvalue">atom value</a> <a href="#attached">attached data</a>
+        <a href="#bondangle"> bond angle</a> <a href="#bondlength"> bond length</a>
+        <a href="#chiralflag">chiral flag error</a> <a href="#coord">coordination system error</a>
+	<a href="#cov_counter">covalent counterion</a>
+        <a href="#crosseddouble">crossed double bond</a> 
+	<a href="#empty">empty structure</a>
+        <a href="#explh">explicit hydrogen</a> <a href="#expllp">explicit lone pairs</a> 
+	<a href="#isotope">isotope</a> <a href="#metallocene">metallocene</a>
+        <a href="#missingatommap">missing atom map</a> <a href="#molcharge">molecule charge</a>
+        <a href="#multicenter">multicenter</a> <a href="#multicomponent">multicomponent</a> 
+	<a href="#ocr">OCR error</a> <a href="#overlappingatoms">overlapping atoms</a>
+        <a href="#overlappingbonds">overlapping bonds</a> <a href="#pseudo">pseudo</a>
+        <a href="#queryatom">query atom</a> <a href="#querybond">query bond</a>
+        <a href="#radical">radical</a> <a href="#rareelement">rare element</a> 
+	<a href="#reactionmap">reaction map error</a> <a href="#ringstrain">ring strain error</a>
+	<a href="#solvent">solvent</a> <a href="#staratom">star atom</a>
+        <a href="#3d">3 dimension</a> <a href="#valence">valence error</a>
+        <a href="#wedge">wedge error</a> <a href="#wigglydouble">wiggly double bond</a>
+
+        <h2>Setting Structure Checker configuration</h2>
+        <p>Before you start using the Stucture Checker, consult the list of
+            available checkers in the Preferences dialog (Edit -&gt; Preferences -&gt; Checkers tab).
+              <p><img src="pref_checkers.png" width="477" height="318" alt="pref_checkers"/>
+        <p>The default list contains checkers in alphabetical order.
+            Click on the name of the checker to see additional options and select the
+            needed options by clicking the tick box.
+        <p>Two types of checkers are listed: error detecting and feature detecting checkers.
+            Error checkers are looking for chemically wrong molecule parts (e.g. valence errors,
+            overlapping atoms), while the
+            feature checkers searches the selected molecule characteristics which
+            in the specific structures are not considered as an error (e.g. query properties). The
+            two types are distincted by the addtional 'error' tag and different icons.
+        <h3>Checking order</h3>
+        Some molecule properties might change after fixing an isssue.
+        You can define a checking sequence by moving up or down the list elements.
+        The order of the checkers may be important in case you run a Fix all action.
+        <br>To change the order of the checker items, select the checker from the
+        list and click the up <img src="up.png" width="24" height="24" alt="up"/>
+        or down <img src="down.png" width="24" height="24" alt="down"/>
+        icon on the right side of the dialog.
+        <h3>Add and remove checker items</h3>
+        To discard items from the checking sequence, select the checker and click the
+        <img src="remove.png" width="24" height="24" alt="remove"/>
+        button on the right. To revert this modification or add new elements to the list, click
+        the <img src="add.png" width="24" height="24" alt="add"/>
+        button on the right and select the checker needed.
+     
+        <h3>Save and load checker lists</h3>
+        Different checking lists might be needed for different compound families. To
+        make checking simpler, you can save your checking list to your
+        computer and open it again if you are editing the same molecule type. Click the
+        Save button <img src="save.png" width="24" height="24" alt="save"/>
+        to save your settings and click the Load button <img src="open.png" width="24" height="24" alt="open"/>
+        to open a saved list.
+
+
+        <h2>Usage</h2>
+        <h3>Start Structure Checker</h3>
+        You can open Structure Checker at any stage of your work. As you
+        click the Check structure icon <img src="defaultcheck.png" width="24" height="24" alt="defaultcheck"/>
+        in the toolbar or in the Structure menu or left-click the Checker button in the statusbar,
+        a window will
+        appear next to the sketching window. The molecule regions are highlighted
+        on the canvas with a light red color. If you click on any checker
+        message, the effected area changes color to darker red. If you move the cursor
+        over one of the affected atoms or bonds, the appropriate checker message is highlighted
+        in the checker list.
+
+        <h3>Recheck the structure</h3>
+        After you have changed the structure (including accepting a fix),
+        the checker will offer re-checking. Click on the recheck icon
+        in the Checker window. <img src="checkerwindow.png" width="255" height="317" alt="check"/>
+        <p>At any point you can allow the Structure checker to fix the issues one
+        by one or every of them by a single click. Another option is to turn on automatic rechecking: click the Enable
+        automatic checking in the bottom of the text.
+
+        <h3>Automatic structure checking</h3>
+        Turn on Automatic checking to follow every drawing step you make by a quick check.
+        This option is switched on in the Structure menu or right-clicking the Checker 
+        button on the status bar which then becomes colored. In case of an
+        error a red exclamation mark appears.
+        Left-clicking on this icon opens the Structure Checker window, where all the
+        warnings are listed.
+        <p>While the molecules are scanned for checker issues, a yellow question mark appears on the status bar.
+        <p>If the molecule is correct, a green check mark appears in the Checker icon on the status bar.
+
+
+        <h2>List of available checkers and fixers</h2>
+            <p><a href="#abbr">abbreviated group</a> <a href="#alias">alias</a>
+        <a href="#arom">aromaticity error</a> <a href="#atommap">atom map</a>
+        <a href="#atomvalue">atom value</a> <a href="#attached">attached data</a>
+        <a href="#bondangle"> bond angle</a> <a href="#bondlength"> bond length</a>
+        <a href="#chiralflag">chiral flag error</a> <a href="#coord">coordination system error</a>
+	<a href="#cov_counter">covalent counter ion</a>
+        <a href="#crosseddouble">crossed double bond</a> 
+	<a href="#empty">empty structure</a>
+        <a href="#explh">explicit hydrogen</a> <a href="#expllp">explicit lone pairs</a> 
+	<a href="#isotope">isotope</a> <a href="#metallocene">metallocene</a>
+        <a href="#missingatommap">missing atom map</a> <a href="#molcharge">molecule charge</a>
+        <a href="#multicenter">multicenter</a> <a href="#multicomponent">multicomponent</a> 
+	<a href="#ocr">OCR error</a> <a href="#overlappingatoms">overlapping atoms</a>
+        <a href="#overlappingbonds">overlapping bonds</a> <a href="#pseudo">pseudo</a>
+        <a href="#queryatom">query atom</a> <a href="#querybond">query bond</a>
+        <a href="#radical">radical</a> <a href="#rareelement">rare element</a> 
+	<a href="#reactionmap">reaction map error</a> <a href="#ringstrain">ring strain error</a>
+	<a href="#solvent">solvent</a> <a href="#staratom">star atom</a>
+        <a href="#3d">3 dimension</a> <a href="#valence">valence error</a>
+        <a href="#wedge">wedge error</a> <a href="#wigglydouble">wiggly double bond</a>
+
+
+        <dl>
+            <dt><a name="abbr" type="anchor"><b>Abbreviated Group</b></a></dt>
+            <dd>
+                <ul>
+                    <li>Checker searches for abbreviated groups in the structure, contracted, expanded or both.
+                    <li>Fixer offers ungrouping abbreviated groups; expanding abbreviated groups; contracting abbreviated groups.
+                </ul>
+                <br><b>Example</b>: ungroup a contracted and an expanded phenyl group.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_abbrev_ch.png" width="353" height="217" alt="ex_abbrev_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_abbrev_f.png" width="341" height="245" alt="ex_abbrev_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: If attachment point is not connected to any atom, ungrouping
+                removes attachment points of the abbreviated group and adds an implicit hydrogen.
+            </dd><br>
+
+            <dt><a name="alias" type="anchor"><b>Alias</b></a></dt>
+            <dd>
+                <ul>
+                    <li>Checker searches for aliases in the structure.
+                    <li>Fixer offers converting the alias to atom if the alias value corresponds to an element (e.g. Ar);<br>
+                        converting the alias to abbreviated group if the alias values corresponds to a group in the abbeviated group list; <br>
+                        removing alias (revealing the atom under the alias);<br>
+                        or deleting the alias atom.
+                </ul>
+                <br><b>Example</b>: convert a methoxy group defined as an alias to an abbreviated group.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_alias_ch.png" width="159" height="153" alt="ex_alias_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_alias_f.png" width="149" height="145" alt="ex_alias_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Note: The abbreviated group is linked correctly to the chain after the fix, i.e. bond through the oxygen atom.
+                <br>
+                <br><b>Example</b>: remove the NH<sub>2</sub> alias from the carbon atom.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_alias2_ch.png" width="94" height="112" alt="ex_alias2_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_alias2_f.png" width="85" height="94" alt="ex_alias2_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Note: alias only covers the atom, and fixer removes this alias from the original atom.
+                
+            </dd><br>
+
+            <dt><a name="arom" type="anchor"><b>Aromaticity Error</b></a></dt>
+            <dd>
+                <ul>
+                    <li>Checker searches for aromatic systems that can't be 
+                        dearomatized or rearomatizing with the given method does not reproduce the initial molecule.
+                        <br>Options: choice between basic, general or loose aromatization methods.
+                    <li>Fixer offers rearomatizing or dearomatizing the aromatic system.
+                </ul>
+                <br><b>Example</b>: the 2-pyridone aromatized in general mode is corrected after a checking of aromatization in basic mode.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_arom_ch.png" width="150" height="181" alt="ex_arom_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_arom_f.png" width="135" height="180" alt="ex_arom_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: In this case, both rearomatization and dearomatization fix yields the same structure.<br>
+                <a href="../sci/aromatization-doc.html">Details on aromaticity detection.</a>
+            </dd>
+            <br>
+
+
+            </dd>
+            <dt><a name="atommap" type="anchor"><b>Atom Map</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for atom maps.
+                    <li>Fixer offers removing atom maps.
+                </ul>
+                <br><b>Example</b>: remove atom map from a partially mapped ethyl methylether molecule.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_atommap_ch.png" width="173" height="90" alt="ex_atommap_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_atommap_f.png" width="150" height="82" alt="ex_atommap_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </dd><br>
+
+            <dt><a name="atomvalue" type="anchor"><b>Atom Value</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for atom values.
+                    <li>Fixer offers removing atom values or deleting the atom with value.
+                </ul>
+                <br><b>Example</b>: delete the atom with value 'isotope'.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_atomvalue_ch.png" width="273" height="101" alt="ex_atomvalue_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_atomvalue_f.png" width="196" height="86" alt="ex_atomvalue_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </dd><br>
+
+            <dt><a name="attached" type="anchor"><b>Attached Data</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for attached data.
+                    <li>Fixer offers removing attached data or deleting the atom with attached data.
+                </ul>
+                <br><b>Example</b>: removing attached data (reactant=12) from the oxygen atom.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_attached_ch.png" width="355" height="129" alt="ex_attached_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_attached_f.png" width="212" height="103" alt="ex_attached_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </dd><br>
+
+            <dt><a name="bondangle" type="anchor"><b>Bond Angle</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for bonds NOT matching the following rules:
+                        <table border="0">
+                            <tbody>
+                                <tr>
+                                    <td><ul><li>Triple bond angle 180&deg; (&plusmn; 0.5 rad)</ul></td>
+                                    <td><img src="check_angle1.png" width="152" height="76" alt="check_angle1"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><ul><li>Double bond angle 120&deg; or 180&deg; (&plusmn; 0.5 rad)</ul></td>
+                                    <td><img src="check_angle2.png" width="386" height="108" alt="check_angle2"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><ul><li>sp<sup>2</sup> atom's bond angles 120&deg;</ul></td>
+                                    <td><img src="check_angle3.png" width="118" height="114" alt="check_angle3"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="300"><ul><li>sp<sup>3</sup> atom's bond angles 90&deg;<br> <b>or</b> 3 bond angles 120&deg;,
+                                        4th bond of an angle of n times 15&deg;;<br> <b>or</b> a bond angle of 120&deg; and two adjacent angles equal</ul></td>
+                                    <td><img src="check_angle4.png" width="217" height="291" alt="check_angle4"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    <li>Fixer offers cleaning the structures by 2D cleaner.
+                </ul>
+                <br><b>Example</b>: cleaning the molecule.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_bondangle_ch.png" width="186" height="167" alt="ex_bondangle_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_bondangle_f.png" width="152" height="187" alt="ex_bondangle_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: The current version of bond angle checker examines chain bonds of 2D molecules.
+                Envelope-shaped cyclic compounds are considered as error. <!--partial clean is not available-->
+            </dd><br>
+
+            <dt><a name="bondlength" type="anchor"><b>Bond Length</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for bond lengths different than the default setting.
+                    <li>Fixer offers cleaning the structures by 2D clean.
+                </ul>
+                <br><b>Example</b>: cleaning the molecule to adjust bond length.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_bondlength_ch.png" width="138" height="136" alt="ex_bondlength_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_bondlength_f.png" width="124" height="146" alt="ex_bondlength_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: The current version of bond length checker examines chain bonds of 2D molecules.<!--partial clean is not available-->
+            </dd><br>
+
+           <dt><a name="chiralflag" type="anchor"><b>Chiral Flag error</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for set chiral flags in case of non-chiral molecules and
+                        for absent chiral flags in case of chiral molecules.
+                    <li>Fixer offers removing or setting the chiral flag.
+                </ul>
+                <br><b>Example</b>: adding chiral flag to a chiral compound not flagged.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_chiralflag_ch.png" width="130" height="138" alt="ex_chiralflag_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_chiralflag_f.png" width="134" height="140" alt="ex_chiralflag_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+             <!-- Notes:.--></dd><br>
+
+            <dt><a name="coord" type="anchor"><b>Coordination System error</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for errors in the use of coordinative bonds:
+                        <ul><li>2 multicenters connected with a bond</li>
+                            <li>coordinated atom is connected to an atom of the same multicenter with a coordinative bond</li>
+                            <li>multicenter merged with one of its atoms</li>
+                        </ul>
+                    <li>Fixer offers deleting the wrong bond or the multicenter
+                </ul>
+                <br><b>Example</b>: deleting a coordination bond between two multicenters.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_coord_ch.png" width="111" height="179" alt="ex_coord_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_coord_f.png" width="105" height="187" alt="ex_coord_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="cov_counter" type="anchor"><b>Covalent Counterion</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for covalently bound counter ions.
+                    <li>Fixer offers changing the structure to the ionic form.
+                </ul>
+                <br><b>Example</b>: converting a covalent sodium alkoxide formula to the ionic form.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_covcounter_ch.png" width="198" height="129" alt="ex_covcounter_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_covcounter_f.png" width="191" height="131" alt="ex_covcounter_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="crosseddouble" type="anchor"><b>Crossed double bond</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for crossed double bond types (molecules with unknown or unspecified configuration).
+                    <li>Fixer offers cleaning the structures by 2D cleans.
+                </ul>
+                <br><b>Example</b>: changing a crossed double bond to a wiggly double bond.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_crossed_ch.png" width="129" height="106" alt="ex_crossed_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_crossed_f.png" width="126" height="108" alt="ex_crossed_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: reverse action of wiggly double bond fixing.</dd><br>
+
+             
+            <dt><a name="empty" type="anchor"><b>Empty structure</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for empty structure fields (available in multiple structures files).
+        <!--            <li>Fixer offers changing the isotopic atom to the most abundant natural isotope of that element.-->
+                </ul>
+<!--                <br><b>Example</b>: removing isotope information.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_isotope_ch.png" width="132" height="229" alt="ex_isotope_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_isotope_f.png" width="111" height="215" alt="ex_isotope_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+-->  	  </dd><br>
+
+            <dt><a name="explh" type="anchor"><b>Explicit Hydrogen</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for explicit hydrogens. Tick options for searching:
+                        <ul>
+                            <li>lonely</li>
+                            <li>isotopic</li>
+                            <li>charged</li>
+                            <li>radical</li>
+                            <li>mapped</li>
+                            <li>wegded</li>
+                        </ul> explicit hydrogens.
+                    <li>Fixer offers removing explicit hydrogens and the ticked special atoms.
+                </ul>
+                <br><b>Example</b>: removing explicit hydrogen and isotopic hydrogen atoms.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_explh_ch.png" width="406" height="124" alt="ex_explh_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_explh_f.png" width="392" height="97" alt="ex_explh_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="expllp" type="anchor"><b>Explicit Lone Pairs</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for explicitly drawn lone pairs (inserted as Special node from 
+the Advanced tab of the Periodic Table).
+                    <li>Fixer offers removing the explicit lone pair.
+                </ul>
+                <br><b>Example</b>: removing explicit lone pair.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_expllp_ch.png" width="218" height="162" alt="ex_expllp_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_expllp_f.png" width="210" height="137" alt="ex_expllp_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="isotope" type="anchor"><b>Isotope</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for isotopic atoms.
+                    <li>Fixer offers changing the isotopic atom to the most abundant natural isotope of that element.
+                </ul>
+                <br><b>Example</b>: removing isotope information.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_isotope_ch.png" width="132" height="229" alt="ex_isotope_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_isotope_f.png" width="111" height="215" alt="ex_isotope_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: deuterium and tritium are recognized as symbols D and T, respectively as well.</dd><br>
+
+            <dt><a name="metallocene" type="anchor"><b>Metallocene</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for incorrect metallocene representations. 
+                    <li>Fixer offers converting to a valid structure: aromatizing the rings, inserting coordination
+			bonds, and fixing charge values.
+                </ul>
+              <br><b>Example</b>: fixing ferrocene structures.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_metallocene_ch.png" width="619" height="265" alt="ex_metallocene_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_metallocene_f.png" width="607" height="253" alt="ex_metallocene_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+              </dd><br>
+
+
+            <dt><a name="missingatommap" type="anchor"><b>Missing Atom Map</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for missing atom maps.
+                    <li>Fixer offers mapping all atoms in the sketch.
+                </ul>
+                <br><b>Example</b>: mapping atoms in unmapped molecules.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_missingmap_ch.png" width="132" height="129" alt="ex_missingatommap_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_missingmap_f.png" width="129" height="120" alt="ex_missingatommap_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="molcharge" type="anchor"><b>Molecule Charge</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches molecules in which total charge is not zero.
+                    <li>Fixer offers removing the charge by adding or removing hydrogens.
+                </ul>
+                <br><b>Example</b>: removing charge along with removing a proton.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_charge_ch.png" width="124" height="169" alt="ex_molcharge_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_charge_f.png" width="116" height="168" alt="ex_molcharge_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: charge is not checked in reactions. Charged molecules where no hydrogens can be removed, are to be corrected manually.</dd><br>
+
+            <dt><a name="multicenter" type="anchor"><b>Multicenter</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for multicenter drawing.
+                    <li>Fixer offers removing the multicenter from the molecule.
+                </ul>
+                <br><b>Example</b>: removing multicenter.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_multicenter_ch.png" width="110" height="114" alt="ex_multicenter_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_multicenter_f.png" width="108" height="115" alt="ex_multicenter_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="multicomponent" type="anchor"><b>Multicomponent</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for multiple components in the drawing.
+                    <li>No fixer is available.
+                </ul>
+              
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="ocr" type="anchor"><b>OCR error</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for structures imported incorrectly from optical character recognition procedure.
+                  <li>Fixer: no fixer is available for this checker.</ul>
+ <br><b>Example</b>: detecting OCR errors.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_ocr_ch.png" width="201" height="186" alt="ex_ocr_ch"/></td>
+                        </tr></table>
+                
+   </dd><br>
+            <dt><a name="overlappingatoms" type="anchor"><b>Overlapping Atoms</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for overlapping atoms: atoms closer than the pre-set percentage of the default atom radius.
+                    <li>Fixer offers setting or removing the chiral flag.
+                </ul>
+                <br><b>Example</b>: adding chiral flag to a chiral compound.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_overlappingatoms_ch.png" width="292" height="128" alt="ex_overlappingatoms_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_overlappingatoms_f.png" width="357" height="192" alt="ex_overlappingatoms_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="overlappingbonds" type="anchor"><b>Overlapping Bonds</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for overlapping bonds: bonds crossing each other or bonds closer to each other than the set minimal value.
+                    <li>Fixer offers cleaning the molecule (2D).
+                </ul>
+                <br><b>Example</b>: cleaning the molecule.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_overlappingbonds_ch.png" width="212" height="100" alt="ex_overlappingbonds_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_overlappingbonds_f.png" width="221" height="92" alt="ex_overlappingbonds_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+               Notes: bridged polycycles are cleaned as far as their structure allows it, and the overlapping bonds warning will remain.</dd><br>
+
+            <dt><a name="pseudo" type="anchor"><b>Pseudo Atom</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for pseudo atoms in the molecule.
+                    <li>Fixer offers 
+                        <ul>
+                            <li>converting to abbreviated group if the name is in the abbreviated group list (e.g. Et for ethyl);</li>
+                            <li>converting to a carbon atom;</li>
+                            <li>deleting atom.</li>
+                        </ul>
+                </ul>
+                <br><b>Example</b>: converting a pseudo atom to a carbon atom.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_pseudo_ch.png" width="157" height="78" alt="ex_pseudo_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_pseudo_f.png" width="163" height="95" alt="ex_pseudo_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="queryatom" type="anchor"><b>Query Atom</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for query atoms.
+                    <li>No fixer for this feature.
+                </ul>
+                <br><b>Example</b>: finding query atoms.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_queryatom_ch.png" width="393" height="167" alt="ex_queryatom_ch"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="querybond" type="anchor"><b>Query Bond</b></a></dt>
+            <dd><ul>
+                   <li>Checker searches for query bonds.
+                    <li>No fixer for this feature.
+                </ul>
+                <br><b>Example</b>: finding query bonds.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_querybond_ch.png" width="484" height="160" alt="ex_querybond_ch"/></td>
+                        </tr>
+                     </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="radical" type="anchor"><b>Radical</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for radical information on molecules.
+                    <li>Fixer offers removing the radical information.
+                </ul>
+                <br><b>Example</b>: removing wrong radical from acetate.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_radical_ch.png" width="127" height="111" alt="ex_radical_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_radical_f.png" width="118" height="105" alt="ex_radical_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="rareelement" type="anchor"><b>Rare element</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for rare elements in the structures. Atoms generally present in organic compounds are: H, Li, Na, K, Mg, Ca, B, C, N, O, F, Cl, Br, I, Al, P, S, Cr, Mn, Fe, Co, Ni, Cu, Zn. Any elements outside this selection are considered rare elements.
+ <li>No fixer for this feature.</ul>
+ <br><b>Example</b>: filtering the praseodymium as a substitution for a propyl group.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_rareelement_ch.png" width="157" height="133" alt="ex_rareelement_ch"/></td>
+                        </tr>
+                     
+                    </tbody>
+                </table>
+         </dd><br>
+
+        <dt><a name="reactionmap" type="anchor"><b>Reaction Map error</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for incomplete reaction map.
+                        A reaction with two or less atom maps (both on the reactant and the product side)
+                        is considered an incompletely mapped reaction.
+                    <li>Fixer offers mapping the reaction.
+                </ul>
+                <br><b>Example</b>: mapping a partially mapped reaction.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_reactionmap3_ch.png" width="770" height="124" alt="ex_reactionmap_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_reactionmap_f.png" width="807" height="124" alt="ex_reactionmap_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+                    <dt><a name="ringstrain" type="anchor"><b>Ring strain error</b></a></dt>
+            <dd>
+                <ul>
+                    <li>Checker searches for trans double bonds in bridged rings.
+                    <li>Fixer offers transforming to cis configuration.
+                </ul>
+                <br><b>Example</b>: cleaning the molecule.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_doublebondstereo_ch.png" width="241" height="140" alt="ex_doublebondstereo_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_doublebondstereo_f.png" width="205" height="172" alt="ex_doublebondstereo_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+           <dt><a name="solvent" type="anchor"><b>Solvent</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches in the molecule file for fragments defined as solvent molecules if more than 1 fragment is present. The list is 
+			customizable and is found in a configuration file. 
+                    <li>Fixer offers removing solvent fragments in case only one type of solvent is present.
+                </ul>
+                <br><b>Example</b>: removing water molecules.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_solvent_ch.png" width="399" height="142" alt="ex_solvent_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_solvent_f.png" width="401" height="117" alt="ex_solvent_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+		<p>The default solvents are: water, methanol, ethanol, propan-1-ol propan-2-ol, butan-1-ol, formic 
+		acid, acetic acid, pentane, hexane, benzene, methylbenzene, ethoxyethane, trichloromathane, 
+		ethyl acetate, dichloromethane, propan-2-one, acetonitrile, N-methylacetamide, methanesulfonylmethane, 
+		oxolane, heptane, 2-mezhylpropan-2-ol, butan-2-one, cyclohexane, cycloheptane, 1,2-dichloroethane, 
+		2-(propan-2-yloxy)propane, 1,2-dimethoxyethane, N,N-dimethylacetamide, pyridine, 1,2-dimethylbenzene, 
+		2-methyoxy-2-methylpropane
+
+                </dd><br>
+
+            <dt><a name="staratom" type="anchor"><b>Star Atom</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for star atoms (inserted as Special node from 
+the Advanced tab of the Periodic Table).
+                    <li>Fixer offers removing the star atom.
+                </ul>
+            <br><b>Example</b>: deleting the star atom.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_staratom_ch.png" width="185" height="132" alt="ex_staratom_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_staratom_f.png" width="188" height="102" alt="ex_staratom_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+               </dd><br>
+
+            <dt><a name="3d" type="anchor"><b>Three Dimension</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for 3rd dimension (Z) coordinates.
+                    <li>Fixer offers 2D cleaning.
+                </ul>
+                <br><b>Example</b>: cleaning the cyclohexane in 2D.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_3d_ch.png" width="276" height="187" alt="ex_3d_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_3d_f.png" width="153" height="165" alt="ex_3d_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Notes:.--></dd><br>
+
+            <dt><a name="valence" type="anchor"><b>Valence error</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for valence errors.
+                    <li>Fixer offers removing explicit hydrogens if applicable.
+                </ul>
+                <br><b>Example</b>: setting the charge on a quaternary ammonium ion; removing a hydrogen from the secondary ammonium ion with no charge set.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_valence_ch.png" width="321" height="108" alt="ex_valence_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_valence_f.png" width="283" height="113" alt="ex_valence_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: valence errors with no removable hydrogens have to be corrected manually.</dd><br>
+
+            <dt><a name="wedge" type="anchor"><b>Wedge error</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for erratic wedge bonds. 
+                    <li>Fixer offers removing all wedge bonds and replacing them with a single bond.
+                </ul>
+                <br><b>Example</b>: 
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_wedge_ch.png" width="345" height="174" alt="ex_wedge_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_wedge_f.png" width="333" height="163" alt="ex_wedge_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: some symmetric structures are not recognized by the checker.</dd><br>
+        </dl>
+
+            <dt><a name="wigglydouble" type="anchor"><b>Wiggly Double Bond</b></a></dt>
+            <dd><ul>
+                    <li>Checker searches for wiggly double bond (molecules with unknown or unspecified configuration).
+                    <li>Fixer offers changing to crossed double bond type.
+                </ul>
+                <br><b>Example</b>: changing a wiggly double bond to a crossed double bond.
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>Warning:</td>
+                            <td><img src="ex_wiggly_ch.png" width="217" height="193" alt="ex_wiggly_ch"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fix:</td>
+                            <td><img src="ex_wiggly_f.png" width="226" height="192" alt="ex_wiggly_f"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                Notes: reverse action of crossed double bond fixing.</dd><br>
+        </dl>
+<br>
+            <p><a href="#abbr">abbreviated group</a> <a href="#alias">alias</a>
+        <a href="#arom">aromaticity error</a> <a href="#atommap">atom map</a>
+        <a href="#atomvalue">atom value</a> <a href="#attached">attached data</a>
+        <a href="#bondangle"> bond angle</a> <a href="#bondlength"> bond length</a>
+        <a href="#chiralflag">chiral flag error</a> <a href="#coord">coordination system error</a>
+	<a href="#cov_counter">covalent counter ion</a>
+        <a href="#crosseddouble">crossed double bond</a> 
+	<a href="#empty">empty structure</a>
+        <a href="#explh">explicit hydrogen</a> <a href="#expllp">explicit lone pairs</a> 
+	<a href="#isotope">isotope</a> <a href="#metallocene">metallocene</a>
+        <a href="#missingatommap">missing atom map</a> <a href="#molcharge">molecule charge</a>
+        <a href="#multicenter">multicenter</a> <a href="#multicomponent">multicomponent</a> 
+	<a href="#ocr">OCR error</a> <a href="#overlappingatoms">overlapping atoms</a>
+        <a href="#overlappingbonds">overlapping bonds</a> <a href="#pseudo">pseudo</a>
+        <a href="#queryatom">query atom</a> <a href="#querybond">query bond</a>
+        <a href="#radical">radical</a> <a href="#rareelement">rare element</a> 
+	<a href="#reactionmap">reaction map error</a> <a href="#ringstrain">ring strain error</a>
+	<a href="#solvent">solvent</a> <a href="#staratom">star atom</a>
+        <a href="#3d">3 dimension</a> <a href="#valence">valence error</a>
+        <a href="#wedge">wedge error</a> <a href="#wigglydouble">wiggly double bond</a>
+
+</html>

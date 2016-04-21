@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../marvinmanuals.css" 
+TITLE="Style">
+<TITLE>Structure Checker Developer's Guide</TITLE>
+</HEAD>
+<BODY>
+<center>
+<h1>Structure Checker Developer's Guide</h1>
+<h3>Version 5.4.1.1</h3>
+</center>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#intro">Introduction</a>
+<li><a href="#architecture">Architecture</a>
+<li><a href="#example">Example</a>
+<li><a href="#tutorial">Tutorial</a>
+<li><a href="../structurechecker/checker.html">User's Guide</a>
+</ul>
+
+<center><div class="lenia">&nbsp;</div></center>
+
+<h2><a name="intro"></a>Introduction</h2>
+
+<p>Structure Checker is an API which provides functionality (through <a href="../java/api/chemaxon/checkers/StructureChecker.hmtl">
+StructureChecker implementations </a>) to check properties, features or errors on a 
+<a href="../java/api/chemaxon/struc/Molecule.html">Molecule</a> object and with the help of the
+<a href="../java/api/chemaxon/fixers/StructureFixer.html">Structure Fixer</a> classes it provides
+fixing mechanism for the detected problems.
+
+<center><div class="lenia">&nbsp;</div></center>
+
+<h2><a name="architecture"></a>Architecture</h2>
+
+<p>The most important interface in the Structure Checker API is
+<a href="../java/api/chemaxon/checkers/StructureChecker.html">StructureChecker</a>. Every <a href="../java/api/chemaxon/checkers/StructureChecker.html">StructureChecker</a>
+instance has a method called <a href="../java/api/chemaxon/checkers/StructureChecker.html#check(chemaxon.struc.Molecule)">check(Molecule mol)</a>
+which provides the mechanism to check for problem in the molecule. This method returns a <a href="../java/api/chemaxon/checkers/result/StructureCheckerResult">StructureCheckerResult</a>
+if any problem is found in the molecule or null otherwise. This result contains all the information needed for fixing the problem. All other methods of <a href="../java/api/chemaxon/checkers/StructureChecker.html">StructureChecker</a> provide properties
+for GUI based representation. Every <a href="../java/api/chemaxon/checkers/StructureChecker.html">StructureChecker</a> instance has any error type which signs the kind of the problem it checks.
+This error type has to be unique for every implementation.<br><br>
+For a developer who'd like to extend the list of the existing checker tools the best choice
+is to extend from <a href="../java/api/chemaxon/checkers/ExternalStructureChecker.html">ExternalStructureChecker</a> class. 
+It is a descendant of 
+<a href="../java/api/chemaxon/checkers/AbstractStructureChecker.html">AbstractStructureChecker</a> so it already implements all GUI property based functionalities
+(such as name handling, error message handling, icon handling etc.) and automatically
+sets the error type of the checker to <a href="../java/api/chemaxon/checkers/StructureCheckerErrorType.html#EXTERNAL">EXTERNAL</a> which signs that this checker isn't part
+of the ChemAxon built-in checker list and thus the runner framework will know that this
+checker's result had to be handled separated. And of course with this super class the
+developer have to implement only the checker mechanism for the problem.<br>
+WARNING! Of course any developer can implement a checker which will have the same error 
+type as one of the built-in checkers but at this case there can be ambiguous issues with
+the running framework and unexpected errors could happened. So in this case the proper 
+work of the checker system can not be guaranteed.
+</p>
+<p>
+<a href="../java/api/chemaxon/fixers/StructureFixer.html">StructureFixer</a> implementations provide the functionality to fix a problem signed by a <a href="../java/api/chemaxon/checkers/result/StructureCheckerResult.html">StructureCheckerResult</a>.
+A fixer can modify anything in the molecule as the result has a reference to the <a href="../java/api/chemaxon/struc/Molecule.html">Molecule</a> and also contains a list of atoms and bonds affected by the problem.
+</p>
+<p>
+<a href="../java/api/chemaxon/checkers/CheckerRunner.html">CheckerRunner</a> provides the functionality to run a set of checkers automatically on a molecule to
+collect all the results produced by the checkers and to find the related fixers for the problems or fix the problems automatically. 
+</p>
+<center><div class="lenia">&nbsp;</div></center>
+
+<h2><a name="example"></a>Example</h2>
+
+<p>To initiate a <a href="../java/api/chemaxon/checkers/StructureChecker.html">checker</a> instance 
+and to check a <a href="../java/api/chemaxon/struc/Molecule.html">molecule</a> object for problems
+developer has to do the following:</p>
+
+<pre>
+	//This example assumes that mol is chemaxon.struc.Molecule object 
+	...
+	//BondLengthChecker is one of the ChemAxon built-in checker implementations
+	StructureChecker checker = new BondLengthChecker(); 
+	StructureCheckerResult result = checker.check(mol);
+	...
+</pre>
+
+<p>
+The next code example shows how to apply a <a href="../java/api/chemaxon/fixers/StructureFixer.html">StructureFixer</a>
+to an existing <a href="../java/api/chemaxon/checkers/result/StructureCheckerResult.html">StructureCheckerResult</a>
+</p>
+<pre>
+	//This example assumes that result is a chemaxon.checkers.result.StructureCheckerResult object
+	//Could be a continuation of the previous example
+	...
+	//CleanFixer is one of the ChemAxon built-in fixer implementations
+	StructureFixer fixer = new CleanFixer();
+	fixer.fix(result);
+	...
+</pre>
+
+<p>
+<a href="../java/api/chemaxon/checkers/runner/CheckerRunner.hmlt">CheckerRunner</a> provides automatic checking and fixing features. Usage of this class is the following:
+</p>
+
+<pre>
+	CheckerRunner runner;<br>
+	//... (initialize/initiate the current CheckerRunner instance)
+	List<StructureCheckerResult> results = runner.checkAndWait();
+	for (StructureChecekrResult result : results) {
+		List<StructureFixer> fixers = runner.getFixers(result);
+		//execute one of the fixers
+	}
+</pre>
+
+<p> CheckerRunner supports executing the default fixer of a {@link StructureCheckerResult}</p>
+<pre>
+	CheckerRunner runner;
+	... (initialize/initiate the current CheckerRunner instance)
+	List<StructureCheckerResult> results = runner.checkAndWait();
+	for (StructureCheckerResult result : results) {
+		runner.fix(result);
+	}
+</pre>
+
+<center><div class="lenia">&nbsp;</div></center>
+
+<h2><a name="tutorial"></a>Tutorial</h2>
+<p>This documentation also provides a <a href="tutorial.zip">tutorial</a> which contains three
+different class implementation. "MyFirstStructureFixer.java" describes how easy it is to extend the existing
+Structure Checker framework with custom fixers. "MyFirstStructureChecker.java" shows how to create a new
+StructureChecker implementation. "MyFixerForMyChecker.java" introduces how to develop a new fixer for our
+own checker. All classes have their own JUNIT test file to test with. This tutorial only works with properly installed
+Marvin 5.4 and with MarvinBeans.jar, MarvinBeans-license.jar and MarvinBeans-checkers.jar in the classpath during compile.
+<center><div class="lenia">&nbsp;</div></center>
+
+<center>
+<font size="-2" face="helvetica">
+Copyright &copy; 1999-2011 
+<a href="http://www.chemaxon.com">ChemAxon Ltd.</a>
+&nbsp;&nbsp;&nbsp;All rights reserved.
+</font>
+</center>
+
+</BODY>
+</HTML>

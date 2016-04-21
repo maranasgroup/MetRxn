@@ -1,0 +1,241 @@
+<?php if(!isset($_SESSION))
+{
+session_start();
+
+include("pathToGlobalVariables.php");
+include($pathToGlobalVariables);
+$connPath = relativePath(getcwd(),$conn_php);
+include($connPath);
+
+$synonymLinkPath = str_replace('\\','\\\\',relativePath(getcwd(),$results_php)."?searchString=");
+ 
+connect();
+	set_time_limit (300);
+
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- InstanceBegin template="/Templates/metrxnTemplate.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Register here</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+	<link href="<?php echo relativePath(getcwd(),$metRxnContents_css); ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo relativePath(getcwd(),$anchors_css); ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo relativePath(getcwd(),$headings_css); ?>" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.header {
+	width:100%;
+	top:0;
+	border:none;
+}
+.footer {
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+.content {
+	float:left;
+	width:80%;
+	position:relative;
+}
+.leftbar {
+	float:left;
+	width:20%;
+	position:relative;
+}
+iframe {
+	border:0;
+}
+table {
+	border-collapse:collapse;
+	margin:20px;
+}
+td {
+	padding:2px;
+}
+.imageframe {
+}
+img {
+	margin:20px;
+	float:left;
+}
+#structure {
+	float:left;
+}
+#synonym {
+	bottom:1;
+	float:none;
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+  <iframe src="/MetRxn/top_data/top.htm" width="100%" height="160" scrolling="no"> </iframe>
+</div>
+<div class="leftbar">
+<?php include('../left_data/leftMenu.php'); ?>
+<!--iframe src="/MetRxn/left_data/leftMenu.htm" height="450" scrolling="no">
+    </iframe-->
+</div>
+<?php
+if(isset($_POST['submit']))
+{
+	$submit = $_POST['submit'];
+	$FullName = $_POST['FullName'];
+	$organization = $_POST['organization'];
+	$email = $_POST['email'];
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$repeatpassword = $_POST['repeatpassword'];
+
+
+/*$connect = mysql_connect("localhost","root","login@123") or die("Cannot connect to the server for registration, Please try again later.");*/
+mysql_select_db("metrxnweb");
+//require_once "E:\\xampp\php\PEAR\mail.php";
+
+if($submit == 'register') {
+	//check for FullName and organization
+	if ($FullName||$organization) {
+			
+		if($email)
+		{
+			{
+				//check if the email is valid.
+			}
+			{
+				//check if the email already exists in the database
+				$query = mysql_query("select * from login where email = '".$email."'");
+				$numrows = mysql_num_rows($query);
+				if ($numrows != 0) {
+					die("A user had registered with this Email, please contact the admin to retrieve your password ");
+				}
+			}
+
+			if ($username) {
+
+				{
+					//check if the username already exists in the database
+					$query = mysql_query("select * from login where username = '".$username."'");
+					$numrows = mysql_num_rows($query);
+					if ($numrows != 0) {
+						die("A user had registered with this username, please choose a different username, click here to return <a href=register.php>--> register</a>");
+					}
+				}
+				if ($repeatpassword == $password) {
+
+					//insert the data into the login table
+					$randomvalue =	rand(123,9990909);
+					$query = mysql_query("
+					INSERT INTO `login`(`username`,`password`,`FullName`,`email`,`Registerationdate`,`random`)
+					VALUES('".$username."','".$password."','".$FullName."','".$email."',curdate(),".$randomvalue.")
+										");
+					$id = mysql_insert_id();					
+					if($id !=0)
+					{
+					die("The Admin will contact you shortly regarding your login");	
+					
+					$from = "Admin <azk172@psu.edu>";
+					$to = $email;
+					$subject = "Activate your MetRxn Account";
+
+
+					$host = "ssl://smtp.googlemail.com";
+					$port = "465";
+					$username = "kmr.akhil";
+					$password = "login@123";
+
+
+					
+
+					$message = "Hello $FullName,\n\nPlease follow the link below and activate your account\n http://130.203.234.86/MetRxn/login/activate.php?id=$id&random=$randomvalue' \n Thanks\n MetRxn team\n";
+
+					$headers = array ('From' => $from,
+   						'To' => $to,
+   						'Subject' => $subject);
+
+					$smtp = Mail::factory('smtp',
+					array ('host' => $host,
+     					'port' => $port,
+     					'auth' => true,
+     					'username' => $username,
+     					'password' => $password));
+
+					
+
+					$mail = $smtp->send($to, $headers, $message);
+
+					if (PEAR::isError($mail)) {
+						die("<p>" . $mail->getMessage() . "</p>");
+							
+					} else {
+						
+						die("Thanks for registering, please check your email for the activation link. Click here to login <a href='index.php'> Login</a>");
+					}
+					}
+					die("error");
+
+				}
+				else die("passwords do not match");
+			}
+			else die("username not entered");
+		}
+		else die("Email not entered");
+			
+	}
+	else
+	die("Full name or Organization not entered");
+
+
+}
+}
+?>
+<?php
+echo "<h1>Register here</h1>";
+?>
+<form action="register.php" method="POST">
+  <table>
+    <tr>
+      <td>Enter you Full Name</td>
+      <td><input type="text" name="FullName"
+			value="<?php if(isset($_POST['FullName'])) $_POST['FullName'];?>"></td>
+    </tr>
+    <tr>
+      <td>Enter your Organization/Insitution</td>
+      <td><input type="text" name="organization"
+			value="<?php if(isset($_POST['organization'])) $_POST['organization'];?>"></td>
+    </tr>
+    <tr>
+      <td>Enter you Email</td>
+      <td><input type="text" name="email" value="<?php if(isset($_POST['email'])) $_POST['email'];?>"></td>
+    </tr>
+    <tr>
+      <td>Enter you username</td>
+      <td><input type="text" name="username"
+			value="<?php if(isset($_POST['username']))$_POST['username'];?>"></td>
+    </tr>
+    <tr>
+      <td>Enter you password</td>
+      <td><input type="password" name="password"></td>
+    </tr>
+    <tr>
+      <td>Re-Enter you password</td>
+      <td><input type="password" name="repeatpassword"></td>
+    </tr>
+    <tr>
+      <td>Click to submit</td>
+      <td><input type="submit" name="submit" value="register"></td>
+    </tr>
+  </table>
+</form>
+<?php
+
+?>
+</body>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd -->
+</html>

@@ -1,0 +1,264 @@
+<html>
+<head>
+<meta NAME="author" CONTENT="Peter Csizmadia">
+    <script type="text/javascript" src="../../sh_main.js"></script>
+    <script type="text/javascript" src="../../sh_javascript.js"></script>
+    <script type="text/javascript" src="../../sh_html.js"></script>
+    <link REL ="stylesheet" TYPE="text/css" HREF="../../sh_nedit.css" TITLE="Style">
+<link REL ="stylesheet" TYPE="text/css" HREF="../../../marvinmanuals.css" TITLE="Style">
+<title>MarvinSketch Example - Import/export of structures</title>
+</head>
+<body onload="sh_highlightDocument();">
+
+<h1>MarvinSketch Example - Import/export of structures</h1>
+<p>
+In Macintosh systems, there are several browsers that do not support standard JavaScript to Java communication
+(LiveConnect).
+This example shows a workaround for this problem.
+</p><p>
+
+<p>Press the <code>'Import'</code> button to import the molfile into MarvinSketch.
+Press the <code>'Export&nbsp;as&nbsp;Molfile'</code> or the
+<code>'Export&nbsp;as&nbsp;SMILES'</code> button to
+export the molecule in the specified format.
+</p><p>If the browser does not support LiveConnect,
+pressing the <code>'Export&nbsp;as&nbsp;Molfile'</code> button displays the molecule string in
+<a href="../../../help/formats/gzip-doc.html">gzip</a> format encoded
+with <a href="../../../help/formats/base64-doc.html">Base64</a>.</p>
+
+<p>
+<center>
+<form NAME=MolForm onSubmit="return false">
+<textarea NAME="MolTxt" ROWS=20 COLS=70>
+3,7-Dihydro-1,3,7-trimethyl-1H-purine-2,6-dione
+  Marvin  07099920012D
+
+ 14 15  0  0  0  0  0  0  0  0999 V2000
+   -2.0245   -2.6287    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.0245   -1.0107    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.7156   -0.0596    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.4367   -1.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415   -0.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.5735   -0.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.7075   -2.3196    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415   -3.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.9755   -2.3196    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.9755   -1.3197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415    0.1803    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.5735   -2.8197    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.7075   -1.3197    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415   -2.8197    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+  5 13  1  0  0  0  0
+ 13  7  1  0  0  0  0
+  7 14  1  0  0  0  0
+ 14  9  1  0  0  0  0
+  9 10  2  0  0  0  0
+  5 10  1  0  0  0  0
+  4  2  1  0  0  0  0
+  2 10  1  0  0  0  0
+  9  1  1  0  0  0  0
+  4  1  2  0  0  0  0
+  2  3  1  0  0  0  0
+  5 11  2  0  0  0  0
+ 13  6  1  0  0  0  0
+  7 12  2  0  0  0  0
+ 14  8  1  0  0  0  0
+M  END
+</textarea>
+<p>
+<input TYPE=BUTTON VALUE="Import" onClick="importMol(null)">
+<input TYPE=BUTTON VALUE="Export as Molfile" onClick="exportMol('mol')">
+<input TYPE=BUTTON VALUE="Export as SMILES" onClick="exportMol('smiles')">
+</p>
+</form>
+
+<script type="text/javascript" SRC="../../../marvin.js"></script>
+<script type="text/javascript" SRC="../../../js2java.js"></script>
+<script type="text/javascript">
+<!--
+
+var isJs2Java = isLiveConnect(); // Is JavaScript - Java communication available?
+setPath("../../.."); // Sets the relative path of the Marvin directory.
+
+function importMol(opts) {
+	var s = document.MolForm.MolTxt.value;
+	if((document.MSketch != null) && isJs2Java) {
+		document.MSketch.setMol(s, opts);
+	} else if(!isJs2Java) {
+	    mparams = "java.lang.String";
+	    if(opts != null) {
+			mparams += ",java.lang.String";
+	    }
+	    setMethod("MSketch.setMol",mparams);
+	    addMethodParam(s);
+	    if(opts != null) {
+	    	addMethodParam(opts);
+	    }
+	    runMethod();
+	} else {
+	    alert("Cannot import molecule:\n"+
+	      "no JavaScript to Java communication in your browser.\n");
+	}
+}
+
+function printMol() {
+    var s = getResult();
+    s = convertJs2Html(s);
+    document.MolForm.MolTxt.value = s;
+}
+
+function exportMol(format) {
+	if((document.MSketch != null) && isJs2Java) {
+		var s = document.MSketch.getMol(format);
+		s = unix2local(s); // Convert "\n" to local line separator
+		document.MolForm.MolTxt.value = s;
+	} else if(!isJs2Java) {
+		if(format == 'smiles') {
+			setIsCompressed(false);
+		} else {
+			setIsCompressed(true);
+		}
+	    setMethod("MSketch.getMol","java.lang.String");
+	    addMethodParam(format);
+	    setPostJsMethod("parent.printMol()");
+	    runMethod();
+	} else {
+	    alert("Cannot import molecule:\n"+
+	      "no JavaScript to Java communication in your browser.\n");
+	}
+}
+
+msketch_name = "MSketch";
+msketch_begin("../../..", 540, 480);
+msketch_end();
+//-->
+</script>
+</center>
+<p>
+
+<p>If the browser does not support LiveConnect a workaround is needed to
+import / export molecules. See the <code>else if(!isJs2Java)</code> branch in the code of the
+<code>importMol</code> and <code>exportMol</code> functions.</p>
+
+<blockquote>
+<pre class="sh_html">
+<strong>&lt;script type</strong>=&quot;text/javascript&quot;<strong>&gt;</strong>
+&lt;!--
+//--&gt;
+<strong>&lt;/script&gt;</strong>
+
+<strong>&lt;form NAME</strong>=MolForm <strong>onSubmit</strong>=&quot;return false&quot;<strong>&gt;</strong>
+<strong>&lt;textarea NAME</strong>=&quot;MolTxt&quot; <strong>ROWS</strong>=20 <strong>COLS</strong>=70<strong>&gt;</strong>
+3,7-Dihydro-1,3,7-trimethyl-1H-purine-2,6-dione
+  Marvin  07099920012D
+
+ 14 15  0  0  0  0  0  0  0  0999 V2000
+   -2.0245   -2.6287    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.0245   -1.0107    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.7156   -0.0596    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.4367   -1.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415   -0.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.5735   -0.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.7075   -2.3196    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415   -3.8197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.9755   -2.3196    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.9755   -1.3197    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415    0.1803    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -5.5735   -2.8197    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.7075   -1.3197    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.8415   -2.8197    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+  5 13  1  0  0  0  0
+ 13  7  1  0  0  0  0
+  7 14  1  0  0  0  0
+ 14  9  1  0  0  0  0
+  9 10  2  0  0  0  0
+  5 10  1  0  0  0  0
+  4  2  1  0  0  0  0
+  2 10  1  0  0  0  0
+  9  1  1  0  0  0  0
+  4  1  2  0  0  0  0
+  2  3  1  0  0  0  0
+  5 11  2  0  0  0  0
+ 13  6  1  0  0  0  0
+  7 12  2  0  0  0  0
+ 14  8  1  0  0  0  0
+M  END
+<strong>&lt;/textarea&gt;</strong>
+<strong>&lt;p&gt;</strong>
+<strong>&lt;input TYPE</strong>=BUTTON <strong>VALUE</strong>=&quot;Import&quot; <strong>onClick</strong>=&quot;importMol('null')&quot;<strong>&gt;</strong>
+<strong>&lt;input TYPE</strong>=BUTTON <strong>VALUE</strong>=&quot;Export as Molfile&quot; <strong>onClick</strong>=&quot;exportMol('mol')&quot;<strong>&gt;</strong>
+<strong>&lt;input TYPE</strong>=BUTTON <strong>VALUE</strong>=&quot;Export as SMILES&quot; <strong>onClick</strong>=&quot;exportMol('smiles')&quot;<strong>&gt;</strong>
+<strong>&lt;/p&gt;</strong>
+<strong>&lt;/form&gt;</strong>
+<strong>&lt;script type</strong>=&quot;text/javascript&quot; <strong>SRC</strong>=&quot;../../../<a HREF="../marvin.js.txt">marvin.js</a>&quot;<strong>&gt;</strong><strong>&lt;/script&gt;</strong>
+<strong>&lt;script type</strong>=&quot;text/javascript&quot; <strong>SRC</strong>=&quot;../../../<a HREF="../js2java.js.txt">js2java.js</a>&quot;<strong>&gt;</strong><strong>&lt;/script&gt;</strong>
+<strong>&lt;script type</strong>=&quot;text/javascript&quot;<strong>&gt;</strong>
+<strong>&lt;!--</strong>
+</pre>
+<pre class="sh_javascript">
+var isJs2Java = isLiveConnect(); <em>// Is JavaScript - Java communication available?</em>
+setPath("../../..");  <em>// Sets the relative path of the Marvin directory.</em>
+
+function <strong>importMol(opts)</strong> {
+	var s = document.MolForm.MolTxt.value;
+	if((document.MSketch != null) && isJs2Java) {
+	    document.MSketch.<a HREF="../../../help/developer/applets/api/JMSketch.html#setMol(java.lang.String, java.lang.String)">setMol</a>(s, opts);
+	} else if(!isJs2Java) {
+	    mparams = "java.lang.String";
+	    if(opts != null) {
+	        mparams += ",java.lang.String";
+	    }
+	    <a href="../js2java.js.txt">setMethod</a>("MSketch.setMol",mparams);
+	    <a href="../js2java.js.txt">addMethodParam</a>(s);
+	    if(opts != null) {
+	        <a href="../js2java.js.txt">addMethodParam</a>(opts);
+	    }
+	    <a href="../js2java.js.txt">runMethod</a>();
+	} else {
+	    alert(&quot;Cannot import molecule:\n&quot;+
+	          &quot;no JavaScript to Java communication in your browser.\n&quot;);
+	}
+}
+
+function <strong>printMol()</strong> {
+    var s = <a href="../js2java.js.txt">getResult()</a>;
+    s = <a href="../js2java.js.txt">convertJs2Html</a>(s);
+    document.MolForm.MolTxt.value = s;
+}
+
+function <strong>exportMol(</strong>format<strong>)</strong> {
+	if((document.MSketch != null) && isJs2Java) {
+		var s = document.MSketch.<a HREF="../../../help/developer/applets/api/JMSketch.html#getMol(java.lang.String)">getMol</a>(format);
+		s = <a HREF="../marvin.js.txt">unix2local</a>(s); // Convert &quot;\n&quot; to local line separator
+		document.MolForm.MolTxt.value = s;
+	} else if(!isJs2Java) {
+		if(format == 'smiles') {
+			<a href="../js2java.js.txt">setIsCompressed</a>(false);
+		} else {
+			setIsCompressed(true);
+		}
+	    setMethod("MSketch.getMol","java.lang.String");
+	    addMethodParam(format);
+	    <a href="../js2java.js.txt">setPostJsMethod</a>("parent.printMol()");
+	    runMethod();
+}
+<strong>msketch_name</strong> = &quot;MSketch&quot;;
+<strong>msketch_begin(</strong>&quot;../../..&quot;<strong>,</strong> 540<strong>,</strong> 480<strong>);</strong>
+<strong>msketch_end();</strong>
+<strong>//--&gt;</strong>
+<strong>&lt;/script&gt;</strong>
+</pre>
+</blockquote>
+
+<p>The limitation of this workaround is that the result string can be 2K characters the maximum.
+Because of the limited transfer size, the compression of the result data is highly recommended.
+Use the <code>setIsCompressed</code> method to specify that the compression of the result is required or not.
+If you set it to <code>true</code>, the  the data is sent in compressed (gzip) format with <em>Base 64</em> encoding.
+(<code>true</code> is the default value.)<br>
+Marvin supports molecule import as well as export in <a href="../../../help/formats/base64-doc.html">base64:gzip</a> format.</p>
+
+<p>Since <code>getResult()</code> returns a string that may contain special characters in an encoded format,
+using the <code>convertJs2Html</code> function is recommended to decode these characters before displaying the text in a textbox.</p>
+
+</body>
+</html>

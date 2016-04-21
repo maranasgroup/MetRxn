@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color:#000;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#wrapper {
+	width:700px;
+	margin:0 auto;
+}
+#main_header {
+	margin:20px 0 0 0;
+	background-image:url(body_main_header.gif);
+	background-position:top;
+	background-repeat:no-repeat;
+	color:#CCC;
+	font-size:12px;
+	padding-top:5px;
+	padding-left:20px;
+	height:20px;
+}
+#main {
+	background-color:#f7eedf;
+	padding:20px 0;
+}
+h2 {
+	margin:0;
+	color:#900;
+	font-size:14px;
+	padding:0 0 5px 50px;
+}
+#comments {
+	width:600px;
+	border:#900 solid 1px;
+	background-color:#FFF;
+	color:#000;
+	margin:0 auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+#footer {
+	background-image:url(body_main_footer.gif);
+	background-repeat:no-repeat;
+	height:25px;
+}
+p {
+	margin:6px 20px;
+}
