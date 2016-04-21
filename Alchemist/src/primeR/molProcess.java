@@ -10,11 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
+import com.google.common.collect.Collections2;
 import com.google.common.math.BigIntegerMath;
 import com.opencsv.CSVReader;
 
@@ -45,7 +49,8 @@ import chemaxon.struc.MoleculeGraph;
 /*the numbering should transfer to all, make sure that is done .. */
 /* The idea is to create a graph that can be extended in the future also, 
  * Right now we focus on connectivity, 
- * as and when we need to consider other things, we can focus on them too*/
+ * as and when we need to consider other things, we can focus on them too, 
+ * Next is to use a database*/
 public class molProcess extends Thread {
 	private static final int MM_DIST_THRESH = 40;
 	private static final String PRODUCT = "product_";
@@ -71,7 +76,7 @@ public class molProcess extends Thread {
 	public static String INDEXTYPE = "idxType"; /* original or new, true is original, false is new */
 	public static String IGNOREDBYATOM = "ignr";
 	public static String ETYPE = "et";
-	public static SortedSet<String> sortedProducts = Collections.synchronizedSortedSet(new TreeSet<String>());
+	public static Map<Integer,LinkedHashMap<String,String>> ProductsPrime = Collections.synchronizedMap(new HashMap<Integer,LinkedHashMap<String,String>>());
 
 	private static MajorMicrospeciesPlugin mmSpeciesPlugin = new MajorMicrospeciesPlugin();
 
@@ -84,6 +89,7 @@ public class molProcess extends Thread {
 			// String molStr =
 			// "CCCC[C@H](NC(=O)[C@@H]1CCCN1C(=O)[C@H](CCCNC(N)=N)NC(C)=O)C(=O)N[C@@H](CCC1=CC=CC=C1)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](CCCCN)C(=O)NCC(=O)N1CCC[C@H]1C(=O)N[C@@H](CC(C)C)C(N)=O";
 			String molStr = "N[C@@H](Cc1ccc(O)cc1)C(O)=O";
+			//String molStr = "NC(=O)c1ccc[n+](c1)[C@@H]1O[C@H](COP([O-])(=O)OP(O)(=O)OC[C@H]2O[C@H]([C@H](O)[C@@H]2O)n2cnc3c(N)ncnc23)[C@@H](O)[C@H]1O";
 			Molecule mol = getMolObject(molStr);
 			mol = getMMSpecies(mol, pH_0);
 			mol = standardizeMol(mol);			
@@ -93,14 +99,25 @@ public class molProcess extends Thread {
 			for (Molecule mol2 : molSet) {
 				mol2 = annotatedMolecule(mol2, false);
 				addPseudo(mol2, mmDistribution.get(mol2));
+				addPrimeZero(mol2);			
+				
+				int i=0;
+				while (calcGI(mol2, i)) {
+					i++;
+					/*do something when its true*/
+					
+				}
+				
+				
 				new Cleaner().clean(mol2, 2);
+			
 				String out = MolExporter.exportToFormat(mol2, "mrv:S");
 				System.out.println(out);
 				System.out.println();
 				System.out.println("*************");
 			}
 
-			mol = displayFilter(mol);
+			//mol = displayFilter(mol);
 
 		}
 		catch (IOException e) {
@@ -118,7 +135,6 @@ public class molProcess extends Thread {
 			CSVReader reader = new CSVReader(new FileReader(NODEINDEXFILENAME), '\t', '"', 1);
 			String[] nextLine;
 			while ((nextLine = reader.readNext()) != null) {
-
 				returnVal.put(nextLine[0] + ":" + nextLine[1], Integer.valueOf(nextLine[2]));
 			}
 			reader.close();
@@ -375,7 +391,7 @@ public class molProcess extends Thread {
 			}
 			
 			if (atomArray[i].containsPropertyKey(TERMINAL)) {
-				if ((int) atomArray[i].getProperty(TERMINAL) > 0) {
+				if ((boolean) atomArray[i].getProperty(TERMINAL) == false) continue;
 					MolAtom term_node = new MolAtom(MolAtom.PSEUDO);
 					term_node.setAliasstr("term");
 					term_node.putProperty(INDEX, atomArray[i].getProperty(TERMINAL).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
@@ -383,7 +399,7 @@ public class molProcess extends Thread {
 					term_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
 					mol_in.add(term_node);
 					mol_in.add(term_bond);
-				}
+				
 			}
 			
 			if (atomArray[i].containsPropertyKey(HYBRIDIZATIONSTATE)) {
@@ -710,7 +726,7 @@ public class molProcess extends Thread {
 			if (molAtom.getAliasstr().equalsIgnoreCase("e")) {
 				return "e:" + molAtom.getProperty(ETYPE).toString();
 			}
-			else if (molAtom.getAliasstr().equalsIgnoreCase("rng") || molAtom.getAliasstr().equalsIgnoreCase("erng") || molAtom.getAliasstr().equalsIgnoreCase("rad")) {
+			else if (molAtom.getAliasstr().equalsIgnoreCase("rng") || molAtom.getAliasstr().equalsIgnoreCase("erng") || molAtom.getAliasstr().equalsIgnoreCase("rad") || molAtom.getAliasstr().equalsIgnoreCase("term")) {
 				return molAtom.getAliasstr() + ":" + molAtom.getAliasstr();
 			}
 			else if (molAtom.getAliasstr().equalsIgnoreCase("en") || molAtom.getAliasstr().equalsIgnoreCase("chrl") || molAtom.getAliasstr().equalsIgnoreCase("hbz")) {
@@ -744,38 +760,92 @@ public class molProcess extends Thread {
 		}
 	}
 
-	public static void calcProduct(Molecule mol2, int level) {
+	public static boolean calcGI(Molecule mol2, int level) {
+		/*there is no need to store the product, we can have a service to lookup the primes that correspond to the product, 
+		 * for now, we use a function that returns the corresponding prime, 
+		 * this function internally will later be transformed to use REST*/
 		MolAtom[] atomArray = mol2.getAtomArray();
 		String index;
 		MolBond[] bondArray;
 		BigInteger product = BigInteger.valueOf(1);
+		String prime = "";
+		String symbol = "";
 		for (MolAtom molAtom : atomArray) {
 			index = molAtom.getProperty(INDEX).toString();
-			bondArray = molAtom.getBondArray();
+			
 			product = BigInteger.valueOf(Long.valueOf(molAtom.getProperty(PRIME + level).toString()));
+			product = product.multiply(product);
+			
+			bondArray = molAtom.getBondArray();
+			
 			for (int i = 0; i < bondArray.length; i++) {
 
 				if (bondArray[i].containsPropertyKey(IGNOREDBYATOM)) if (bondArray[i].getProperty(IGNOREDBYATOM).toString().equalsIgnoreCase(index)) continue;
 
 				product = BigInteger.valueOf(Long.valueOf(bondArray[i].getProperty(PRIME + level).toString())).multiply(product);
 			}
-			molAtom.putProperty(PRODUCT + level, product.toString());
+			molAtom.putProperty(PRODUCT + (level + 1), product.toString());
+			
 			if (molAtom.isPseudo()) {
-				sortedProducts.add("e:" + product.toString() + ":" + level);
+				symbol = molAtom.getAliasstr();				
 			}
 			else {
-				sortedProducts.add("a:" + product.toString() + ":" + level);
+				symbol = molAtom.getSymbol();				
 			}
+			
+			
+			
+			prime = getPrime(symbol+":"+product.toString(),level + 1);
+			
+			molAtom.putProperty(PRIME + (level + 1), prime);
 		}
 
 		bondArray = mol2.getBondArray();
 		for (MolBond molBond : bondArray) {
 			product = BigInteger.valueOf(Long.valueOf(molBond.getProperty(PRIME + level).toString()));
-			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom1().getProperty(PRIME + level).toString())).multiply(product);
-			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom2().getProperty(PRIME + level).toString())).multiply(product);
-			molBond.putProperty(PRODUCT + level, product.toString());
-			sortedProducts.add("b:" + product.toString() + ":" + level);
+			product = product.multiply(product);
+			
+			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom1().getProperty(PRIME + (level+1)).toString())).multiply(product);
+			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom2().getProperty(PRIME + (level+1)).toString())).multiply(product);
+			
+			molBond.putProperty(PRODUCT + (level + 1), product.toString());
+			prime = getPrime("b:"+product.toString(),level + 1);
+			molBond.putProperty(PRIME + (level + 1), prime);
 		}
+		
+		TreeMap<String,String> sorter1 = new TreeMap<String,String>();
+		TreeMap<String,String> sorter2 = new TreeMap<String,String>();
+		
+		for (MolAtom atom : atomArray) {
+			sorter1.put(String.valueOf(atom.getProperty(INDEX)), String.valueOf(atom.getProperty(PRIME + (level))));
+			sorter2.put(String.valueOf(atom.getProperty(INDEX)), String.valueOf(atom.getProperty(PRIME + (level + 1))));
+		}
+		
+		for (MolBond molBond : bondArray) {
+			sorter1.put(String.valueOf(molBond.getProperty(INDEX)), String.valueOf(molBond.getProperty(PRIME + (level))));
+			sorter2.put(String.valueOf(molBond.getProperty(INDEX)), String.valueOf(molBond.getProperty(PRIME + (level + 1))));
+		}
+		
+		String sorter1Str = sorter1.toString();
+		String sorter2Str = sorter2.toString();
+		
+		if (sorter1Str.equalsIgnoreCase(sorter2Str)) 
+			return false;
+		else 
+			return true;
+		
+	}
+
+	private static String getPrime(String productLabel,int level) {
+		if (!ProductsPrime.containsKey(level)) {
+			ProductsPrime.put(level, new LinkedHashMap<String,String>());
+		}
+		Object returnVal = ProductsPrime.get(level).get(productLabel);
+		if (returnVal == null) {
+			returnVal = String.valueOf(primeHash.get(ProductsPrime.get(level).size()));
+			ProductsPrime.get(level).put(productLabel, (String)returnVal);
+		}
+		return (String) returnVal;
 	}
 
 	public static HashMap<Integer, HashMap<String, Integer>> updatedLookup() {
@@ -803,7 +873,9 @@ public class molProcess extends Thread {
 					maxValue.put(level, prime);
 				}
 			}
-			for (String prod : molProcess.sortedProducts) {
+			inputStream.close();
+			
+			/*for (String prod : molProcess.sortedProducts) {
 				level = Integer.valueOf(prod.split("[:]")[2]);
 				if (!returnVal.get(level).containsKey(prod)) {
 					prime = primeHash.get(primeIndex.get(maxValue.get(level)) + 1);
@@ -812,8 +884,8 @@ public class molProcess extends Thread {
 						maxValue.put(level, prime);
 					}
 				}
-			}
-			inputStream.close();
+			}*/
+			
 		}
 		catch (IOException e) {
 			System.err.println("IOException:");
