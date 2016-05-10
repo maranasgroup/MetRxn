@@ -26,86 +26,44 @@ if (!isset($_SESSION)) {
    <title>
     MetRxn Home
 	</title>
-   	<link rel="stylesheet"  href="http://metRxn.engr.psu.edu/inc/css/sidebars.css"   type="text/css" />
+   	<!-- <link rel="stylesheet"  href="http://metRxn.engr.psu.edu/inc/css/sidebars.css"   type="text/css" /> -->
    	<link rel="search" href="/MetRxn/plugins/openSearch/openSearch.xml" type="application/opensearchdescription+xml" title="MetRxn" />
 	<link href="<?php echo relativePath(getcwd(), $metRxnContents_css); ?>" rel="stylesheet" type="text/css" />
 	<link href="<?php echo relativePath(getcwd(), $anchors_css); ?>" rel="stylesheet" type="text/css" />
 	<link href="<?php echo relativePath(getcwd(), $headings_css); ?>" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-		.header {
-
-			width: 100%;
-			top: 0;
-			border: none;
-		}
-		.search {
-			overflow: scroll;
-		}
-		.footer {
-			position: relative;
-			bottom: 0;
-			width: 100%;
-		}
-		.content {
-			float: left;
-			width: 130%;
-			position: relative;
-			background-position: center;
-		}
-		.leftbar {
-			float: left;
-			width: 20%;
-		}
-		iframe {
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<style type="text/css">
+	iframe {
 			border: 0;
-		}
-		table {
-			border-collapse: collapse;
-			margin: 20px;
-		}
-		td {
-			padding: 2px;
-		}
-		.imageframe {
-
-		}
-		img {
-			margin: 20px;
-			float: left;
-		}
-		#structure {
-
-			float: left;
-		}
-		#synonym {
-			bottom: 1;
-			float: none;
-		}
-
+	}
+	.center-block {float: none !important}
 	</style>
 </head>
 
 <body>
-<table>
-<tr>
-<div class="header">
-    <iframe src="<?php echo $top_data_htm ?>" width="100%" height="160" scrolling="no">
+<!-- <table id="main_table">
+<tr> -->
+<div class="container-fluid">
+<div class="row">
+    <iframe src="<?php echo relativePath(getcwd(), $top_data_htm); ?>" width="100%" height="160" scrolling="no">
     </iframe>
 </div>
-</tr>
-<tr>
-<div class="leftbar">	
+<!-- </tr> -->
+<!-- <tr> -->
+<div class="row">
+<div class="col-md-2 sidebar">	
    	<iframe src="<?php echo relativePath(getcwd(), $left_Menu_php); ?>" height="450" scrolling="no">
     </iframe>
 </div>
-<td>
-<div class="content" align="center">
-<div style="width:100%" align="center">
-<?php $query = "Select count(distinct idStr) cnt from `metrxn`.`abbrsynstrsrcview` where type = 'metabolites'";
-$result = mysql_query($query);
+<!-- <td> -->
+<!-- <div style="width:100%" align="center"> -->
 
+<?php
+$query = "Select count(distinct idStr) cnt from `metrxn`.`abbrsynstrsrcview` where type = 'metabolites'";
+$result = mysql_query($query);
 while ($row = mysql_fetch_array($result)) {
 	$metaboliteCount = $row['cnt'];
+	// echo $metaboliteCount;
 }
 
 $query = "Select max(date) `date` from `metrxn`.`source_pin`";
@@ -133,34 +91,31 @@ while ($row = mysql_fetch_array($result)) {
 }
 ?>
 <!--?php include('/main_data/main.php'); ?-->
-    <div align="left" style="width:700px">
+<div class="col-md-10">
+    <div id="intro" style="width:900px" align="center">
         <h1>
                     Welcome to MetRxn <font size=2>(Last updated on <?php echo $lastUpdateDate ?>)</font>, <font size=2 color = 'red'>version 2.0 will be made available by July 2014 </font>
         </h1>
         <p>MetRxn is a comprehensive collection of consistent metabolite and reaction entities for use in metabolic analysis and model construction.  MetRxn's current <?php echo $metaboliteCount; ?> uniquely resolved metabolites and <?php echo $reactionCount; ?> uniquely resolved reactions incorporates data from <a href="<?php echo relativePath(getcwd(), $dataSourceDatabase_php); ?>" target="_parent"><?php echo $databaseCount; ?></a> different metabolic databases and <a href="<?php echo relativePath(getcwd(), $dataSourceMetabolicModels_php); ?>" target="_parent"><?php echo $metabolicModelCount?></a> genome-scale metabolic models.</p>
     </div>
 
-    <div>
-        <iframe src="<?php echo relativePath(getcwd(), $search_php); ?>" width="100%" scrolling="no" style="visibility:visible;max-height:600px">
+    <div id="searchbox" align="left">
+        <iframe id="iframeBox" src="<?php echo relativePath(getcwd(), $search_php); ?>" width="900px" scrolling="no" style="visibility:visible;max-height:2000px">
         </iframe>
     </div>
 
-    <div>
+    <div id="main">
         <iframe src="<?php echo relativePath(getcwd(), $main_php); ?>" width="100%" height="500px" scrolling="no">
         </iframe>
     </div>
-</div>
-</div>    
-</td>
-</tr>
 
-</table>
-
-<div class="footer">
+	<div id="footer">
     <iframe src="<?php echo relativePath(getcwd(), $footer_php); ?>" height="60" width="100%" scrolling="no">
     </iframe>
+    </div>
 </div>
-
+</div>
+</div>
 </body>
 <!-- InstanceEnd -->
 
