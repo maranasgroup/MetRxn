@@ -1,48 +1,47 @@
 package primeR;
 
-import java.awt.Component;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.Vector;
+import java.util.concurrent.Semaphore;
 
-import com.google.common.collect.Collections2;
-import com.google.common.math.BigIntegerMath;
+import org.apache.commons.collections4.BidiMap;
+
+import com.google.common.collect.ArrayListMultimap;
 import com.opencsv.CSVReader;
 
-import chemaxon.calculations.clean.Clean2D;
 import chemaxon.calculations.clean.Cleaner;
 import chemaxon.calculations.hydrogenize.Hydrogenize;
 import chemaxon.formats.MolExporter;
 import chemaxon.formats.MolImporter;
-import chemaxon.marvin.MolPrinter;
 import chemaxon.marvin.calculations.MajorMicrospeciesPlugin;
 import chemaxon.marvin.calculations.pKaPlugin;
-import chemaxon.marvin.calculations.pKaPluginDisplay;
-import chemaxon.marvin.plugin.CalculatorPluginDisplay;
 import chemaxon.marvin.plugin.PluginException;
-import chemaxon.marvin.services.MoleculeExporterArgument;
-import chemaxon.marvin.uif.action.support.PropertiesUtil;
-import chemaxon.naming.n2s.parse.Radical;
-import chemaxon.standardizer.actions.MesomerizeAction;
-import chemaxon.standardizer.actions.NeutralizeAction;
-import chemaxon.struc.MPropertyContainer;
 import chemaxon.struc.MolAtom;
 import chemaxon.struc.MolBond;
 import chemaxon.struc.Molecule;
 import chemaxon.struc.MoleculeGraph;
+import chemaxon.struc.RxnMolecule;
 
 //import chemaxon.util.settings.loader.PropertiesLoader;
 
@@ -52,13 +51,34 @@ import chemaxon.struc.MoleculeGraph;
  * as and when we need to consider other things, we can focus on them too, 
  * Next is to use a database*/
 public class molProcess extends Thread {
+	private static final int THREADCOUNT = Runtime.getRuntime().availableProcessors() - 1;
+
 	private static final int MM_DIST_THRESH = 40;
-	private static final String PRODUCT = "product_";
-	private static final String PRIME = "prime_";
-	private static final double pH_0 = 0.0; // contains all protons i think
-	private static final String NODEINDEXFILENAME = "nodeTypes.tsv";/* has to be made available locally */
+	public static final String PRODUCT = "product_";
+	public static final String PRIME = "prime_";
+	private static final String NODEINDEXFILENAME = "nodeTypes.tsv";/*
+																	 * has to be
+																	 * made
+																	 * available
+																	 * locally
+																	 */
 	private static final String PRODUCT_LOOKUP = "product.lookup";
 	public static final int MAXLEVEL = 4;
+	
+
+	private static final String ID = "id";
+
+	public static final String SMILES = "smi";
+
+
+
+	private static final String PRIMEPRODUCTSPATH = "products.prime";
+
+	protected static final String ADJ = "adjList";
+
+	private static final String PRIMEDICTIONARYFOLDER = "primes/";
+
+	private static final String RP = "rp";
 	public static String INDEX = "indx";
 	public static String LONEPAIRCOUNT = "lp";
 	public static String VALENCE = "val";
@@ -73,64 +93,314 @@ public class molProcess extends Thread {
 	public static String PH = "ph";
 	public static String HYBRIDIZATIONSTATE = "hybz";
 	public static String SYMBOL = "smbl";
-	public static String INDEXTYPE = "idxType"; /* original or new, true is original, false is new */
+	public static String INDEXTYPE = "idxType"; /*
+												 * original or new, true is
+												 * original, false is new
+												 */
 	public static String IGNOREDBYATOM = "ignr";
 	public static String ETYPE = "et";
-	public static Map<Integer,LinkedHashMap<String,String>> ProductsPrime = Collections.synchronizedMap(new HashMap<Integer,LinkedHashMap<String,String>>());
+	public static Map<Integer, LinkedHashMap<String, String>> ProductsPrime = Collections
+			.synchronizedMap(new HashMap<Integer, LinkedHashMap<String, String>>());
+	
+	public static HashMap<Integer, LinkedHashMap<String, String>> ProductsPrime2 = new HashMap<Integer, LinkedHashMap<String, String>>();
 
 	private static MajorMicrospeciesPlugin mmSpeciesPlugin = new MajorMicrospeciesPlugin();
 
-	private static HashMap<String, Integer> nodeIndex = loadNodeIndex();
-	public static HashMap<Integer, Integer> primeHash = loadPrimes();
-	public static HashMap<Integer, Integer> primeIndex = primes.getPrimeIndex(primeHash);
+	private static HashMap<String, Integer> nodeIndex;
+	public static HashMap<Integer, BigInteger> primeHash;
+	//public static HashMap<BigInteger, Integer> primeIndex = primes.getPrimeIndex(primeHash);
+
+	private static PrintWriter pw;
+	private static PrintWriter statWriter;
+
+	private static LinkedList<Semaphore> smphores;
+
+	private static int cnt;
+
+	// private static CSVWriter writer;
+
+	// private static PrintWriter pw;
 
 	public static void main(String[] args) {
-		try {
-			// String molStr =
-			// "CCCC[C@H](NC(=O)[C@@H]1CCCN1C(=O)[C@H](CCCNC(N)=N)NC(C)=O)C(=O)N[C@@H](CCC1=CC=CC=C1)C(=O)N[C@@H](C)C(=O)N[C@@H](C)C(=O)N[C@@H](CCCCN)C(=O)NCC(=O)N1CCC[C@H]1C(=O)N[C@@H](CC(C)C)C(N)=O";
-			String molStr = "N[C@@H](Cc1ccc(O)cc1)C(O)=O";
-			//String molStr = "NC(=O)c1ccc[n+](c1)[C@@H]1O[C@H](COP([O-])(=O)OP(O)(=O)OC[C@H]2O[C@H]([C@H](O)[C@@H]2O)n2cnc3c(N)ncnc23)[C@@H](O)[C@H]1O";
-			Molecule mol = getMolObject(molStr);
-			mol = getMMSpecies(mol, pH_0);
-			mol = standardizeMol(mol);			
-			mol = annotatedMolecule(mol, true);
-			HashMap<Molecule, Double> mmDistribution = getMMDistribution(mol);
-			Set<Molecule> molSet = mmDistribution.keySet();
-			for (Molecule mol2 : molSet) {
-				mol2 = annotatedMolecule(mol2, false);
-				addPseudo(mol2, mmDistribution.get(mol2));
-				addPrimeZero(mol2);			
-				
-				int i=0;
-				while (calcGI(mol2, i)) {
-					i++;
-					/*do something when its true*/
+		//ProductsPrime2 = populateProducts(PRIMEPRODUCTSPATH, ProductsPrime2);
+		//ProductsPrime.putAll(ProductsPrime2);
+		nodeIndex = loadNodeIndex();
+		primeHash = loadPrimes();
+		ProductsPrime = populateProducts(PRIMEPRODUCTSPATH, ProductsPrime);
+		
+		System.out.println("Copied the primes");
+		
+		
+		/*while (ProductsPrime.values().size() != ProductsPrime2.values().size()) {
+					System.out.println("checking if all elements have been copied");
 					
+		}*/	
+		
+		String rxnSmiFile = "reactions/input/rxn.smi";
+		smphores = new LinkedList<Semaphore>();
+		for (int i = 0; i < 300; i++) {
+			final Semaphore s = new Semaphore(1);
+			smphores.add(s);
+		}
+		
+		System.out.println("created the semaphores");
+		
+
+		try {
+			pw = new PrintWriter(new BufferedWriter(new FileWriter(PRIMEPRODUCTSPATH,true)));
+			statWriter = new PrintWriter(new BufferedWriter(new FileWriter("reactions/gi.stat",true)));
+			File f = new File(rxnSmiFile);
+
+			final Semaphore s = new Semaphore(THREADCOUNT);
+			BufferedReader br = null;
+			try {
+				String ln;
+				br = new BufferedReader(new FileReader(f));
+				cnt = 0;
+				while ((ln = br.readLine()) != null) {
+					
+					if (cnt > 10) break;
+
+					s.acquireUninterruptibly();
+					final String[] strArr = ln.split("\t");
+					new Thread() {
+						public void run() {
+							try {
+								process(strArr);
+							}
+
+							catch (Exception e) {
+								e.printStackTrace();
+							} finally {
+								s.release();
+							}
+						}
+
+						private void process(String[] strArr) {
+							
+														
+							String smiles = strArr[0].trim();
+
+							String id = strArr[1];
+
+							
+							String filePath = "reactions/" + id + ".mrv";
+							
+							if (new File(filePath).exists()) {
+								return;
+							}
+							cnt++;
+							
+							RxnMolecule mol = getMolObject(smiles,id);
+							
+							
+							
+							mol = standardizeMol(mol);
+							
+							System.out.println("after standerdization"+id+" "+mol.getReactantCount()+" "+mol.getProductCount());
+							
+							mol = annotatedMolecule(mol, true);
+							
+							System.out.println("after annotation"+id+" "+mol.getReactantCount()+" "+mol.getProductCount());
+							
+							mol = addPseudo(mol, id);
+							
+							System.out.println("after pseduo"+id+" "+mol.getReactantCount()+" "+mol.getProductCount());
+							
+							
+							
+							addPrimeZero(mol);
+							
+							System.out.println("after P_zero"+id+" "+mol.getReactantCount()+" "+mol.getProductCount());
+							
+							TreeMap<String, TreeSet<String>> adjList = getAdjList(mol);
+
+							mol = addMetaData(mol, smiles, id, adjList);
+							
+							System.out.println("after metadata"+id+" "+mol.getReactantCount()+" "+mol.getProductCount());
+							
+							int i = 0;
+							while (calcGI(mol, i)) {
+								i++;//								
+							}
+							
+							/*generate stat here, the atom count vs GI radius*/
+							
+							statWriter.println(id+"\t"+mol.getAtomCount()+mol.getBondCount()+"\t"+i);						
+							System.out.println("after GI"+id+" "+mol.getReactantCount()+" "+mol.getProductCount());
+
+							try {
+								
+								BufferedOutputStream bo = new BufferedOutputStream(new FileOutputStream(filePath));
+								MolExporter mx = new MolExporter(bo, "mrv");
+										
+								mx.write(mol);
+								mx.close();
+								bo.close();
+
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+					}.start();
 				}
-				
-				
-				new Cleaner().clean(mol2, 2);
-			
-				String out = MolExporter.exportToFormat(mol2, "mrv:S");
-				System.out.println(out);
-				System.out.println();
-				System.out.println("*************");
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (br != null)
+						br.close();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
 			}
 
-			//mol = displayFilter(mol);
+			try {
+				while (s.availablePermits() < THREADCOUNT) {
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			pw.close();
+			statWriter.close();
+		} catch (IOException e) {
 
-		}
-		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	private static HashMap<Integer, Integer> loadPrimes() {
-		return primes.getPrimesAsHash();
+	private static Map<Integer, LinkedHashMap<String, String>> populateProducts(String primeproductspath,
+			Map<Integer, LinkedHashMap<String, String>> productsPrime3) {
+		try {
+			CSVReader reader = new CSVReader(new FileReader(primeproductspath), '\t');
+			String[] nextLine;
+			while ((nextLine = reader.readNext()) != null) {
+				if (!productsPrime3.containsKey(Integer.valueOf(nextLine[0])))
+					{
+						productsPrime3.put(Integer.valueOf(nextLine[0]), new LinkedHashMap<String, String>());
+					}
+
+				
+				productsPrime3.get(Integer.valueOf(nextLine[0])).put(nextLine[1], nextLine[2]);
+			}
+			reader.close();
+			return productsPrime3;
+
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	protected static RxnMolecule addMetaData(RxnMolecule mol, String smiles, String id,
+			TreeMap<String, TreeSet<String>> adjList) {
+		mol.setProperty(ID, id);
+		mol.setProperty(SMILES, smiles);
+		mol.setProperty(ADJ, adjList.toString());
+		return mol;
+	}
+
+	/*private static void test(String molStr) throws IOException {
+		Molecule mol = getMolObject(molStr);
+		mol = getMMSpecies(mol, pH_0);
+		mol = standardizeMol(mol);
+		mol = annotatedMolecule(mol, true);
+
+		HashMap<Molecule, Double> mmDistribution = getMMDistribution(mol);
+		Set<Molecule> molSet = mmDistribution.keySet();
+
+		for (Molecule mol2 : molSet) {
+			mol2 = annotatedMolecule(mol2, false);
+			addPseudo(mol2, mmDistribution.get(mol2));
+			addPrimeZero(mol2);
+
+			TreeMap<String, TreeSet<String>> adjList = getAdjList(mol2);
+			System.out.println(adjList.toString());
+			int i = 0;
+			while (calcGI(mol2, i)) {
+				i++;
+				 do something when its true 
+
+			}
+
+			// calcGI(mol2, 0);
+
+			new Cleaner().clean(mol2, 2);
+
+			String out = MolExporter.exportToFormat(mol2, "mrv:S");
+			System.out.println(out);
+			System.out.println();
+			System.out.println("*************");
+		}
+
+		// mol = displayFilter(mol);
+	}
+*/
+	private static TreeMap<String, TreeSet<String>> getAdjList(Molecule mol) {
+		TreeMap<String, TreeSet<String>> returnVal = new TreeMap<String, TreeSet<String>>();
+
+		ArrayListMultimap<String, Vector<String>> checker = ArrayListMultimap.create();
+
+		MolAtom[] atomArray = mol.getAtomArray();
+		int atomCnt = 0;
+		for (int i = 0; i < atomArray.length; i++) {
+			if (atomArray[i].getSymbol().equalsIgnoreCase("H"))
+				continue;
+
+			atomCnt++;
+
+			TreeSet<String> neighbors = new TreeSet<String>();
+			Vector<String> checkerV = new Vector<String>();
+			MolBond[] bondArray = atomArray[i].getBondArray();
+			for (MolBond molBond : bondArray) {
+				if (String.valueOf(molBond.getProperty(IGNOREDBYATOM))
+						.equalsIgnoreCase(String.valueOf(atomArray[i].getProperty(INDEX))))
+					continue;
+
+				MolAtom neighbor = molBond.getOtherAtom(atomArray[i]);
+				neighbors.add(String.valueOf(neighbor.getProperty(INDEX)) + ":"
+						+ String.valueOf(neighbor.getProperty(PRIME + "0")));
+
+				Collections.sort(checkerV);
+				checkerV.add(String.valueOf(neighbor.getProperty(PRIME + "0")));
+			}
+			checker.put(String.valueOf(atomArray[i].getProperty(PRIME + "0")), checkerV);
+
+			returnVal.put(String.valueOf(atomArray[i].getProperty(INDEX)) + ":"
+					+ String.valueOf(atomArray[i].getProperty(PRIME + "0")), neighbors);
+		}
+		if (atomCnt != returnVal.size()) {
+			System.err.println("ERROR in indexing");
+		}
+
+		TreeSet<String> checkerIndexes = new TreeSet<String>();
+		checkerIndexes.addAll(checker.keySet());
+		Vector<String> checkerPrinter = new Vector<String>();
+		for (String prime_0 : checkerIndexes) {
+			// System.out.println(prime_0);
+			checkerPrinter.add(prime_0 + ":" + checker.get(prime_0).toString());
+		}
+		//System.out.println(checkerPrinter.toString());
+		return returnVal;
+	}
+
+	private static HashMap<Integer, BigInteger> loadPrimes() {
+		try {
+			return primes.getPrimesAsHash(PRIMEDICTIONARYFOLDER);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return  null;
 	}
 
 	public static HashMap<String, Integer> loadNodeIndex() {
-		HashMap returnVal = new HashMap<String, Integer>();
+		HashMap<String,Integer> returnVal = new HashMap<String, Integer>();
 		try {
 			CSVReader reader = new CSVReader(new FileReader(NODEINDEXFILENAME), '\t', '"', 1);
 			String[] nextLine;
@@ -138,11 +408,9 @@ public class molProcess extends Thread {
 				returnVal.put(nextLine[0] + ":" + nextLine[1], Integer.valueOf(nextLine[2]));
 			}
 			reader.close();
-		}
-		catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return returnVal;
@@ -171,35 +439,71 @@ public class molProcess extends Thread {
 		return mol;
 	}
 
-	public static void addPseudo(Molecule mol_in, Double pH_in) {
-		/*Pseudo atoms in place of lone pair electrons and Hydrogen connections.*/
-		mol_in.setProperty(PH, pH_in.toString());
+	public static RxnMolecule addPseudo(RxnMolecule rxnMol, String id) {
+		
+
+		
+		/*
+		 * next we add the extra electron nodes, that would account for double
+		 * and triple
+		 */
+		Molecule[] reactants = rxnMol.getReactants();
+		RxnMolecule returnRxnMol = new RxnMolecule();
+		for (Molecule mol_in : reactants) {
+			returnRxnMol.addComponent(addPseudoToMol(mol_in), RxnMolecule.REACTANTS);
+			mol_in.setProperty(RP, "r");
+		}
+		
+		Molecule[] products = rxnMol.getProducts();
+		for (Molecule mol_in : products) {
+			returnRxnMol.addComponent(addPseudoToMol(mol_in), RxnMolecule.PRODUCTS);
+			mol_in.setProperty(RP, "p");
+		}
+		
+		returnRxnMol.updateComponentRoles();
+		return returnRxnMol;
+	}
+
+	private static Molecule addPseudoToMol(Molecule mol_in) {
+		/*
+		 * Pseudo atoms in place of lone pair electrons and Hydrogen
+		 * connections.
+		 */
+		
 		MolBond[] bondArray = mol_in.getBondArray();
 		Hydrogenize.convertExplicitHToImplicit(mol_in);
-		
 		MolAtom[] atomArray2 = mol_in.getAtomArray();
 		for (int i = 0; i < atomArray2.length; i++) {
-			if (atomArray2[i].getSymbol().equalsIgnoreCase("H") || atomArray2[i].getSymbol().equalsIgnoreCase("LP")) continue;
-			
-			atomArray2[i].putProperty(HCOUNT, atomArray2[i].getImplicitHCount(true) + atomArray2[i].getExplicitHcount());
+			if (atomArray2[i].getSymbol().equalsIgnoreCase("H") || atomArray2[i].getSymbol().equalsIgnoreCase("LP"))
+				continue;
+
+			atomArray2[i].putProperty(HCOUNT,
+					atomArray2[i].getImplicitHCount(true) + atomArray2[i].getExplicitHcount());
 			atomArray2[i].putProperty(LONEPAIRCOUNT, atomArray2[i].getLonePairCount());
 			atomArray2[i].putProperty(VALENCE, atomArray2[i].getValence());
 		}
-		
 		for (int i = 0; i < bondArray.length; i++) {
-			/*The first two if's for .H. and LP will be removed*/
-			/*create new enodes e-h based on number of protons and e-lp based on the number of lone pairs.*/
-			if (bondArray[i].getProperty(SYMBOL).toString().contains(".H.") || bondArray[i].getProperty(SYMBOL).toString().contains(".LP.")) {
-				if (bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("H") || bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("LP")) {
-					bondArray[i].putProperty(IGNOREDBYATOM, bondArray[i].getAtom2().getProperty(INDEX));					
+			/* The first two if's for .H. and LP will be removed */
+			/*
+			 * create new enodes e-h based on number of protons and e-lp based
+			 * on the number of lone pairs.
+			 */
+			if (bondArray[i].getProperty(SYMBOL).toString().contains(".H.")
+					|| bondArray[i].getProperty(SYMBOL).toString().contains(".LP.")) {
+				if (bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("H")
+						|| bondArray[i].getAtom1().getSymbol().equalsIgnoreCase("LP")) {
+					bondArray[i].putProperty(IGNOREDBYATOM, bondArray[i].getAtom2().getProperty(INDEX));
 				} else {
 					bondArray[i].putProperty(IGNOREDBYATOM, bondArray[i].getAtom1().getProperty(INDEX));
 				}
-				
+
 				continue;
-			}			
-			else {
-				/* here the bond information of being in the ring plays a key role */
+			} else {
+				/*
+				 * here the bond information of being in the ring plays a key
+				 * role
+				 */
+				boolean isTermial = (boolean) bondArray[i].getProperty(TERMINAL);
 				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
 				MolAtom e_node2 = new MolAtom(MolAtom.PSEUDO);
 				e_node.setAliasstr("e");
@@ -216,6 +520,12 @@ public class molProcess extends Thread {
 				MolBond bond = new MolBond(bondArray[i].getAtom1(), e_node);
 				MolBond bond2 = new MolBond(bondArray[i].getAtom2(), e_node2);
 
+				e_node.putProperty(TERMINAL, isTermial);
+				e_node2.putProperty(TERMINAL, isTermial);
+				e_bond.putProperty(TERMINAL, isTermial);
+				bond.putProperty(TERMINAL, isTermial);
+				bond2.putProperty(TERMINAL, isTermial);
+				
 				mol_in.add(e_node);
 				mol_in.add(e_node2);
 				mol_in.add(e_bond);
@@ -226,50 +536,58 @@ public class molProcess extends Thread {
 			}
 
 		}
-
-		/* next we add the extra electron nodes, that would account for double and triple */
 		MolAtom[] atomArray = mol_in.getAtomArray();
 		int lp_count = 0;
 		int h_count = 0;
 		for (int i = 0; i < atomArray.length; i++) {
 			lp_count = 0;
 			h_count = 0;
-			
-			if (atomArray[i].isPseudo()) if (atomArray[i].getAliasstr().equalsIgnoreCase("e")) continue;
 
-			if (atomArray[i].getSymbol().equalsIgnoreCase("H")) continue;
-			
-			h_count = (Integer)atomArray[i].getProperty(HCOUNT);
-			
+			if (atomArray[i].isPseudo())
+				if (atomArray[i].getAliasstr().equalsIgnoreCase("e"))
+					continue;
+
+			if (atomArray[i].getSymbol().equalsIgnoreCase("H"))
+				continue;
+
+			h_count = (Integer) atomArray[i].getProperty(HCOUNT);
+
 			for (int j = 0; j < h_count; j++) {
 				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
 				e_node.setAliasstr("e");
 				e_node.putProperty(ETYPE, "e-h");
+				
 				MolBond e_bond = new MolBond(e_node, atomArray[i]);
 				e_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
+				e_node.putProperty(TERMINAL, atomArray[i].getProperty(TERMINAL));
+				e_bond.putProperty(TERMINAL,atomArray[i].getProperty(TERMINAL));
 				mol_in.add(e_node);
 				mol_in.add(e_bond);
 			}
-			
-			lp_count = (Integer)atomArray[i].getProperty(LONEPAIRCOUNT);
-			
+
+			lp_count = (Integer) atomArray[i].getProperty(LONEPAIRCOUNT);
+
 			for (int j = 0; j < lp_count; j++) {
 				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
 				e_node.setAliasstr("e");
 				e_node.putProperty(ETYPE, "e-lp");
+				e_node.putProperty(TERMINAL, true);
 				MolBond e_bond = new MolBond(e_node, atomArray[i]);
 				e_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
 				e_bond.putProperty(SYMBOL, "lp");
 				mol_in.add(e_node);
 				mol_in.add(e_bond);
+				
+				e_node.putProperty(TERMINAL, atomArray[i].getProperty(TERMINAL));
+				e_bond.putProperty(TERMINAL,atomArray[i].getProperty(TERMINAL));
 			}
-			
 
 			int e_count = 0;
 			MolBond[] bondArray2 = atomArray[i].getBondArray();
 			for (int j = 0; j < bondArray2.length; j++) {
 				if (bondArray2[j].containsPropertyKey(SYMBOL)) {
-					if (bondArray2[j].getProperty(SYMBOL).toString().equalsIgnoreCase("lp")) continue;
+					if (bondArray2[j].getProperty(SYMBOL).toString().equalsIgnoreCase("lp"))
+						continue;
 				}
 				if (bondArray2[j].getOtherAtom(atomArray[i]).getAliasstr().equalsIgnoreCase("e")) {
 					e_count++;
@@ -278,7 +596,7 @@ public class molProcess extends Thread {
 			e_count = (int) atomArray[i].getProperty(VALENCE) - e_count;
 			if (e_count < 0) {
 				System.err.println("ABORTED, INCORRECT CONNECTIVITY");
-				return;
+				return null;
 			}
 			for (int j = 0; j < e_count; j++) {
 				MolAtom e_node = new MolAtom(MolAtom.PSEUDO);
@@ -288,42 +606,56 @@ public class molProcess extends Thread {
 				MolBond e_bond = new MolBond(e_node, atomArray[i]);
 				e_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
 
+				e_node.putProperty(TERMINAL, atomArray[i].getProperty(TERMINAL));
+				e_bond.putProperty(TERMINAL,atomArray[i].getProperty(TERMINAL));
+				
 				mol_in.add(e_node);
 				mol_in.add(e_bond);
 			}
-		}
 
+		}
 		/* Now that the graph is redrawn, we need to index the e, h and bonds */
 		/*
-		 * 1) start with numbering the protons2) then number the lp 3) then number the electrons that are part of the
-		 * connecting ones, each will have its own indexing scheme
+		 * 1) start with numbering the protons2) then number the lp 3) then
+		 * number the electrons that are part of the connecting ones, each will
+		 * have its own indexing scheme
 		 */
 		atomArray = mol_in.getAtomArray();
 		for (int i = 0; i < atomArray.length; i++) {
-			if (atomArray[i].isPseudo()) if (atomArray[i].getAliasstr().equalsIgnoreCase("e")) continue;
+			if (atomArray[i].isPseudo())
+				if (atomArray[i].getAliasstr().equalsIgnoreCase("e"))
+					continue;
 
-			if (atomArray[i].getSymbol().equalsIgnoreCase("H")) continue;
+			if (atomArray[i].getSymbol().equalsIgnoreCase("H"))
+				continue;
 
 			lp_count = 0;
 			h_count = 0;
 
 			MolBond[] bondArray2 = atomArray[i].getBondArray();
 			for (int j = 0; j < bondArray2.length; j++) {
-				if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().equalsIgnoreCase("e-lp")) {
+				if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString()
+						.equalsIgnoreCase("e-lp")) {
 					lp_count++;
-					bondArray2[j].getOtherAtom(atomArray[i]).putProperty(INDEX, lp_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#e-lp");
-				}
-				else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().equalsIgnoreCase("e-h")) {
+					bondArray2[j].getOtherAtom(atomArray[i]).putProperty(INDEX,
+							lp_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#e-lp");
+				} else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString()
+						.equalsIgnoreCase("e-h")) {
 					h_count++;
 					MolAtom otherEatom = bondArray2[j].getOtherAtom(atomArray[i]);
-					otherEatom.putProperty(INDEX, h_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#e-h");					
-				}
-				else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().contains("-e")) {
-					bondArray2[j].getOtherAtom(atomArray[i]).putProperty(INDEX, bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
-				}
-				else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().contains("e-c")) {
-					/* here, we partially index the -e nodes, full indexing will be done after the bonds are indexed */
-					bondArray2[j].getOtherAtom(atomArray[i]).putProperty(INDEX, atomArray[i].getProperty(INDEX).toString() + "#e-c#");
+					otherEatom.putProperty(INDEX,
+							h_count + "#" + atomArray[i].getProperty(INDEX).toString() + "#e-h");
+				} else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().contains("-e")) {
+					bondArray2[j].getOtherAtom(atomArray[i]).putProperty(INDEX,
+							bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString() + "#"
+									+ atomArray[i].getProperty(INDEX).toString());
+				} else if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().contains("e-c")) {
+					/*
+					 * here, we partially index the -e nodes, full indexing will
+					 * be done after the bonds are indexed
+					 */
+					bondArray2[j].getOtherAtom(atomArray[i]).putProperty(INDEX,
+							atomArray[i].getProperty(INDEX).toString() + "#e-c#");
 				}
 			}
 		}
@@ -338,8 +670,14 @@ public class molProcess extends Thread {
 						for (int j = 0; j < bondArray2.length; j++) {
 							if (bondArray2[j].getOtherAtom(atomArray[i]).isPseudo()) {
 								if (bondArray2[j].getOtherAtom(atomArray[i]).containsPropertyKey(ETYPE)) {
-									if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString().equalsIgnoreCase("e-c")) {
-										atomArray[i].putProperty(INDEX, atomArray[i].getProperty(INDEX).toString() + bondArray2[j].getOtherAtom(atomArray[i]).getProperty(INDEX).toString().split("[#]")[0]);
+									if (bondArray2[j].getOtherAtom(atomArray[i]).getProperty(ETYPE).toString()
+											.equalsIgnoreCase("e-c")) {
+										atomArray[i]
+												.putProperty(INDEX,
+														atomArray[i].getProperty(INDEX).toString() + "#"
+																+ bondArray2[j].getOtherAtom(atomArray[i])
+																		.getProperty(INDEX).toString()
+																		.split("[#]")[0]);
 									}
 								}
 							}
@@ -348,20 +686,25 @@ public class molProcess extends Thread {
 				}
 			}
 		}
-
 		/*
-		 * TODO: check difference between NAD+ and NADH TODO: add index to bonds TODO: GI for all the molecules and dont
-		 * worry about computation this time, you have all the resources in the world ... let it run forever !!
+		 * TODO: check difference between NAD+ and NADH TODO: add index to bonds
+		 * TODO: GI for all the molecules and dont worry about computation this
+		 * time, you have all the resources in the world ... let it run forever
+		 * !!
 		 */
 		atomArray = mol_in.getAtomArray();
 		for (int i = 0; i < atomArray.length; i++) {
-			if (atomArray[i].isPseudo()) if (atomArray[i].getAliasstr().equalsIgnoreCase("e")) continue;
-			if (atomArray[i].getSymbol().equalsIgnoreCase("H")) continue;
+			if (atomArray[i].isPseudo())
+				if (atomArray[i].getAliasstr().equalsIgnoreCase("e"))
+					continue;
+			if (atomArray[i].getSymbol().equalsIgnoreCase("H"))
+				continue;
 
 			if (atomArray[i].containsPropertyKey(ELECTRONEGATIVITY)) {
 				MolAtom en_node = new MolAtom(MolAtom.PSEUDO);
 				en_node.setAliasstr("en");
-				en_node.putProperty(INDEX, atomArray[i].getProperty(ELECTRONEGATIVITY).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
+				en_node.putProperty(INDEX, "en#" + atomArray[i].getProperty(ELECTRONEGATIVITY).toString() + "#"
+						+ atomArray[i].getProperty(INDEX).toString());
 				MolBond en_bond = new MolBond(atomArray[i], en_node);
 				en_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
 				mol_in.add(en_node);
@@ -382,30 +725,34 @@ public class molProcess extends Thread {
 				if ((int) atomArray[i].getProperty(CHIRALITY) > 0) {
 					MolAtom chrl_node = new MolAtom(MolAtom.PSEUDO);
 					chrl_node.setAliasstr("chrl");
-					chrl_node.putProperty(INDEX, atomArray[i].getProperty(CHIRALITY).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
+					chrl_node.putProperty(INDEX, "chrl#" + atomArray[i].getProperty(CHIRALITY).toString() + "#"
+							+ atomArray[i].getProperty(INDEX).toString());
 					MolBond chrl_bond = new MolBond(atomArray[i], chrl_node);
 					chrl_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
 					mol_in.add(chrl_node);
 					mol_in.add(chrl_bond);
 				}
 			}
-			
+
 			if (atomArray[i].containsPropertyKey(TERMINAL)) {
-				if ((boolean) atomArray[i].getProperty(TERMINAL) == false) continue;
-					MolAtom term_node = new MolAtom(MolAtom.PSEUDO);
-					term_node.setAliasstr("term");
-					term_node.putProperty(INDEX, atomArray[i].getProperty(TERMINAL).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
-					MolBond term_bond = new MolBond(atomArray[i], term_node);
-					term_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
-					mol_in.add(term_node);
-					mol_in.add(term_bond);
-				
+				if ((boolean) atomArray[i].getProperty(TERMINAL) == false)
+					continue;
+				MolAtom term_node = new MolAtom(MolAtom.PSEUDO);
+				term_node.setAliasstr("term");
+				term_node.putProperty(INDEX, "term#" + atomArray[i].getProperty(TERMINAL).toString() + "#"
+						+ atomArray[i].getProperty(INDEX).toString());
+				MolBond term_bond = new MolBond(atomArray[i], term_node);
+				term_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
+				mol_in.add(term_node);
+				mol_in.add(term_bond);
+
 			}
-			
+
 			if (atomArray[i].containsPropertyKey(HYBRIDIZATIONSTATE)) {
 				MolAtom hbz_node = new MolAtom(MolAtom.PSEUDO);
 				hbz_node.setAliasstr("hbz");
-				hbz_node.putProperty(INDEX, atomArray[i].getProperty(HYBRIDIZATIONSTATE).toString() + "#" + atomArray[i].getProperty(INDEX).toString());
+				hbz_node.putProperty(INDEX, "hbz#" + atomArray[i].getProperty(HYBRIDIZATIONSTATE).toString() + "#"
+						+ atomArray[i].getProperty(INDEX).toString());
 				MolBond hbz_bond = new MolBond(atomArray[i], hbz_node);
 				hbz_bond.putProperty(IGNOREDBYATOM, atomArray[i].getProperty(INDEX));
 				mol_in.add(hbz_node);
@@ -446,10 +793,15 @@ public class molProcess extends Thread {
 				}
 			}
 		}
+		mol_in.regenBonds();
+		return mol_in;
 	}
 
 	public static HashMap<Molecule, Double> getMMDistribution(Molecule mol) {
-		/*This function returns a HashMap with microspecies molecule as key, and the corresponding PH as the value*/
+		/*
+		 * This function returns a HashMap with microspecies molecule as key,
+		 * and the corresponding PH as the value
+		 */
 		HashMap<Molecule, Double> returnVal = new HashMap<Molecule, Double>();
 		try {
 			pKaPlugin pKAplugin = new pKaPlugin();
@@ -476,8 +828,7 @@ public class molProcess extends Thread {
 				}
 			}
 			return returnVal;
-		}
-		catch (PluginException e) {
+		} catch (PluginException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -499,14 +850,12 @@ public class molProcess extends Thread {
 							returnVal.put(mmSpeciesPlugin.getMajorMicrospecies(), Double.valueOf(i));
 						}
 					}
-				}
-				else {
+				} else {
 					returnVal.put(mmSpeciesPlugin.getMajorMicrospecies(), Double.valueOf(i));
 				}
 			}
 			return returnVal;
-		}
-		catch (PluginException e) {
+		} catch (PluginException e) {
 			e.printStackTrace();
 			System.err.println("*******");
 			System.err.println("error in getMMSpecies(mol,pH)");
@@ -531,12 +880,15 @@ public class molProcess extends Thread {
 			System.out.println("msCount =" + mscount);
 			int bestPhIndex;
 			/*
-			 * double[][] msDistributions = pKAplugin.getMsDistributions(); for (int i = 0; i < msDistributions.length;
-			 * i++) { System.out.println(Arrays.toString(msDistributions[i])); }
+			 * double[][] msDistributions = pKAplugin.getMsDistributions(); for
+			 * (int i = 0; i < msDistributions.length; i++) {
+			 * System.out.println(Arrays.toString(msDistributions[i])); }
 			 */
 			/*
-			 * CalculatorPluginDisplay display = new pKaPluginDisplay(); display.setPlugin(pKAplugin); display.store();
-			 * Component component = display.getResultComponent(); component.setVisible(true);
+			 * CalculatorPluginDisplay display = new pKaPluginDisplay();
+			 * display.setPlugin(pKAplugin); display.store(); Component
+			 * component = display.getResultComponent();
+			 * component.setVisible(true);
 			 */
 
 			for (int i = 0; i < mscount; ++i) {
@@ -548,8 +900,7 @@ public class molProcess extends Thread {
 				}
 			}
 			return returnVal;
-		}
-		catch (PluginException e) {
+		} catch (PluginException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -562,7 +913,10 @@ public class molProcess extends Thread {
 		for (int i = 0; i < msDistribution.length; i++) {
 			if (msDistribution[i] > distribution) {
 				distribution = msDistribution[i];
-				returnval = i;/* index of that ph, where this molecule has the highest distribution */
+				returnval = i;/*
+								 * index of that ph, where this molecule has the
+								 * highest distribution
+								 */
 			}
 		}
 		if (distribution < MM_DIST_THRESH) {
@@ -577,8 +931,7 @@ public class molProcess extends Thread {
 			mmSpeciesPlugin.setpH(pH);
 			mmSpeciesPlugin.run();
 			return mmSpeciesPlugin.getMajorMicrospecies();
-		}
-		catch (PluginException e) {
+		} catch (PluginException e) {
 			e.printStackTrace();
 			System.err.println("*******");
 			System.err.println("error in getMMSpecies(mol,pH)");
@@ -587,11 +940,23 @@ public class molProcess extends Thread {
 		return null;
 	}
 
-	public static Molecule getMolObject(String molStr) {
+	public static RxnMolecule getMolObject(String molStr, String id) {
 		try {
-			return MolImporter.importMol(molStr);
-		}
-		catch (Exception e) {
+			
+			RxnMolecule importMol = new RxnMolecule().getReaction(MolImporter.importMol(molStr));
+			importMol.rebuildStructures();
+			Molecule[] molecules = importMol.getReactants();
+			
+			for (Molecule mol : molecules) {
+				mol.setProperty(RP, "r");
+			}
+			
+			molecules = importMol.getProducts();
+			for (Molecule mol : molecules) {
+				mol.setProperty(RP, "p");
+			}
+			return importMol;
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("*******");
 			System.err.println(molStr);
@@ -600,7 +965,7 @@ public class molProcess extends Thread {
 		return null;
 	}
 
-	public static Molecule standardizeMol(Molecule mol) {
+	public static RxnMolecule standardizeMol(RxnMolecule mol) {
 		try {
 			mol.dearomatize();
 
@@ -613,8 +978,7 @@ public class molProcess extends Thread {
 
 			mol.calcHybridization();
 			return mol;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("*******");
 			System.err.println("standardizer error");
@@ -623,14 +987,14 @@ public class molProcess extends Thread {
 		return null;
 	}
 
-	public static Molecule annotatedMolecule(Molecule mol, boolean newIndex) {
+	public static RxnMolecule annotatedMolecule(RxnMolecule mol, boolean newIndex) {
 		/*
-		 * only atoms will be indexed, indexing of bonds will be done in the addPseudo(), since there will be changes in
-		 * charges and protonation at different pH
+		 * only atoms will be indexed, indexing of bonds will be done in the
+		 * addPseudo(), since there will be changes in charges and protonation
+		 * at different pH
 		 */
-		
+
 		Hydrogenize.convertExplicitHToImplicit(mol);
-		
 
 		try {
 			MolAtom[] atomArray = mol.getAtomArray();
@@ -638,11 +1002,11 @@ public class molProcess extends Thread {
 				atomArray[i].setSelected(true);
 
 				if (atomArray[i].getSymbol().equalsIgnoreCase("LP") || atomArray[i].getSymbol().equalsIgnoreCase("H")) {
-					/*capture error into a file*/
+					/* capture error into a file */
 					continue;
 				}
 				if (newIndex) {
-					atomArray[i].putProperty(INDEX, String.valueOf(i + 1));
+					atomArray[i].putProperty(INDEX, atomArray[i].getAtomMap());
 				}
 
 				atomArray[i].putProperty(RADICALCOUNT, atomArray[i].getRadicalCount());
@@ -653,13 +1017,13 @@ public class molProcess extends Thread {
 				atomArray[i].putProperty(HYBRIDIZATIONSTATE, atomArray[i].getHybridizationState());
 				atomArray[i].putProperty(RING, mol.isAtomInRing(atomArray[i]));
 				atomArray[i].putProperty(TERMINAL, atomArray[i].isTerminalAtom());
-				
-				/*here we count the number of protons*/
-				atomArray[i].putProperty(HCOUNT, atomArray[i].getImplicitHCount(true) + atomArray[i].getExplicitHcount());
-				
+				atomArray[i].setAliasstr(atomArray[i].getSymbol());
+				/* here we count the number of protons */
+				atomArray[i].putProperty(HCOUNT,
+						atomArray[i].getImplicitHCount(true) + atomArray[i].getExplicitHcount());
+
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("*******");
 			System.err.println("Error in annotation: Atoms");
@@ -675,9 +1039,13 @@ public class molProcess extends Thread {
 				bondArray[i].putProperty(SYMBOL, bondSymbol);
 				bondArray[i].putProperty(RING, mol.isRingBond(i));
 				bondArray[i].putProperty(BONDTYPE, bondArray[i].getType());
+				if (bondArray[i].getAtom1().isTerminalAtom() || bondArray[i].getAtom2().isTerminalAtom()) {
+					bondArray[i].putProperty(TERMINAL, true);
+				} else {
+					bondArray[i].putProperty(TERMINAL, false);
+				}
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("*******");
 			System.err.println("Error in annotation: Bonds");
@@ -689,11 +1057,13 @@ public class molProcess extends Thread {
 	}
 
 	private static String getBondSymbol(MolBond bond) {
-		/*this function sorts and concatenates the atom symbols to create unique bond symbols.*/
+		/*
+		 * this function sorts and concatenates the atom symbols to create
+		 * unique bond symbols.
+		 */
 		if (bond.getAtom1().getSymbol().compareToIgnoreCase(bond.getAtom2().getSymbol()) > 1) {
 			return "." + bond.getAtom1().getSymbol() + "." + bond.getAtom2().getSymbol() + ".";
-		}
-		else {
+		} else {
 			return "." + bond.getAtom2().getSymbol() + "." + bond.getAtom1().getSymbol() + ".";
 		}
 	}
@@ -705,15 +1075,17 @@ public class molProcess extends Thread {
 			if (molAtom.isPseudo()) {
 				if (molAtom.getAliasstr().equalsIgnoreCase("e")) {
 					uniqueProperties.add(molAtom.getProperty(ETYPE).toString());
-				}
-				else if (molAtom.getAliasstr().equalsIgnoreCase("rng") || molAtom.getAliasstr().equalsIgnoreCase("erng") || molAtom.getAliasstr().equalsIgnoreCase("rad")) {
+				} else if (molAtom.getAliasstr().equalsIgnoreCase("rng")
+						|| molAtom.getAliasstr().equalsIgnoreCase("erng")
+						|| molAtom.getAliasstr().equalsIgnoreCase("rad")) {
 					uniqueProperties.add(molAtom.getAliasstr());
+				} else if (molAtom.getAliasstr().equalsIgnoreCase("en")
+						|| molAtom.getAliasstr().equalsIgnoreCase("chrl")
+						|| molAtom.getAliasstr().equalsIgnoreCase("hbz")) {
+					uniqueProperties
+							.add(molAtom.getAliasstr() + ":" + molAtom.getProperty(INDEX).toString().split("[#]")[0]);
 				}
-				else if (molAtom.getAliasstr().equalsIgnoreCase("en") || molAtom.getAliasstr().equalsIgnoreCase("chrl") || molAtom.getAliasstr().equalsIgnoreCase("hbz")) {
-					uniqueProperties.add(molAtom.getAliasstr() + ":" + molAtom.getProperty(INDEX).toString().split("[#]")[0]);
-				}
-			}
-			else {
+			} else {
 				uniqueProperties.add("a:" + molAtom.getAtno() + ":" + molAtom.getSymbol());
 			}
 		}
@@ -725,15 +1097,15 @@ public class molProcess extends Thread {
 		if (molAtom.isPseudo()) {
 			if (molAtom.getAliasstr().equalsIgnoreCase("e")) {
 				return "e:" + molAtom.getProperty(ETYPE).toString();
-			}
-			else if (molAtom.getAliasstr().equalsIgnoreCase("rng") || molAtom.getAliasstr().equalsIgnoreCase("erng") || molAtom.getAliasstr().equalsIgnoreCase("rad") || molAtom.getAliasstr().equalsIgnoreCase("term")) {
+			} else if (molAtom.getAliasstr().equalsIgnoreCase("rng") || molAtom.getAliasstr().equalsIgnoreCase("erng")
+					|| molAtom.getAliasstr().equalsIgnoreCase("rad")
+					|| molAtom.getAliasstr().equalsIgnoreCase("term")) {
 				return molAtom.getAliasstr() + ":" + molAtom.getAliasstr();
-			}
-			else if (molAtom.getAliasstr().equalsIgnoreCase("en") || molAtom.getAliasstr().equalsIgnoreCase("chrl") || molAtom.getAliasstr().equalsIgnoreCase("hbz")) {
+			} else if (molAtom.getAliasstr().equalsIgnoreCase("en") || molAtom.getAliasstr().equalsIgnoreCase("chrl")
+					|| molAtom.getAliasstr().equalsIgnoreCase("hbz")) {
 				return molAtom.getAliasstr() + ":" + molAtom.getProperty(INDEX).toString().split("[#]")[0];
 			}
-		}
-		else {
+		} else {
 			return "a:" + molAtom.getAtno();
 		}
 		return null;
@@ -742,28 +1114,30 @@ public class molProcess extends Thread {
 	public static Integer getZeroIndex(String prop) {
 		if (nodeIndex.containsKey(prop)) {
 			return nodeIndex.get(prop);
-		}
-		else
+		} else
 			return 1;
 
 	}
 
-	public static void addPrimeZero(Molecule mol2) {
+	public static void addPrimeZero(RxnMolecule mol2) {
 		int level = 0;
 		MolAtom[] atomArray = mol2.getAtomArray();
 		for (MolAtom molAtom : atomArray) {
-			molAtom.putProperty(PRIME + level, primeHash.get(getZeroIndex(getProperties(molAtom))));
+			molAtom.putProperty(PRIME + level, (primeHash.get(getZeroIndex(getProperties(molAtom))).toString()));
 		}
 		MolBond[] bondArray = mol2.getBondArray();
 		for (MolBond molBond : bondArray) {
-			molBond.putProperty(PRIME + level, primeHash.get(getZeroIndex("b:b")));
+			molBond.putProperty(PRIME + level, (primeHash.get(getZeroIndex("b:b")).toString()));
 		}
 	}
 
-	public static boolean calcGI(Molecule mol2, int level) {
-		/*there is no need to store the product, we can have a service to lookup the primes that correspond to the product, 
-		 * for now, we use a function that returns the corresponding prime, 
-		 * this function internally will later be transformed to use REST*/
+	public static boolean calcGI(RxnMolecule mol2, int level) {
+		/*
+		 * there is no need to store the product, we can have a service to
+		 * lookup the primes that correspond to the product, for now, we use a
+		 * function that returns the corresponding prime, this function
+		 * internally will later be transformed to use REST
+		 */
 		MolAtom[] atomArray = mol2.getAtomArray();
 		String index;
 		MolBond[] bondArray;
@@ -772,31 +1146,31 @@ public class molProcess extends Thread {
 		String symbol = "";
 		for (MolAtom molAtom : atomArray) {
 			index = molAtom.getProperty(INDEX).toString();
-			
+
 			product = BigInteger.valueOf(Long.valueOf(molAtom.getProperty(PRIME + level).toString()));
 			product = product.multiply(product);
-			
+
 			bondArray = molAtom.getBondArray();
-			
+
 			for (int i = 0; i < bondArray.length; i++) {
 
-				if (bondArray[i].containsPropertyKey(IGNOREDBYATOM)) if (bondArray[i].getProperty(IGNOREDBYATOM).toString().equalsIgnoreCase(index)) continue;
+				if (bondArray[i].containsPropertyKey(IGNOREDBYATOM))
+					if (bondArray[i].getProperty(IGNOREDBYATOM).toString().equalsIgnoreCase(index))
+						continue;
 
-				product = BigInteger.valueOf(Long.valueOf(bondArray[i].getProperty(PRIME + level).toString())).multiply(product);
+				product = BigInteger.valueOf(Long.valueOf(bondArray[i].getProperty(PRIME + level).toString()))
+						.multiply(product);
 			}
 			molAtom.putProperty(PRODUCT + (level + 1), product.toString());
-			
+
 			if (molAtom.isPseudo()) {
-				symbol = molAtom.getAliasstr();				
+				symbol = molAtom.getAliasstr();
+			} else {
+				symbol = molAtom.getSymbol();
 			}
-			else {
-				symbol = molAtom.getSymbol();				
-			}
-			
-			
-			
-			prime = getPrime(symbol+":"+product.toString(),level + 1);
-			
+
+			prime = getPrime(symbol + ":" + product.toString(), level + 1);
+
 			molAtom.putProperty(PRIME + (level + 1), prime);
 		}
 
@@ -804,48 +1178,105 @@ public class molProcess extends Thread {
 		for (MolBond molBond : bondArray) {
 			product = BigInteger.valueOf(Long.valueOf(molBond.getProperty(PRIME + level).toString()));
 			product = product.multiply(product);
-			
-			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom1().getProperty(PRIME + (level+1)).toString())).multiply(product);
-			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom2().getProperty(PRIME + (level+1)).toString())).multiply(product);
-			
+
+			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom1().getProperty(PRIME + (level + 1)).toString()))
+					.multiply(product);
+			product = BigInteger.valueOf(Long.valueOf(molBond.getAtom2().getProperty(PRIME + (level + 1)).toString()))
+					.multiply(product);
+
 			molBond.putProperty(PRODUCT + (level + 1), product.toString());
-			prime = getPrime("b:"+product.toString(),level + 1);
+			prime = getPrime("b:" + product.toString(), level + 1);
 			molBond.putProperty(PRIME + (level + 1), prime);
 		}
+
 		
-		TreeMap<String,String> sorter1 = new TreeMap<String,String>();
-		TreeMap<String,String> sorter2 = new TreeMap<String,String>();
 		
-		for (MolAtom atom : atomArray) {
-			sorter1.put(String.valueOf(atom.getProperty(INDEX)), String.valueOf(atom.getProperty(PRIME + (level))));
-			sorter2.put(String.valueOf(atom.getProperty(INDEX)), String.valueOf(atom.getProperty(PRIME + (level + 1))));
-		}
 		
-		for (MolBond molBond : bondArray) {
-			sorter1.put(String.valueOf(molBond.getProperty(INDEX)), String.valueOf(molBond.getProperty(PRIME + (level))));
-			sorter2.put(String.valueOf(molBond.getProperty(INDEX)), String.valueOf(molBond.getProperty(PRIME + (level + 1))));
-		}
-		
-		String sorter1Str = sorter1.toString();
-		String sorter2Str = sorter2.toString();
-		
-		if (sorter1Str.equalsIgnoreCase(sorter2Str)) 
-			return false;
-		else 
-			return true;
-		
+		if (level > 1) {
+			TreeMap<BigInteger, TreeSet<String>> sorter1 = new TreeMap<BigInteger, TreeSet<String>>();
+			TreeMap<BigInteger, TreeSet<String>> sorter2 = new TreeMap<BigInteger, TreeSet<String>>();
+			
+			BigInteger key1;
+			BigInteger key2;
+			for (MolAtom atom : atomArray) {
+				//System.out.println(String.valueOf(atom.getProperty(PRODUCT + (level))));
+				/*key1 = BigInteger.valueOf(Long.parseLong(String.valueOf(atom.getProperty(PRODUCT + (level)))));
+				key2 = BigInteger.valueOf(Long.parseLong(String.valueOf(atom.getProperty(PRODUCT + (level + 1)))));*/
+				
+				key1 = new BigInteger(String.valueOf(atom.getProperty(PRODUCT + (level))));
+				key2 = new BigInteger(String.valueOf(atom.getProperty(PRODUCT + (level + 1))));
+				if (!sorter1.containsKey(key1))
+					sorter1.put(key1, new TreeSet<String>());
+				if (!sorter2.containsKey(key2))
+					sorter2.put(key2, new TreeSet<String>());
+
+				sorter1.get(key1).add(String.valueOf(atom.getProperty(INDEX)));
+				sorter2.get(key2).add(String.valueOf(atom.getProperty(INDEX)));
+			}
+			for (MolBond molBond : bondArray) {
+				/*key1 = BigInteger.valueOf(Long.parseLong(String.valueOf(molBond.getProperty(PRODUCT + (level)))));
+				key2 = BigInteger.valueOf(Long.parseLong(String.valueOf(molBond.getProperty(PRODUCT + (level + 1)))));*/
+				
+				key1 = new BigInteger(String.valueOf(molBond.getProperty(PRODUCT + (level))));
+				key2 = new BigInteger(String.valueOf(molBond.getProperty(PRODUCT + (level + 1))));
+				
+				if (!sorter1.containsKey(key1))
+					sorter1.put(key1, new TreeSet<String>());
+				if (!sorter2.containsKey(key2))
+					sorter2.put(key2, new TreeSet<String>());
+
+				sorter1.get(key1).add(String.valueOf(molBond.getProperty(INDEX)));
+				sorter2.get(key2).add(String.valueOf(molBond.getProperty(INDEX)));
+
+			}
+			
+			
+			if (compareGI(sorter1,sorter2))
+				return false;
+			else
+				return true;
+		} else return true;
+
 	}
 
-	private static String getPrime(String productLabel,int level) {
+	private static boolean compareGI(TreeMap<BigInteger, TreeSet<String>> sorter1, TreeMap<BigInteger, TreeSet<String>> sorter2) {
+		TreeSet<String> desorter1 = new TreeSet<String>();
+		TreeSet<String> desorter2 = new TreeSet<String>();
+		Set<BigInteger> keySet = sorter1.keySet();
+		for (BigInteger key : keySet) {
+			desorter1.add(sorter1.get(key).toString());
+			
+		}
+		keySet = sorter2.keySet();
+		for (BigInteger key : keySet) {
+			desorter2.add(sorter2.get(key).toString());			
+		}
+		if ((desorter1.toString()).equalsIgnoreCase((desorter2.toString()))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private static String getPrime(String productLabel, int level) {
+		smphores.get(level).acquireUninterruptibly();
+		/*even after using synchronized, it doesnt synchronize*/
+		
 		if (!ProductsPrime.containsKey(level)) {
-			ProductsPrime.put(level, new LinkedHashMap<String,String>());
+			ProductsPrime.put(level, new LinkedHashMap<String, String>());
 		}
-		Object returnVal = ProductsPrime.get(level).get(productLabel);
-		if (returnVal == null) {
+		String returnVal ="";
+		if (!((ProductsPrime.get(level)).containsKey(productLabel))) {
 			returnVal = String.valueOf(primeHash.get(ProductsPrime.get(level).size()));
-			ProductsPrime.get(level).put(productLabel, (String)returnVal);
+			
+			pw.println(level + "\t" + productLabel + "\t" + (String) returnVal);
+			
+			ProductsPrime.get(level).put(productLabel, (String) returnVal);		
+		} else {
+			returnVal = ProductsPrime.get(level).get(productLabel);
 		}
-		return (String) returnVal;
+		smphores.get(level).release();
+		return returnVal;
 	}
 
 	public static HashMap<Integer, HashMap<String, Integer>> updatedLookup() {
@@ -874,20 +1305,17 @@ public class molProcess extends Thread {
 				}
 			}
 			inputStream.close();
-			
-			/*for (String prod : molProcess.sortedProducts) {
-				level = Integer.valueOf(prod.split("[:]")[2]);
-				if (!returnVal.get(level).containsKey(prod)) {
-					prime = primeHash.get(primeIndex.get(maxValue.get(level)) + 1);
-					returnVal.get(level).put(prod, prime);
-					if (prime > maxValue.get(level)) {
-						maxValue.put(level, prime);
-					}
-				}
-			}*/
-			
-		}
-		catch (IOException e) {
+
+			/*
+			 * for (String prod : molProcess.sortedProducts) { level =
+			 * Integer.valueOf(prod.split("[:]")[2]); if
+			 * (!returnVal.get(level).containsKey(prod)) { prime =
+			 * primeHash.get(primeIndex.get(maxValue.get(level)) + 1);
+			 * returnVal.get(level).put(prod, prime); if (prime >
+			 * maxValue.get(level)) { maxValue.put(level, prime); } } }
+			 */
+
+		} catch (IOException e) {
 			System.err.println("IOException:");
 			e.printStackTrace();
 		}
@@ -903,11 +1331,14 @@ public class molProcess extends Thread {
 
 /* read molecules from tab file */
 /* convert smiles to mol objects */
-/* standardize the mol objects -> clean in 2d, aromatic to kekule, cis and trans when ?, R and S when ? */
+/*
+ * standardize the mol objects -> clean in 2d, aromatic to kekule, cis and trans
+ * when ?, R and S when ?
+ */
 /* use isRingBond, isConjugated, isCoordinate, also */
 /* number them and print them w/o proton or charge ?? */
 /* print them */
 /*
- * find the pseudoisomer distribution, number them and print them in a way such that it is possible to recreate the
- * molecule
+ * find the pseudoisomer distribution, number them and print them in a way such
+ * that it is possible to recreate the molecule
  */
