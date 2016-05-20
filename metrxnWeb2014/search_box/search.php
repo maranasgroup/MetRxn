@@ -39,10 +39,19 @@ function getsearchValues(form)
 	
 }
 function doCSS() {
+	// parent.document.getElementById("intro").style.display = 'none';
+	parent.document.getElementById("search_dismiss_1").style.display = 'none';
+	parent.document.getElementById("search_dismiss_2").style.display = 'none';
+	parent.document.getElementById("search_height").style.height = '2000px';
+	parent.document.getElementById("iframeBox").style.height = '2000px';
 	$("#suggestions").css({'border': 'solid','border-width': '1px','margin-top': '0px','border-top-color': 'white'});
 }
 
 function undoCSS() {
+	parent.document.getElementById("search_dismiss_1").style.display = '';
+	parent.document.getElementById("search_dismiss_2").style.display = '';
+	parent.document.getElementById("search_height").style.height = '150px';
+	parent.document.getElementById("iframeBox").style.height = '150px';
 	$("#suggestions").css({'border': 'none'});
 }
 
@@ -101,7 +110,7 @@ table {
 <body>
 <div align="center">
 <div id="content_holder">
-<form action="<?php echo relativePath(getcwd(),$results_php); ?>" method="get" target="_parent" >
+<form action="../searchResults/results_new.php" method="get" target="_parent" >
 <br/><br/>
 <table>
 <tr><td>
@@ -118,7 +127,7 @@ table {
 </table>
 <br/><br/>
 <!--<a href="/MetRxn/AdvancedSearch/advancedSearch.php" target="_parent">Advanced Search</a> |-->
-<a href="<?php echo relativePath(getcwd(),$Documentation_php); ?>" target = "_parent">About MetRxn</a>
+<!-- a href="../Documentation.html">About MetRxn</a> -->
 
 </form>
 </div>

@@ -58,199 +58,128 @@ connect();
 		echo "</table>";
 	}
 	?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Model comparisions</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>MetRxn Database of Costas D. Maranas. Penn State Department of Chemical Engineering</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!--Custom CSS-->
+  <link href="../css/labwebsite.css" rel="stylesheet"></link>
+  <style>
+    .container { padding: 0px !important;}
 
-
-<link rel="stylesheet"  href="http://metRxn.engr.psu.edu/inc/css/sidebars.css"   type="text/css" />
-   	<link rel="search" href="/MetRxn/plugins/openSearch/openSearch.xml" type="application/opensearchdescription+xml" title="MetRxn" />
-	<link href="<?php echo relativePath(getcwd(),$metRxnContents_css); ?>" rel="stylesheet" type="text/css" />
-	<link href="<?php echo relativePath(getcwd(),$anchors_css); ?>" rel="stylesheet" type="text/css" />
-	<link href="<?php echo relativePath(getcwd(),$headings_css); ?>" rel="stylesheet" type="text/css" />
-<style type="text/css">
-pre {
-	text-indent: 30px
-}
-#tabmenu {
-	color: #000;
-	margin: 12px 0px 0px 0px;
-	padding: 0px;
-	z-index: 1;
-	padding-left: 10px
-}
-#tabmenu li {
-	display: inline;
-	overflow: hidden;
-	list-style-type: none;
-}
-#tabmenu a, a.active {
-	color: #000;
-	background: #C4D8F1;
-	border: 1px solid black;
-	padding: 2px 5px 0px 5px;
-	margin: 0px;
-	text-decoration: none;
-	cursor: hand;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-}
-#tabmenu a.active {
-	background: #ffffff;
-	border-bottom-color: #FFF;
-}
-#tabmenu a:hover {
-	color: #fff;
-	background: #ADC09F;
-}
-#tabmenu a:visited {
-	color: #E8E9BE;
-}
-#tabmenu a.active:hover {
-	background: #ffffff;
-	color: #DEDECF;
-}
-#content {
-	text-align: justify;
-	background: #ffffff;
-	padding: 20px;
-	border-top: none;
-	z-index: 2;
-	float: left;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-}
-#content a {
-	text-decoration: none;
-	color: #E8E9BE;
-}
-#content a:hover {
-	background: #aaaaaa;
-}
-#result a:hover {
-	background: #aaaaaa;
-	font-size: 16px;
-	text-decoration: overline
-}
-#result a {
-	text-decoration: none;
-	color: #000
-}
-.hide {
-	display: none;
-}
-.show {
- display:!important;
-}
-table {
-	border-collapse: collapse;
-	margin: 20px;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-}
-.footer {
-	position: relative;
-	bottom: 0;
-	width: 100%;
-}
-iframe {
-	border: 0;
-}
-.leftbar {
-	float: left;
-	width: 20%;
-	
-}
-.comparision {
-	float: none;
-	width: 70%;
-	position: relative;
-}
-.header {
-	width: 100%;
-	top: 0;
-	border: none;
-}
-</style>
+  </style>
 </head>
 <body>
-<table>
-<tr>
-<div class="header">
-    <iframe src="<?php echo relativePath(getcwd(),$top_data_htm);?>" width="100%" height="160" scrolling="no">
-    </iframe>
-</div>
-</tr>
-<tr>
-<div class="leftbar">	
-   	<iframe src="<?php echo relativePath(getcwd(),$left_Menu_php); ?>" height="450" scrolling="no">
-    </iframe>
-</div>
-<div class="comparision">
-    
-      <?php
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand hidden-xs" href="index.htm">Penn State | Chemical and Biological Systems Optimization Lab | MetRxn</a>
+      <a class="navbar-brand visible-xs" href="index.htm">Penn State | MetRxn</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../MetRxntest.php"><i class="fa fa-home"></i></a></li>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="BrowseByOrganism_new.php">Organism</a></li>
+          <li class="active"><a href="comparisons_new.php">Comparisons</a></li>
+        </ul>
+        </li>
+                <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Documentation
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="../Documentation.html">About MetRxn</a></li>
+        </ul>
+        </li>
+        <li><a href="mailto:costas@psu.edu">Contact</a></li>
+        <li><a href="../MetRxntest.php">Login</a></li>
+        <li><a href="http://www.maranasgroup.com">Maranas Group</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-			
-		$result = mysql_query("SELECT source `source`,idSourceName FROM `metrxn`.`source_pin` where idSourceName in 
-		(select distinct A.idSource from `metrxn`.`source_user_pin` A,`metrxnweb`.`login` B /*,`metrxn`.`reaction_pin` C*/
-		where A.idUser = B.idlogin and B.username = '".$username."' /*and A.idSource = C.idSource*/) and sourceType = 'Metabolic model' order by sourceType,source");
-		
-		$resultCount = mysql_affected_rows();
-		
-		echo "<form name=model_comparsion method=post action=statQuery.php>";
-		echo "<table valign='top'>";
-		$j = 0;				
-		echo "<th style='background-color:#99CCFF;'>Metabolic models</th><tr>";
-		$i = 0;
-		while ($row = mysql_fetch_array($result))
-		{
-			echo "<td style='border:1px solid black;'><input type=checkbox name=field[".$i."] value=".$row['idSourceName'].">".$row['source']."</input></td>";	
-			$i++;
-			$j++;
-			if($j == 3)
-			{
-				echo "<br></tr><tr>";
-				$j = 0;
-			}
-			
-		}
-		echo "</tr><tr><td></td></tr><tr>";
-		echo "";
-		$result = mysql_query("SELECT source `source`,idSourceName FROM `metrxn`.`source_pin` where idSourceName in 
-		(select distinct A.idSource from `metrxn`.`source_user_pin` A,`metrxnweb`.`login` B,`metrxn`.`reaction_pin` C
-		where A.idUser = B.idlogin and B.username = '".$username."' and A.idSource = C.idSource) and sourceType = 'database' 
-		order by sourceType,source");
-		
-		$j = 0;				
-		echo "<th style='background-color:#99CCFF;'>Databases</th><tr>";
-		
-		while ($row = mysql_fetch_array($result))
-		{
-			echo "<td style='border:1px solid black;'><input type=checkbox name=field[".$i."] value=".$row['idSourceName'].">".$row['source']."</input></td>";	
-			$i++;
-			$j++;
-			if($j == 3)
-			{
-				echo "<br></tr><tr>";
-				$j = 0;
-			}
-			
-		}
-		
-		
-		echo "</tr><tr><td style=border-right-width:0>
-					<input type=hidden name=count value=$resultCount>
-					<input type=hidden name=val value=5>
-					<input type=submit value=submit />";
+<div style="padding: 20px">
+<div class="container-fluid">
+  <div class="row">
+		<div class="col-md-10 col-md-offset-1 comparision">
+			<!-- <div class="comparision"> -->
+			    
+			      <?php
+
+						
+					$result = mysql_query("SELECT source `source`,idSourceName FROM `metrxn`.`source_pin` where idSourceName in 
+					(select distinct A.idSource from `metrxn`.`source_user_pin` A,`metrxnweb`.`login` B /*,`metrxn`.`reaction_pin` C*/
+					where A.idUser = B.idlogin and B.username = '".$username."' /*and A.idSource = C.idSource*/) and sourceType = 'Metabolic model' order by sourceType,source");
 					
-		echo "</td></tr></table>";
-		echo "</form>";
-		
+					$resultCount = mysql_affected_rows();
+					
+					echo "<form name=model_comparsion method=post action=statQuery_new.php> ";
 
+					echo "<table valign='top'>";
+					$j = 0;				
+					echo "<th style='background-color:#99CCFF;'>Metabolic models</th><tr>";
+					$i = 0;
+					while ($row = mysql_fetch_array($result))
+					{
+						echo "<td style='border:1px solid black;'><input type=checkbox name=field[".$i."] value=".$row['idSourceName'].">".$row['source']."</input></td>";	
+						$i++;
+						$j++;
+						if($j == 3)
+						{
+							echo "<br></tr><tr>";
+							$j = 0;
+						}
+						
+					}
+					echo "</tr><tr><td></td></tr><tr>";
+					echo "";
+					$result = mysql_query("SELECT source `source`,idSourceName FROM `metrxn`.`source_pin` where idSourceName in 
+					(select distinct A.idSource from `metrxn`.`source_user_pin` A,`metrxnweb`.`login` B,`metrxn`.`reaction_pin` C
+					where A.idUser = B.idlogin and B.username = '".$username."' and A.idSource = C.idSource) and sourceType = 'database' 
+					order by sourceType,source");
+					
+					$j = 0;				
+					echo "<th style='background-color:#99CCFF;'>Databases</th><tr>";
+					
+					while ($row = mysql_fetch_array($result))
+					{
+						echo "<td style='border:1px solid black;'><input type=checkbox name=field[".$i."] value=".$row['idSourceName'].">".$row['source']."</input></td>";	
+						$i++;
+						$j++;
+						if($j == 3)
+						{
+							echo "<br></tr><tr>";
+							$j = 0;
+						}
+						
+					}
+					
+					
+					echo "</tr><tr><td style=border-right-width:0>
+								<input type=hidden name=count value=$resultCount>
+								<input type=hidden name=val value=5>
+								<input type=submit value=submit />";
+								
+					echo "</td></tr></table>";
+					echo "</form>";
+			?>
 
-?>
-
-</div>
-</tr>
-</table>
+		</div>
+	</div>
+</div></div>
 </body>
