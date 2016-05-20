@@ -30,136 +30,72 @@ $username = "guest";
 	}
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $_POST["Organism"]; ?></title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>MetRxn Database of Costas D. Maranas. Penn State Department of Chemical Engineering</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!--Custom CSS-->
+  <link href="../css/labwebsite.css" rel="stylesheet"></link>
+  <style>
+    .container { padding: 0px !important;}
 
-	<link href="<?php echo relativePath(getcwd(),$metRxnContents_css); ?>" rel="stylesheet" type="text/css" />
-	<link href="<?php echo relativePath(getcwd(),$anchors_css); ?>" rel="stylesheet" type="text/css" />
-	<link href="<?php echo relativePath(getcwd(),$headings_css); ?>" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-	pre {
-		text-indent: 30px
-	}
-	#tabmenu {
-		color: #000;
-		margin: 12px 0px 0px 0px;
-		padding: 0px;
-		z-index: 1;
-		padding-left: 10px
-	}
-	#tabmenu li {
-		display: inline;
-		overflow: hidden;
-		list-style-type: none;
-	}
-	#tabmenu a, a.active {
-		color: #000;
-		background: #C4D8F1;
-		border: 1px solid black;
-		padding: 2px 5px 0px 5px;
-		margin: 0px;
-		text-decoration: none;
-		cursor: hand;
-		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	}
-	#tabmenu a.active {
-		background: #ffffff;
-		border-bottom-color: #FFF;
-	}
-	#tabmenu a:hover {
-		color: #fff;
-		background: #ADC09F;
-	}
-	#tabmenu a:visited {
-		color: #E8E9BE;
-	}
-	#tabmenu a.active:hover {
-		background: #ffffff;
-		color: #DEDECF;
-	}
-	#content {
-		text-align: justify;
-		background: #ffffff;
-		padding: 20px;
-		border-top: none;
-		z-index: 2;
-		float: left;
-		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	}
-	#content a {
-		text-decoration: none;
-		color: #E8E9BE;
-	}
-	#content a:hover {
-		background: #aaaaaa;
-	}
-	#result a:hover {
-		background: #aaaaaa;
-		font-size: 16px;
-		text-decoration: overline
-	}
-	#result a {
-		text-decoration: none;
-		color: #000
-	}
-	.hide {
-		display: none;
-	}
-	.show {
-	 display:!important;
-	}
-	table {
-		border-collapse: collapse;
-		margin: 20px;
-		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	}
-	.footer {
-		position: relative;
-		bottom: 0;
-		width: 100%;
-	}
-	iframe {
-		border: 0;
-	}
-	.leftbar {
-		float: left;
-		width: 20%;		
-	}
-	.header {
-		width: 100%;
-		top: 0;
-		border: none;
-	}
-</style>
+  </style>
 </head>
-    <script type="text/javascript"
-    SRC="http://www.chemaxon.com/marvin/marvin.js"></script>
-    <script language="JavaScript" type="application/javascript">
-        function showStructure(id,fileType)
-        {
-	mview_begin('../marvin', 400, 200);
-	mview_param('mol', '../StructureFile/'+id+'.'+fileType+'');
-	mview_param('mol', '../StructureFile/'+id+'.'+fileType+'');
-	mview_end();
-        }
-    </script>
+<script type="text/javascript"
+SRC="http://www.chemaxon.com/marvin/marvin.js"></script>
+<script language="JavaScript" type="application/javascript">
+    function showStructure(id,fileType)
+    {
+mview_begin('../marvin', 400, 200);
+mview_param('mol', '../StructureFile/'+id+'.'+fileType+'');
+mview_param('mol', '../StructureFile/'+id+'.'+fileType+'');
+mview_end();
+    }
+</script>
+
 <body>
-<table>
-<tr>
-<div class="header">
-    <iframe src="<?php echo relativePath(getcwd(),$top_data_htm);?>" width="100%" height="160" scrolling="no">
-    </iframe>
-</div>
-</tr>
-<tr>
-<div class="leftbar">	
-   	<iframe src="<?php echo relativePath(getcwd(),$left_Menu_php); ?>" height="450" scrolling="no">
-    </iframe>
-</div>
-<td>
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand hidden-xs" href="index.htm">Penn State | Chemical and Biological Systems Optimization Lab | MetRxn</a>
+      <a class="navbar-brand visible-xs" href="index.htm">Penn State | MetRxn</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../MetRxntest.php"><i class="fa fa-home"></i></a></li>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Browse
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="BrowseByOrganism_new.php">Organism</a></li>
+          <li><a href="comparisons_new.php">Comparisons</a></li>
+        </ul>
+        </li>
+                <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Documentation
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="active"><a href="../Documentation.html">About MetRxn</a></li>
+        </ul>
+        </li>
+        <li><a href="mailto:costas@psu.edu">Contact</a></li>
+        <li><a href="../MetRxntest.php">Login</a></li>
+        <li><a href="http://www.maranasgroup.com">Maranas Group</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <?php
 function showresults($result)
 	{
@@ -197,65 +133,72 @@ function showresults($result)
 		echo "</table>";
 	}
 ?>
-<div>
-<?php
-if (isset($_POST['submit'])) {
-						
-						$result_head = mysql_query("select linkout from metrxn.source_pin where source = '" . $_POST["Organism"] . "'");
-						while ($row = mysql_fetch_array($result_head)) {
-							echo nl2br("\n\nShowing results for <a href=".$row['linkout']." target=_blank>".$_POST["Organism"]."</a>\n\n");
-						}
-                        
-						
-                    }
-?>
-  <form action="" method="post">
-    <select name="Organism">
-      <?php
-                    if (isset($_POST['submit'])) {
-						
-						$result_head = mysql_query("select linkout from metrxn.source_pin where source = '" . $_POST["Organism"] . "'");
-						while ($row = mysql_fetch_array($result_head)) {
-							echo "Showing results for <a href=".$row['linkout'].">".$_POST["Organism"]."</a>";
-						}
-                        
-						echo "<option value='" . $_POST["Organism"] . "'>" . $_POST["Organism"] . "</option>";
-						$rowSource = $_POST["Organism"];
-                    } else {
-                        echo "<option value=''>---------------</option>";
-						$rowSource = '';
-                    }
-					
-                    $result = mysql_query("SELECT DISTINCT source,idSourceName FROM `metrxn`.`source_pin` where idSourceName in 
-					(select distinct A.idSource from `metrxn`.`source_user_pin` A,`metrxnweb`.`login` B
-					where A.idUser = B.idlogin and B.username = '".$username."') and source <> '".$rowSource."' and sourceType <> 'database' order by source;");
-					
-                    while ($row = mysql_fetch_array($result)) {
-                        echo "<option value='" . $row['source'] . "'>" . $row['source'] . "</option>";
-                    }
-                    ?>
-      <input type="radio" name="RXN_MET" value="metabolites" <?php if(isset($_POST['RXN_MET'])){if($_POST['RXN_MET'] == 'metabolites'){echo "checked";}} ?> />
-       Metabolites
-                    
-      <input type="radio" name="RXN_MET" value="reactions" <?php if(isset($_POST['RXN_MET'])){if($_POST['RXN_MET'] == 'reactions'){echo "checked";}} ?>/>
-       Reactions
-	   
-	   <input type="radio" name="RXN_MET" value="SBML" <?php if(isset($_POST['RXN_MET'])){if($_POST['RXN_MET'] == 'SBML'){echo "checked";}} ?>/>
-       SBML
-	   
-	   
-       <?php
-	   if($accessLevel == 'admin')
-	   {
-       echo "<input type=radio name=RXN_MET value=sij />
-       S[i,j]
-       ";
-	   }
+<div style="padding: 80px">
+<div class="container-fluid">
+  <div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		<?php
+		if (isset($_POST['submit'])) {
+								
+								$result_head = mysql_query("select linkout from metrxn.source_pin where source = '" . $_POST["Organism"] . "'");
+								while ($row = mysql_fetch_array($result_head)) {
+									echo nl2br("\n\nShowing results for <a href=".$row['linkout']." target=_blank>".$_POST["Organism"]."</a>\n\n");
+								}
+		                        
+								
+		                    }
 		?>
-      <input type="submit" name = "submit" value="Submit" />
-    </select>
-  </form>
-</div>
+		<form action="" method="post">
+		    <select name="Organism">
+		      <?php
+		                    if (isset($_POST['submit'])) {
+								
+								$result_head = mysql_query("select linkout from metrxn.source_pin where source = '" . $_POST["Organism"] . "'");
+								while ($row = mysql_fetch_array($result_head)) {
+									echo "Showing results for <a href=".$row['linkout'].">".$_POST["Organism"]."</a>";
+								}
+		                        
+								echo "<option value='" . $_POST["Organism"] . "'>" . $_POST["Organism"] . "</option>";
+								$rowSource = $_POST["Organism"];
+		                    } else {
+		                        echo "<option value=''>---------------</option>";
+								$rowSource = '';
+		                    }
+							
+		                    $result = mysql_query("SELECT DISTINCT source,idSourceName FROM `metrxn`.`source_pin` where idSourceName in 
+							(select distinct A.idSource from `metrxn`.`source_user_pin` A,`metrxnweb`.`login` B
+							where A.idUser = B.idlogin and B.username = '".$username."') and source <> '".$rowSource."' and sourceType <> 'database' order by source;");
+							
+		                    while ($row = mysql_fetch_array($result)) {
+		                        echo "<option value='" . $row['source'] . "'>" . $row['source'] . "</option>";
+		                    }
+		                    ?>
+		      <input type="radio" name="RXN_MET" value="metabolites" <?php if(isset($_POST['RXN_MET'])){if($_POST['RXN_MET'] == 'metabolites'){echo "checked";}} ?> />
+		       Metabolites
+		                    
+		      <input type="radio" name="RXN_MET" value="reactions" <?php if(isset($_POST['RXN_MET'])){if($_POST['RXN_MET'] == 'reactions'){echo "checked";}} ?>/>
+		       Reactions
+			   
+			   <input type="radio" name="RXN_MET" value="SBML" <?php if(isset($_POST['RXN_MET'])){if($_POST['RXN_MET'] == 'SBML'){echo "checked";}} ?>/>
+		       SBML
+			   
+			   
+		       <?php
+			   if($accessLevel == 'admin')
+			   {
+		       echo "<input type=radio name=RXN_MET value=sij />
+		       S[i,j]
+		       ";
+			   }
+				?>
+		      <input type="submit" name = "submit" value="Submit" />
+		    </select>
+		  </form>
+		</div>
+   </div>
+</div></div>
+
+
 <?php
 	if(isset($_POST['curationBool']))
 	{
@@ -270,8 +213,10 @@ if (isset($_POST['submit'])) {
 		'".$_POST['curationComments']."')");
 	}
 		?>
+<div class="container-fluid">
+  <div class="row">
+		<div class="col-md-10 col-md-offset-1">
 <?php
-
 if (isset($_POST['submit'])) {
 
 	if(!isset($_POST['RXN_MET']))
@@ -598,8 +543,6 @@ if (isset($_POST['submit'])) {
                     
                     
 ?>
-</td>
-</tr>
-</table>
+</div></div></div>
 </body>
 </html>
