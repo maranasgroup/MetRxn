@@ -17,18 +17,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Vector;
 import java.util.concurrent.Semaphore;
-
-import org.apache.commons.collections4.BidiMap;
-
-import com.google.common.collect.ArrayListMultimap;
-import com.opencsv.CSVReader;
 
 import chemaxon.calculations.clean.Cleaner;
 import chemaxon.calculations.hydrogenize.Hydrogenize;
@@ -43,6 +37,9 @@ import chemaxon.struc.Molecule;
 import chemaxon.struc.MoleculeGraph;
 import chemaxon.struc.RxnMolecule;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.opencsv.CSVReader;
+
 //import chemaxon.util.settings.loader.PropertiesLoader;
 
 /*the numbering should transfer to all, make sure that is done .. */
@@ -51,8 +48,8 @@ import chemaxon.struc.RxnMolecule;
  * as and when we need to consider other things, we can focus on them too, 
  * Next is to use a database*/
 public class molProcess extends Thread {
-	private static final int THREADCOUNT = Runtime.getRuntime().availableProcessors() - 1;
-
+//	private static final int THREADCOUNT = Runtime.getRuntime().availableProcessors() - 1;
+	private static final int THREADCOUNT = 1;
 	private static final int MM_DIST_THRESH = 40;
 	public static final String PRODUCT = "product_";
 	public static final String PRIME = "prime_";
@@ -136,7 +133,12 @@ public class molProcess extends Thread {
 					
 		}*/	
 		
-		String rxnSmiFile = "reactions/input/rxn.smi";
+//		String rxnSmiFile = "reactions/input/rxn.smi";
+//		String rxnSmiFile = "reactions/input/rxnsReconDB.smiles";
+//		String rxnSmiFile = "reactions/input/rxnsProtonatedReconDB.smiles";
+		String rxnSmiFile = "reactions/input/rxnsReconDBCLCA.smiles";
+//		String rxnSmiFile = "reactions/input/test.smi";
+
 		smphores = new LinkedList<Semaphore>();
 		for (int i = 0; i < 300; i++) {
 			final Semaphore s = new Semaphore(1);
@@ -162,7 +164,7 @@ public class molProcess extends Thread {
 					if (cnt > 10) break;
 
 					s.acquireUninterruptibly();
-					final String[] strArr = ln.split("\t");
+					final String[] strArr = ln.split(" ");
 					new Thread() {
 						public void run() {
 							try {
@@ -194,6 +196,7 @@ public class molProcess extends Thread {
 							RxnMolecule mol = getMolObject(smiles,id);
 							
 							
+							mol = setIndex(mol,true);
 							
 							mol = standardizeMol(mol);
 							
@@ -1144,7 +1147,9 @@ public class molProcess extends Thread {
 		BigInteger product = BigInteger.valueOf(1);
 		String prime = "";
 		String symbol = "";
+		int cot = 0;
 		for (MolAtom molAtom : atomArray) {
+			molAtom.getProperty(INDEX);
 			index = molAtom.getProperty(INDEX).toString();
 
 			product = BigInteger.valueOf(Long.valueOf(molAtom.getProperty(PRIME + level).toString()));
@@ -1326,6 +1331,39 @@ public class molProcess extends Thread {
 	public static void updatePrimes(Molecule p_mol, int i) {
 		// TODO Auto-generated method stub
 
+	}
+	public static RxnMolecule setIndex(RxnMolecule mol, boolean newIndex) {
+		/*
+		 * only atoms will be indexed, indexing of bonds will be done in the
+		 * addPseudo(), since there will be changes in charges and protonation
+		 * at different pH
+		 */
+
+		Hydrogenize.convertExplicitHToImplicit(mol);
+
+		try {
+			MolAtom[] atomArray = mol.getAtomArray();
+			for (int i = 0; i < atomArray.length; i++) {
+				atomArray[i].setSelected(true);
+
+				if (atomArray[i].getSymbol().equalsIgnoreCase("LP") || atomArray[i].getSymbol().equalsIgnoreCase("H")
+						|| atomArray[i].getSymbol().equalsIgnoreCase("+")) {
+					/* capture error into a file */
+					continue;
+				}
+				if (newIndex) {
+					atomArray[i].setAtomMap(i);
+				}
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println("*******");
+			System.err.println("Error in annotation: Atoms");
+			System.err.println("*******");
+			return null;
+		}
+		return mol;
 	}
 }
 
